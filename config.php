@@ -60,7 +60,5 @@ return [
      *
      */
 
-    'siteName' => 'اتاق فکر هوش مصنوعی و رباتیک',
-
-    'siteDescription' => 'Yet another awesome site.',
+    'siteName' => 'هوش مصنوعی کلاسیک',
 ];
