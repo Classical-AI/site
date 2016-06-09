@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Yet another awesome site.">
+
+    <title>اتاق فکر هوش مصنوعی و رباتیک </title>
+
+    <link rel="stylesheet" href="/assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/assets/css/bootstrap-rtl.min.css">
+    <link rel="stylesheet" href="/assets/css/style.css">
+</head>
+
+<body>
+
+<div class="container">
+    <nav class="navbar navbar-default navbar-fixed-top">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar"
+                    aria-expanded="false" aria-controls="navbar">
+                <span class="sr-only">گشودن/بستن منو</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="/">اتاق فکر هوش مصنوعی و رباتیک</a>
+        </div>
+        <div id="navbar" class="collapse navbar-collapse">
+            <ul class="nav navbar-nav">
+                <li><a href="/">خانه</a></li>
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
+                       aria-expanded="false">مقالات آموزشی <span class="caret"></span></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="/ai/introduction/">هوش مصنوعی</a></li>
+                        <li><a href="#">هوش محاسباتی</a></li>
+                        <li><a href="#">پردازش سیگنال</a></li>
+                        <li><a href="#">پردازش تصویر</a></li>
+                    </ul>
+                </li>
+                <li><a href="/about/">درباره</a></li>
+                <li><a href="/contact/">تماس</a></li>
+            </ul>
+        </div><!--/.nav-collapse -->
+    </div>
+</nav>
+
+    
+    <ol class="breadcrumb">
+        <li><a href="/">خانه</a></li>
+                    <li><a href=" /ai/introduction/ ">هوش مصنوعی</a></li>
+        
+                <li>هوش مصنوعی کلاسیک</li>
+        
+        <li class="active">جستجوی عمقی</li>
+    </ol>
+
+    <div id="content" class="row">
+        <div class="col-md-9">
+            <h2>جستجوی عمقی</h2>
+                            <p>از اسم این روش جستجو پیداست که پیمایش گراف فضای جستجو با حرکت در عمق انجام می پذیرد. به عنوان مثال فرض کنید با سه کلمه &quot;جستجو&quot; ، &quot;گراف&quot; و &quot;عمقی&quot; می خواهیم یک جمله معنی دار بسازیم. شکل زیر مراحل مختلف تشکیل گراف هنگام جستجوی عمقی گراف را نشان می دهد :</p>
+<p><img src="/assets/images/ai/dfs.jpg" alt="جستجوی عمقی" /></p>
+<p>الگوریتم جستجو چنین است : ابتدا فرزندان ریشه درخت تولید شده و در سطح بعدی درخت قرار می گیرند. در ابتدای کار هریک از کلمات می تواند برای شروع جمله بکار روند. سپس اولین گره دارای کلمه &quot;عمقی&quot; در سطح 1 از درخت انتخاب شده و همه فزرندان قابل تولید آن در سطح 2 درخت تشکیل می شوند(شکل 2 ). سپس در سطح 2 از درخت گره شامل کلمه &quot;جستجو&quot; انتخاب شده و همه فرزندان آن در سطح 3 درخت تشکیل می شوند(شکل 3 ). در نهایت نیز کلمه &quot;گراف&quot; انتخاب شده ور همه فزرندان آن تولید می شوند. با توجه به اینکه دیگر هیچ فزرندی برای این گره وجود ندارد، بنابراین جمله &quot;عمقی جستجوی گراف&quot; که از پیمایش درخت از ریشه تا گره فعلی به دست می آید بررسی می شود تا صیحیح بودن این جمله را تعیین کند. همانطور که می دانیم این جمله از نظر قواعدی جمله صحیحی نمی باشد. بنابراین گره فعلی از حافظه حذف شده ( شکل 4 ) و گره &quot;جستجو&quot; در سطح 2 بررسی می شود تا اگر فزرند دیگری برای این گره وجود داشته باشد، ادامه جستجو از آن فرزند ادامه یابد. اما فرزند دیگری برای این گره وجود ندارد. از اینرو این گره نیز از حافظه حذف می شود ( شکل 5 )</p>
+<p>حال فرزندان گره &quot;گراف&quot; در سطح 2 تولید می شوند (شکل 6 ). همانطور که می بینیم فرزند دیگری برای گره &quot;جسجتو&quot; در سطح 3 وجود ندارد. بنابراین این گره نیز به همراه گره پدر از حافظه حذف خواهد شد ( شکل 7 و 8 ). سپس به سطح 1 بازگشته و فرزندان گره &quot;جستجو&quot; را گسترش می دهیم( شکل 9 ). سپس فرزندادن گره &quot;عمقی&quot; در سطح 2 گسترش یافته صحت جمله ساخته شده از آن کلمات بررسی می شوند. در این مرحله جمله از نظر قواعدی درست تشخیص داده شده و عبارت &quot;جستجوی عمقی درخت&quot; به عنوان جواب مسئله پیدا می شود ( شکل 10 ).</p>
+<p>در مسئله فوق از دو تابع گسترش و تست هدف برای گسترش دادن فرزندان گره و تعیین صحت جواب مسئله استفاده کردیم. این توابع در مسائل مختلف به روش های گوناگونی پیاده سازی می شوند و الگوریتم کلی برای آن ها وجود ندارد.</p>
+                    </div>
+
+        <div class="col-md-3">
+                <ul class="list-group">
+        <li class="list-group-item list-group-item-info">
+            هوش مصنوعی کلاسیک
+        </li>
+
+                    <li class="list-group-item">
+                <a href="/ai/base/">مقدمه هوش مصنوعی</a>
+            </li>
+                    <li class="list-group-item">
+                <a href="/ai/introduction/">مقدمه هوش مصنوعی</a>
+            </li>
+                    <li class="list-group-item">
+                <a href="/ai/search-types/">انواع روش های جستجو</a>
+            </li>
+                    <li class="list-group-item">
+                <a href="/ai/dfs/">جستجوی عمقی</a>
+            </li>
+                    <li class="list-group-item">
+                <a href="/ai/dls/">جستجوی عمقی محدود شده</a>
+            </li>
+                    <li class="list-group-item">
+                <a href="/ai/bfs/">جستجوی سطحی</a>
+            </li>
+                    <li class="list-group-item">
+                <a href="/ai/ucs/">جستجوی هزینه یکنواخت</a>
+            </li>
+                    <li class="list-group-item">
+                <a href="/ai/greedy/">جستجوی حریصانه</a>
+            </li>
+                    <li class="list-group-item">
+                <a href="/ai/a-star/">جستجوی *A</a>
+            </li>
+            </ul>
+    <ul class="list-group">
+        <li class="list-group-item list-group-item-info">
+            الگوریتم های متاهیوریستیک
+        </li>
+
+                    <li class="list-group-item">
+                <a href="/ai/metaheuristic-introduction/">روش های جستجوی متاهیوریستیکی</a>
+            </li>
+            </ul>
+        </div>
+    </div>
+
+</div>
+
+<footer class="footer">
+    <div class="container">
+        <p class="text-muted"> کلیه مطالب وب سایت با رعایت قوانین  <a href="http://ai.amini.eu/www.gnu.org/copyleft/fdl.html">GNU Free Documentation License</a> قابل دسترس می باشند  | 1395- 1389 © </p>
+    </div>
+</footer>
+
+
+<script type="text/javascript" src="/assets/js/jquery-2.2.4.min.js"></script>
+<script type="text/javascript" src="/assets/js/bootstrap.min.js"></script>
+
+</body>
+</html>

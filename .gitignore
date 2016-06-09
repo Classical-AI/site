@@ -1,0 +1,5 @@
+/vendor
+/_cache
+.DS_Store
+composer.lock
+/.idea

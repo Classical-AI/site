@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Yet another awesome site.">
+
+    <title>اتاق فکر هوش مصنوعی و رباتیک </title>
+
+    <link rel="stylesheet" href="/assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/assets/css/bootstrap-rtl.min.css">
+    <link rel="stylesheet" href="/assets/css/style.css">
+</head>
+
+<body>
+
+<div class="container">
+    <nav class="navbar navbar-default navbar-fixed-top">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar"
+                    aria-expanded="false" aria-controls="navbar">
+                <span class="sr-only">گشودن/بستن منو</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="/">اتاق فکر هوش مصنوعی و رباتیک</a>
+        </div>
+        <div id="navbar" class="collapse navbar-collapse">
+            <ul class="nav navbar-nav">
+                <li><a href="/">خانه</a></li>
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
+                       aria-expanded="false">مقالات آموزشی <span class="caret"></span></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="/ai/introduction/">هوش مصنوعی</a></li>
+                        <li><a href="#">هوش محاسباتی</a></li>
+                        <li><a href="#">پردازش سیگنال</a></li>
+                        <li><a href="#">پردازش تصویر</a></li>
+                    </ul>
+                </li>
+                <li><a href="/about/">درباره</a></li>
+                <li><a href="/contact/">تماس</a></li>
+            </ul>
+        </div><!--/.nav-collapse -->
+    </div>
+</nav>
+
+    
+    <ol class="breadcrumb">
+        <li><a href="/">خانه</a></li>
+                    <li><a href=" /ai/introduction/ ">هوش مصنوعی</a></li>
+        
+                <li>هوش مصنوعی کلاسیک</li>
+        
+        <li class="active">جستجوی حریصانه</li>
+    </ol>
+
+    <div id="content" class="row">
+        <div class="col-md-9">
+            <h2>جستجوی حریصانه</h2>
+                            <p>یکبار دیگر گراف روبرو را در نظر بگیرید. در سایر روش های جستجو که در این سایت آمده اند نیز گراف روبرو را می توانید مشاهده کنید. در صورتی که از روش جستجوی هزینه یکنواخت برای حل این مساله استفاده کنیم، می توانیم هزینه پیموده شده تا گره فعلی را در نظر بگیریم و هنگام گسترش ، گره با کمترین هزینه را انتخاب نماییم. با روش جستجوی حریصانه از ایده دیگری می توان استفاده کرد. می توانیم به جای اینکه هزینه پیموده شده تا گره فعلی را به عنوان سنجه ای برای میزان بهینگی گره در نظر بگیریم ، فاصله گره فعلی تا مقصد را به عنوان تخمینی برای
+سنجش میزان بهینگی هر گره انتخاب کنیم. به عبارت دیگر هنگام گسترش ، گره ای از درخت را گسترش دهیم که کمترین فاصله را تا مقصد دارد. منظور از فاصله نیز فاصله خط مستقیم بین گره فعلی و مقصد است که با استفاده از فاصله اقلیدسی می توان آن را محاسبه کرد. روش دیگر برای محاسبه فاصله از گره فعلی تا مقصد می تواند محاسبه فاصله بلوک شهری بین این دو گره باشد. لازم به ذکر است که در اینجا فرض می کنیم از هر خانه تنها یکبار می توانیم عبور کنیم.</p>
+<p><img src="/assets/images/ai/greedy-tree.jpg" alt="جستجوی حریصانه" /></p>
+<p>همانطور که در ابتدای مساله فرض کردیم ، از هر خانه تنها یکبار می توان عبور کرد. این بدان معنی است که هر گره تنها یکبار می تواند در درخت می تواند گسترش یابد. علت گسترش نیافتن گره 8 در سطح 1 از درخت نیز به همین دلیل است. چرا که همه فرزندان این گره قبلا در درخت ( سطح 1 ) گسترش یافته اند.</p>
+<p>درخت تشکیل شده از جستجوی حریصانه را با درخت تشکیل شده از جستجوی هزینه یکنواخت مقایسه کنید. می بینیم که جستجوی حزیصانه با گسترش گره های کمتر ، سریعتر به جواب مساله دست پیدا می کند. با این حال هنگام استفاده از جستجوی حریصانه باید دقت کنیم چرا که جستجوی حریصانه با دو مشکل بزرگ همراه است. مشکل اول اینکه نمی توان با استفاده از جستجوی حریصانه مطمئن بود که همیشه به جواب بهینه دست پیدا خواهیم کرد. همچنین جستجوی حریصانه ممکن است در یک حلقه بینهایت به دام افتد. به عنوان مثال در مسئله مسیریابی فرض کنید از هر خانه می توان چندین بار عبور کرد و با این فرض درخت جسنجو را تشکیل دهید. مشاهده خواهید کرد که گره شماره 8 در یک حلقه بینهایت گسترش یافته و در واقع هیچگاه به جواب مسئله دست پیدا نخواهیم کرد. حال می توان علت نامگذاری این روش به جستجوی حریصانه را حدس زد.</p>
+<p>دیدیم که جستجوی هزینه یکنواخت در صورتی که هزینه گام ها به درستی انتخاب شود، موجب یافتن جواب بهینه مسئله خواهد شد. در مقابل این روش با مشکل کند بودن عمل جستجو همراه است. در مقابل جستجوی حریصانه در یافتن جواب مسئله بسیار سریع بوده اما با مشکل حلقه بینهایت و عدم بهینگی جواب مواجه است ( لازم به ذکر است که بهینگی جستجوی حریصانه در برخی مسائل همانند الگوریتم های پریم و کروسکال اثبات شده است. اما در حالت کلی نمی توان ادعا کرد همیشه جستجوی حریصانه منجر به یافتن جواب بهینه خواهد شد). حال این سوال مطرح می شود که چگونه می توان این دو روش را باهم ترکیب کرده و روش جستجویی را طراحی کنیم که هم سریع بوده و هم جواب بهینه مسئله را بتواند پیدا کند؟ جواب مسئله در روش جستجو A* که در ادامه بررسی خواهیم کرد، می بینیم.</p>
+                    </div>
+
+        <div class="col-md-3">
+                <ul class="list-group">
+        <li class="list-group-item list-group-item-info">
+            هوش مصنوعی کلاسیک
+        </li>
+
+                    <li class="list-group-item">
+                <a href="/ai/base/">مقدمه هوش مصنوعی</a>
+            </li>
+                    <li class="list-group-item">
+                <a href="/ai/introduction/">مقدمه هوش مصنوعی</a>
+            </li>
+                    <li class="list-group-item">
+                <a href="/ai/search-types/">انواع روش های جستجو</a>
+            </li>
+                    <li class="list-group-item">
+                <a href="/ai/dfs/">جستجوی عمقی</a>
+            </li>
+                    <li class="list-group-item">
+                <a href="/ai/dls/">جستجوی عمقی محدود شده</a>
+            </li>
+                    <li class="list-group-item">
+                <a href="/ai/bfs/">جستجوی سطحی</a>
+            </li>
+                    <li class="list-group-item">
+                <a href="/ai/ucs/">جستجوی هزینه یکنواخت</a>
+            </li>
+                    <li class="list-group-item">
+                <a href="/ai/greedy/">جستجوی حریصانه</a>
+            </li>
+                    <li class="list-group-item">
+                <a href="/ai/a-star/">جستجوی *A</a>
+            </li>
+            </ul>
+    <ul class="list-group">
+        <li class="list-group-item list-group-item-info">
+            الگوریتم های متاهیوریستیک
+        </li>
+
+                    <li class="list-group-item">
+                <a href="/ai/metaheuristic-introduction/">روش های جستجوی متاهیوریستیکی</a>
+            </li>
+            </ul>
+        </div>
+    </div>
+
+</div>
+
+<footer class="footer">
+    <div class="container">
+        <p class="text-muted"> کلیه مطالب وب سایت با رعایت قوانین  <a href="http://ai.amini.eu/www.gnu.org/copyleft/fdl.html">GNU Free Documentation License</a> قابل دسترس می باشند  | 1395- 1389 © </p>
+    </div>
+</footer>
+
+
+<script type="text/javascript" src="/assets/js/jquery-2.2.4.min.js"></script>
+<script type="text/javascript" src="/assets/js/bootstrap.min.js"></script>
+
+</body>
+</html>

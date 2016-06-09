@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Yet another awesome site.">
+
+    <title>اتاق فکر هوش مصنوعی و رباتیک </title>
+
+    <link rel="stylesheet" href="/assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/assets/css/bootstrap-rtl.min.css">
+    <link rel="stylesheet" href="/assets/css/style.css">
+</head>
+
+<body>
+
+<div class="container">
+    <nav class="navbar navbar-default navbar-fixed-top">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar"
+                    aria-expanded="false" aria-controls="navbar">
+                <span class="sr-only">گشودن/بستن منو</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="/">اتاق فکر هوش مصنوعی و رباتیک</a>
+        </div>
+        <div id="navbar" class="collapse navbar-collapse">
+            <ul class="nav navbar-nav">
+                <li><a href="/">خانه</a></li>
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
+                       aria-expanded="false">مقالات آموزشی <span class="caret"></span></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="/ai/introduction/">هوش مصنوعی</a></li>
+                        <li><a href="#">هوش محاسباتی</a></li>
+                        <li><a href="#">پردازش سیگنال</a></li>
+                        <li><a href="#">پردازش تصویر</a></li>
+                    </ul>
+                </li>
+                <li><a href="/about/">درباره</a></li>
+                <li><a href="/contact/">تماس</a></li>
+            </ul>
+        </div><!--/.nav-collapse -->
+    </div>
+</nav>
+
+    
+    <ol class="breadcrumb">
+        <li><a href="/">خانه</a></li>
+                    <li><a href=" /ai/introduction/ ">هوش مصنوعی</a></li>
+        
+                <li>هوش مصنوعی کلاسیک</li>
+        
+        <li class="active">جستجوی *A</li>
+    </ol>
+
+    <div id="content" class="row">
+        <div class="col-md-9">
+            <h2>جستجوی *A</h2>
+                            <p><img src="/assets/images/ai/a-star.jpg" alt="جستجوی *A" /></p>
+<p>روش جستجوی <em>A یکی از الگوریتم های پیچیده جستجو در هوش مصنوعی است. با وجود اینکه مقالات زیادی در مورد این روش جستجو می توان بر روی اینترنت پیدا کرد ، اما اغلب این مقالات به گونه ای هستند که درک صحیح آن ها برای افراد تازه کار در زمینه جستجوی </em>A مشکل است. این مقاله با بیان کردن مفاهیم بنیادی شما را در درک هرچه بهتر روش جستجوی*A یاری می کند.</p>
+<p>روش جستجوی<em>A تلفیقی از روش جستجوی هزینه یکنواخت ( UCS ) و روش جستجوی حریصانه ( Greedy ) است. در جستجوی هزینه یکنواخت بر اساس هزینه تا گره فعلی ، کم هزینه ترین گره را انتخاب کرده و گسترش می دهیم. جستجوی هزینه یکنواخت بهینه است ، یعنی جواب بهینه مسئله را پیدا می کند ولی در مقابل بسیاز زمانبر است. جستجوی حریصانه نیز بر اساس هزینه تا مقصد ، کم هزینه ترین گره را برای گسترش انتخاب می کند. یافتن جواب با استفاده از جستجوی حریصانه به سرعت انجام می گیرد. ولی این روش نیز از مشکلاتی همچون بهینه نبودن جواب رنج می برد. روش جستجوی </em>A ، سرعت روش حریصانه در رسیدن به جواب و بیهنگی روش هزینه یکنواخت در پیدا کردن جواب را باهم ترکیب کرده و به جستجوی هدف خود می پردازد.</p>
+<p>جستجوی <em>A سعی می کند مجموع هزینه پرداخت شده تا گره فعلی و هزینه باقی مانده از گره فعلی تا هدف را مینیمم کند. تخمین هزینه باقی مانده تا هدف را هیوریستیک مسئله می گویند. طراحی هیوریستیک مسئله در روش جستجوی </em>A از اهمیت بسزایی برخوردار است و بهینیگی روش *A تحت تاثیر طراحی هیوریستیک مسئله قرار دارد.</p>
+<p>هیوریستیک در روش *A هرینه قابل پرداخت از نقطه فعلی تا نقطه هدف را تخمین می زند. با این توصیف هیوریستیک قابل قبول را چنین تعریف می کنیم : هیوریستیکی قابل قبول ( admissible ) است که هزینه تخمینی آن از نقطه فعلی تا نقطه هدف ، از هزینه واقعی قابل پرداخت از نقطه فعلی تا نقطه هدف کمتر باشد. هیوریستیکی که این شرط را برآورده نکند ، هیوریستیک غیرقابل قبول ( inadmissible ) می نامند.</p>
+<p>با توجه به مطالب فوق چنین بیان می کنیم که هزینه هر گره در روش جستجوی <em>A با استفاده از فرمول زیر محاسبه می شود : F = G + H که در آن F هزینه کل گره ، G هزینه تا گره فعلی و H هزینه تخمینی تا گره هدف را نشان می دهد. در جستجوی </em>A گره بعدی جهت گسترش گره ای است که کمترین هزینه F را در میان گره های گسترش نیافته دیگر داشته باشد. شبه کد زیر نحوه اجرای الگوریتم *A را نشان می دهد:</p>
+<hr />
+<ol>
+<li>نقطه شروع را به صف fringe اضافه کن</li>
+<li>
+<p>مراحل زیر را تکرار کن</p>
+<p>..1. گره موجود در سر صف fringe را انتخاب کن.</p>
+<p>..2. آن را از صف fringe حذف کرده و فلگ آن را جهت بررسی نکردن دوباره آن ، ست کن</p>
+<p>..3. به ازای هر هشت همسایه مربع برداشته شده از صف ( نام مربع را parent فرض کنید ) انجام بده :</p>
+<ul>
+<li>در صورتی که فلگ مربع ست شده باشد آن را نادیده بگیر ، در غیر اینصورت به مرحله بعد برو</li>
+<li>اگر این مربع در صف fringe نباشد ، آن را به صف اضافه کن ، مربع parent را پدر مربع اضافه شده به صف قرار بده و هزینه های F ، G و H مربع را محاسبه کن</li>
+<li>اگر این مربع از قبل در صف باشد ، هزینه G آن را با استفاده از مربع parent محاسبه کن. در صورتی که این هزینه کمتر از هزینه G این مربع در حال حاضر باشد ، مربع parent را ، پدر مربع قرار بده.</li>
+</ul>
+<p>..4. صف fringe را به ترتیب صعودی هزینه ها مرتب کن</p>
+<p>..5. توقف کن در صورتی که</p>
+<ul>
+<li>مربع مقصد به صف fringe اضافه شود که در این صورت مسیر پیدا شده است یا</li>
+<li>صف fringe خالی باشد ( مسیری از مبدا به مقصد وجود ندارد )</li>
+</ul>
+</li>
+<li>مسیر را ذخیره کن. با حرکت عقبگرد از نقطه پایانی و با استفاده از مربع های پدر هر مربع ، تا رسیدن به مربع شروع ، مربع ها را پیمایش کن.</li>
+</ol>
+<hr />
+                    </div>
+
+        <div class="col-md-3">
+                <ul class="list-group">
+        <li class="list-group-item list-group-item-info">
+            هوش مصنوعی کلاسیک
+        </li>
+
+                    <li class="list-group-item">
+                <a href="/ai/base/">مقدمه هوش مصنوعی</a>
+            </li>
+                    <li class="list-group-item">
+                <a href="/ai/introduction/">مقدمه هوش مصنوعی</a>
+            </li>
+                    <li class="list-group-item">
+                <a href="/ai/search-types/">انواع روش های جستجو</a>
+            </li>
+                    <li class="list-group-item">
+                <a href="/ai/dfs/">جستجوی عمقی</a>
+            </li>
+                    <li class="list-group-item">
+                <a href="/ai/dls/">جستجوی عمقی محدود شده</a>
+            </li>
+                    <li class="list-group-item">
+                <a href="/ai/bfs/">جستجوی سطحی</a>
+            </li>
+                    <li class="list-group-item">
+                <a href="/ai/ucs/">جستجوی هزینه یکنواخت</a>
+            </li>
+                    <li class="list-group-item">
+                <a href="/ai/greedy/">جستجوی حریصانه</a>
+            </li>
+                    <li class="list-group-item">
+                <a href="/ai/a-star/">جستجوی *A</a>
+            </li>
+            </ul>
+    <ul class="list-group">
+        <li class="list-group-item list-group-item-info">
+            الگوریتم های متاهیوریستیک
+        </li>
+
+                    <li class="list-group-item">
+                <a href="/ai/metaheuristic-introduction/">روش های جستجوی متاهیوریستیکی</a>
+            </li>
+            </ul>
+        </div>
+    </div>
+
+</div>
+
+<footer class="footer">
+    <div class="container">
+        <p class="text-muted"> کلیه مطالب وب سایت با رعایت قوانین  <a href="http://ai.amini.eu/www.gnu.org/copyleft/fdl.html">GNU Free Documentation License</a> قابل دسترس می باشند  | 1395- 1389 © </p>
+    </div>
+</footer>
+
+
+<script type="text/javascript" src="/assets/js/jquery-2.2.4.min.js"></script>
+<script type="text/javascript" src="/assets/js/bootstrap.min.js"></script>
+
+</body>
+</html>

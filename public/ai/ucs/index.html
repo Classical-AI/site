@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Yet another awesome site.">
+
+    <title>اتاق فکر هوش مصنوعی و رباتیک </title>
+
+    <link rel="stylesheet" href="/assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/assets/css/bootstrap-rtl.min.css">
+    <link rel="stylesheet" href="/assets/css/style.css">
+</head>
+
+<body>
+
+<div class="container">
+    <nav class="navbar navbar-default navbar-fixed-top">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar"
+                    aria-expanded="false" aria-controls="navbar">
+                <span class="sr-only">گشودن/بستن منو</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="/">اتاق فکر هوش مصنوعی و رباتیک</a>
+        </div>
+        <div id="navbar" class="collapse navbar-collapse">
+            <ul class="nav navbar-nav">
+                <li><a href="/">خانه</a></li>
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
+                       aria-expanded="false">مقالات آموزشی <span class="caret"></span></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="/ai/introduction/">هوش مصنوعی</a></li>
+                        <li><a href="#">هوش محاسباتی</a></li>
+                        <li><a href="#">پردازش سیگنال</a></li>
+                        <li><a href="#">پردازش تصویر</a></li>
+                    </ul>
+                </li>
+                <li><a href="/about/">درباره</a></li>
+                <li><a href="/contact/">تماس</a></li>
+            </ul>
+        </div><!--/.nav-collapse -->
+    </div>
+</nav>
+
+    
+    <ol class="breadcrumb">
+        <li><a href="/">خانه</a></li>
+                    <li><a href=" /ai/introduction/ ">هوش مصنوعی</a></li>
+        
+                <li>هوش مصنوعی کلاسیک</li>
+        
+        <li class="active">جستجوی هزینه یکنواخت</li>
+    </ol>
+
+    <div id="content" class="row">
+        <div class="col-md-9">
+            <h2>جستجوی هزینه یکنواخت</h2>
+                            <p>جستجوی هزینه یکنواخت را از آن جهت که در هر لحظه کم هزینه ترین گره را گسترش می دهد ، نه می توان در رده روش های جستجوی عمقی دانست ، نه می توان آن را یک روش جستجوی سطحی تلقی کرد. در این روش جستجو هر گره هزینه حرکت از ریشه تا گره فعلی را در خود نگه می دارد. هنگامی که می خواهیم فرزندان گره گسترش نیافته ای را تولید کنیم، گره ای از درخت برای گسترش انتخاب می شود که کم هزینه ترین گره در میان گره های گسترش نیافته باشد. به عنوان مثال شکل روبرو را در نظر بگیرید :</p>
+<p><img src="/assets/images/ai/ucs_source_dest_problem.jpg" alt="جستجوی هزینه یکنواخت" /></p>
+<p>مسئله یافتن مسیری از مستطیل آبی رنگ به مستطیل قرمز رنگ می باشد. همچنین مستطیل های بنفش نشان دهنده دیوار هستند که نمی توان بر روی آن ها حرکت کرد. در این مسئله به ازای هر خانه،  8 خانه همسایه وجود دارد که در شکل روبرو نشان داده شده اند ( اعداد ترتیب گسترش گره ها را نشان می دهند ) . این بدان معناست که هنگام تولید فرزندان یک گره ، 8 خانه همسایه برای گسترش وجود خواهد داشت. از طرف دیگر حرکات قطری مجاز بوده و از یک خانه می توان چندبار عبور کرد. قبل از    Amini
+بررسی روش جستجوی هزینه یکنواخت با روش های جستجوی عمقی ، سطحی و عمقی محدود شده به حل این مساله می پردازیم. برای روش جستجوی عمقی بسته به اینکه ترتیب گسترش گره ها به چه نحوی باشد و همچنین مبدا و مقصد در کدام قسمت نقشه قرار گیرند، امکان قرار گرفتن در حلقه بینهایت وجود خواهد داشت. بنابراین از این روش استفاده نمی کنیم. در صورتی که از جستجوی سطحی برای حل مساله استفاده کنیم ، مسیر پیدا شده بدین صورت خواهد بود :</p>
+<p><img src="/assets/images/ai/neigh.jpg" alt="جستجوی هزینه یکنواخت" /></p>
+<p><img src="/assets/images/ai/bfs_source_dest.jpg" alt="جستجوی هزینه یکنواخت" /></p>
+<p>مسیری که با روش جستجوس سطحی از مبدا به مقصد به دست می آید در حالت کلی غیر بهینه بوده و گره های اضافی بسیاری را نیز برای یافتن مسیر گسترش می دهد. که این امر در مورد مسائل پیچیده تر خوشایند نخواهد بود. حال فرض کنید از روش جستجوی عمقی محدود شده به عمق 20 برای یافتن مسیر استفاده کنیم. شکل زیر نحوه گسترش گره ها را نشان می دهد :</p>
+<p><img src="/assets/images/ai/dls_source_dest.jpg" alt="جستجوی هزینه یکنواخت" /></p>
+<p>بنابراین مسیر پیدا شده از مبدا به مقصد به صورت روبرو خواهد بود . در مورد جستجوی عمقی محدود شده نیز با دو مشکل مواجه هستیم ، مشکل اول تعیین عمق محدود شده و مشکل دوم عدم بهینگی مسیر پیدا شده از مبدا به مقصد می باشد. در هیچیک از روش های جستجو فوق هزینه از ریشه تا گره فعلی در نظر گرفته نشده است. حال فرض کنید هزینه انتقال از یک خانه به خانه دیگر در جهت افقی و عمودی 1 و در جهت قطری 1.5 باشد. حال با این تعریف می توانیم از روش جستجوی هزینه یکنواخت برای یافتن مسیر استفاده کنیم. همانطور که در ابتدای بخش بیان کردیم ، در روش جستجوی هزینه یکنواخت در هر لحظه گره ای از درخت گسترش می یابد که کمترین هزینه را در میان دیگر گره ها داشته باشد. قبل از نمایش نحوه تشکیل درخت جستجو به هر خانه شماره ای را انتساب می دهیم.</p>
+<p><img src="/assets/images/ai/dls_result.jpg" alt="جستجوی هزینه یکنواخت" /></p>
+<p><img src="/assets/images/ai/ucs_source_dest_problem1.jpg" alt="جستجوی هزینه یکنواخت" /></p>
+<p>درختی که از جستجو به روش هزینه یکنواخت در هر مرحله به دست می آید به شکل زیر خواهد بود :</p>
+<p><img src="/assets/images/ai/ucs_source_dest.jpg" alt="جستجوی هزینه یکنواخت" /></p>
+<p>نکته قابل توجه در مورد جستجوی هزینه یکنواخت این است که این روش جستجو در صورتی جواب بهینه را پیدا می کند که هزینه های هر گام به درستی انتخاب شوند. مشکلی که همچنان در این روش باقی مانده ، گسترش گره های اضافی است که این امر موجب می شود پیدا کردن جواب برای مسئله زیاد سریع نباشد. به جای جستجوی هزینه یکنواخت می توان از جستجوی حریصانه نیز برای حل این مساله استفاده کرد که در بخش بعد به بررسی آن خواهیم پرداخت.</p>
+                    </div>
+
+        <div class="col-md-3">
+                <ul class="list-group">
+        <li class="list-group-item list-group-item-info">
+            هوش مصنوعی کلاسیک
+        </li>
+
+                    <li class="list-group-item">
+                <a href="/ai/base/">مقدمه هوش مصنوعی</a>
+            </li>
+                    <li class="list-group-item">
+                <a href="/ai/introduction/">مقدمه هوش مصنوعی</a>
+            </li>
+                    <li class="list-group-item">
+                <a href="/ai/search-types/">انواع روش های جستجو</a>
+            </li>
+                    <li class="list-group-item">
+                <a href="/ai/dfs/">جستجوی عمقی</a>
+            </li>
+                    <li class="list-group-item">
+                <a href="/ai/dls/">جستجوی عمقی محدود شده</a>
+            </li>
+                    <li class="list-group-item">
+                <a href="/ai/bfs/">جستجوی سطحی</a>
+            </li>
+                    <li class="list-group-item">
+                <a href="/ai/ucs/">جستجوی هزینه یکنواخت</a>
+            </li>
+                    <li class="list-group-item">
+                <a href="/ai/greedy/">جستجوی حریصانه</a>
+            </li>
+                    <li class="list-group-item">
+                <a href="/ai/a-star/">جستجوی *A</a>
+            </li>
+            </ul>
+    <ul class="list-group">
+        <li class="list-group-item list-group-item-info">
+            الگوریتم های متاهیوریستیک
+        </li>
+
+                    <li class="list-group-item">
+                <a href="/ai/metaheuristic-introduction/">روش های جستجوی متاهیوریستیکی</a>
+            </li>
+            </ul>
+        </div>
+    </div>
+
+</div>
+
+<footer class="footer">
+    <div class="container">
+        <p class="text-muted"> کلیه مطالب وب سایت با رعایت قوانین  <a href="http://ai.amini.eu/www.gnu.org/copyleft/fdl.html">GNU Free Documentation License</a> قابل دسترس می باشند  | 1395- 1389 © </p>
+    </div>
+</footer>
+
+
+<script type="text/javascript" src="/assets/js/jquery-2.2.4.min.js"></script>
+<script type="text/javascript" src="/assets/js/bootstrap.min.js"></script>
+
+</body>
+</html>

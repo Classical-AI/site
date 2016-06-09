@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Yet another awesome site.">
+
+    <title>اتاق فکر هوش مصنوعی و رباتیک </title>
+
+    <link rel="stylesheet" href="/assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/assets/css/bootstrap-rtl.min.css">
+    <link rel="stylesheet" href="/assets/css/style.css">
+</head>
+
+<body>
+
+<div class="container">
+    <nav class="navbar navbar-default navbar-fixed-top">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar"
+                    aria-expanded="false" aria-controls="navbar">
+                <span class="sr-only">گشودن/بستن منو</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="/">اتاق فکر هوش مصنوعی و رباتیک</a>
+        </div>
+        <div id="navbar" class="collapse navbar-collapse">
+            <ul class="nav navbar-nav">
+                <li><a href="/">خانه</a></li>
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
+                       aria-expanded="false">مقالات آموزشی <span class="caret"></span></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="/ai/introduction/">هوش مصنوعی</a></li>
+                        <li><a href="#">هوش محاسباتی</a></li>
+                        <li><a href="#">پردازش سیگنال</a></li>
+                        <li><a href="#">پردازش تصویر</a></li>
+                    </ul>
+                </li>
+                <li><a href="/about/">درباره</a></li>
+                <li><a href="/contact/">تماس</a></li>
+            </ul>
+        </div><!--/.nav-collapse -->
+    </div>
+</nav>
+
+    
+    <ol class="breadcrumb">
+        <li><a href="/">خانه</a></li>
+                    <li><a href=" /ai/introduction/ ">هوش مصنوعی</a></li>
+        
+                <li>هوش مصنوعی کلاسیک</li>
+        
+        <li class="active">جستجوی سطحی</li>
+    </ol>
+
+    <div id="content" class="row">
+        <div class="col-md-9">
+            <h2>جستجوی سطحی</h2>
+                            <p>همانطور که در روش جستجوی عمقی محدودشده بررسی کردیم، جستجوی سطحی مشکل حلقه بینهایت و یال های تکراری مربوط به مسئله روبرو را حل خواهد کرد ( یافتن مسیری از گره 1 به گره 5 ). البته این بدان معنا نیست که مشکل حالت های تکراری در جستجوی سطحی به طور کامل رفع شده است. بلکه هیچیک از روش های جستجو در مقابل حالت های تکراری مصون نیستند. این وظیفه طراح الگوریتم است که با اتخاذ روشی از بروز حالت های تکراری جلوگیری کند. یکبار دیگر گراف روبرو را در نظر بگیرید.</p>
+<p>می خواهیم مسیری از گره 1 به گره 5 پیدا کنیم. در صورتی که از جستجوی سطحی برای پیمایش فضای جستجو بخواهیم استفاده کنیم، بدین روش عمل می کنیم : در هر سطح از درخت جستجو ، به ازای هر گره در آن سطح همه فرزندان گره جاری تولید شده و در سطح بعدی درخت قرار می گیرند. با این تعریف حال می توانیم نحوه پیمایش درخت جستجوی مساله مذکور را نشان دهیم :</p>
+<p><img src="/assets/images/ai/bfs_graph4.jpg" alt="جستجوی سطحی" /></p>
+<p>در ابتدا همه فرزندان گره 1 تولید شده و به سطح بعدی درخت اضافه می گردند. در سطح بعدی درخت نیز به ازای هر گره فرزندان آن گره تولید و به درخت جستجو اضافه می شوند. همانطور که از شکل پیداست، در سطح 3 از درخت مسیری از گره 1 به گره 5 پیدا می شود. همچنین مشکل یال های تکراری روش های قبلی نیز در این درخت وجود ندارد. یکی از بزرگترین مشکلات روش جستجوی سطحی مرتبه مکانی یا میران حافظه مصرفی این روش جستجو است. در روش های جستجو عمقی و عمقی محدود شده در هر لحظه تنها گره های مربوط به شاخه فعلی در حافظه وجود دارد. این در حالی است که روش جستجوی سطحی همه گره های بالاتر از سطح فعلی از فضای جستجو را در حافظه نگه خواهد داشت. می توان روش جستجوی عمقی و سطحی را باهم ترکیب کنیم تا با ترکیب این دو ، معایب موجود در هریک از روش ها را رفع کرده و مزایای آن ها را باهم ترکیب کنیم. این روش جستجو را که در بخش بعد به بررسی آن خواهیم پرداخت، جستجوی عمقی تکرار شونده می نامیم.</p>
+                    </div>
+
+        <div class="col-md-3">
+                <ul class="list-group">
+        <li class="list-group-item list-group-item-info">
+            هوش مصنوعی کلاسیک
+        </li>
+
+                    <li class="list-group-item">
+                <a href="/ai/base/">مقدمه هوش مصنوعی</a>
+            </li>
+                    <li class="list-group-item">
+                <a href="/ai/introduction/">مقدمه هوش مصنوعی</a>
+            </li>
+                    <li class="list-group-item">
+                <a href="/ai/search-types/">انواع روش های جستجو</a>
+            </li>
+                    <li class="list-group-item">
+                <a href="/ai/dfs/">جستجوی عمقی</a>
+            </li>
+                    <li class="list-group-item">
+                <a href="/ai/dls/">جستجوی عمقی محدود شده</a>
+            </li>
+                    <li class="list-group-item">
+                <a href="/ai/bfs/">جستجوی سطحی</a>
+            </li>
+                    <li class="list-group-item">
+                <a href="/ai/ucs/">جستجوی هزینه یکنواخت</a>
+            </li>
+                    <li class="list-group-item">
+                <a href="/ai/greedy/">جستجوی حریصانه</a>
+            </li>
+                    <li class="list-group-item">
+                <a href="/ai/a-star/">جستجوی *A</a>
+            </li>
+            </ul>
+    <ul class="list-group">
+        <li class="list-group-item list-group-item-info">
+            الگوریتم های متاهیوریستیک
+        </li>
+
+                    <li class="list-group-item">
+                <a href="/ai/metaheuristic-introduction/">روش های جستجوی متاهیوریستیکی</a>
+            </li>
+            </ul>
+        </div>
+    </div>
+
+</div>
+
+<footer class="footer">
+    <div class="container">
+        <p class="text-muted"> کلیه مطالب وب سایت با رعایت قوانین  <a href="http://ai.amini.eu/www.gnu.org/copyleft/fdl.html">GNU Free Documentation License</a> قابل دسترس می باشند  | 1395- 1389 © </p>
+    </div>
+</footer>
+
+
+<script type="text/javascript" src="/assets/js/jquery-2.2.4.min.js"></script>
+<script type="text/javascript" src="/assets/js/bootstrap.min.js"></script>
+
+</body>
+</html>

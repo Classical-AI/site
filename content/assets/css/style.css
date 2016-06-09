@@ -1,0 +1,73 @@
+@font-face {
+    font-family: 'Samim';
+    src: url('../fonts/Samim.eot?v=0.9.9');
+    src: url('../fonts/Samim.eot?v=0.9.9#iefix') format('embedded-opentype'),
+    url('../fonts/Samim.woff?v=0.9.9') format('woff'),
+    url('../fonts/Samim.ttf?v=0.9.9') format('truetype');
+    font-weight: normal;
+}
+
+@font-face {
+    font-family: 'Samim';
+    src: url('../fonts/Samim-Bold.eot?v=0.9.9');
+    src: url('../fonts/Samim-Bold.eot?v=0.9.9#iefix') format('embedded-opentype'),
+    url('../fonts/Samim-Bold.woff?v=0.9.9') format('woff'),
+    url('../fonts/Samim-Bold.ttf?v=0.9.9') format('truetype');
+    font-weight: bold;
+}
+/* Sticky footer styles
+-------------------------------------------------- */
+html {
+    position: relative;
+    min-height: 100%;
+}
+body {
+    /* Margin bottom by footer height */
+    margin-bottom: 60px;
+    font-family: "Samim", Tahoma, Arial, sans-serif;
+}
+.footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    /* Set the fixed height of the footer here */
+    height: 60px;
+    background-color: #f5f5f5;
+}
+
+
+/* Custom page CSS
+-------------------------------------------------- */
+/* Not required for template or sticky footer method. */
+
+body > .container {
+    padding: 60px 15px 0;
+}
+.container .text-muted {
+    margin: 20px 0;
+}
+
+.footer > .container {
+    padding-right: 15px;
+    padding-left: 15px;
+}
+
+code {
+    font-size: 80%;
+}
+
+.container p {
+    font-size: 1.1em;
+    line-height: 1.9em;
+}
+
+.container p.lead {
+    font-size: 1.3em;
+    line-height: 2.4em;
+}
+
+#content img {
+    display: block;
+    margin-right: auto;
+    margin-left: auto;
+}

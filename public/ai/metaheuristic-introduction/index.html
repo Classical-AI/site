@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Yet another awesome site.">
+
+    <title>اتاق فکر هوش مصنوعی و رباتیک </title>
+
+    <link rel="stylesheet" href="/assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/assets/css/bootstrap-rtl.min.css">
+    <link rel="stylesheet" href="/assets/css/style.css">
+</head>
+
+<body>
+
+<div class="container">
+    <nav class="navbar navbar-default navbar-fixed-top">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar"
+                    aria-expanded="false" aria-controls="navbar">
+                <span class="sr-only">گشودن/بستن منو</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="/">اتاق فکر هوش مصنوعی و رباتیک</a>
+        </div>
+        <div id="navbar" class="collapse navbar-collapse">
+            <ul class="nav navbar-nav">
+                <li><a href="/">خانه</a></li>
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
+                       aria-expanded="false">مقالات آموزشی <span class="caret"></span></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="/ai/introduction/">هوش مصنوعی</a></li>
+                        <li><a href="#">هوش محاسباتی</a></li>
+                        <li><a href="#">پردازش سیگنال</a></li>
+                        <li><a href="#">پردازش تصویر</a></li>
+                    </ul>
+                </li>
+                <li><a href="/about/">درباره</a></li>
+                <li><a href="/contact/">تماس</a></li>
+            </ul>
+        </div><!--/.nav-collapse -->
+    </div>
+</nav>
+
+    
+    <ol class="breadcrumb">
+        <li><a href="/">خانه</a></li>
+                    <li><a href=" /ai/introduction/ ">هوش مصنوعی</a></li>
+        
+                <li>الگوریتم های متاهیوریستیک</li>
+        
+        <li class="active">روش های جستجوی متاهیوریستیکی</li>
+    </ol>
+
+    <div id="content" class="row">
+        <div class="col-md-9">
+            <h2>روش های جستجوی متاهیوریستیکی</h2>
+                            <p><img src="/assets/images/ai/meta1.jpg" alt="الگوریتم های متاهیوریستیک" /></p>
+<p>در مسائل NP زمانی که اندازه مسئله بزرگ باشد، استفاده از روش های جستجوی آگاهانه و ناآگاهانه میسسر نخواهد بود. چراکه در این رده مسائل فضای حالت مسئله چنان بزرگ می باشد که رسیدن به جواب مسئله در مدت زمان قابل قبول با استفاده این روش های جستجو غیرممکن خواهد بود. از اینرو نیاز به روش هایی داریم که بتواند در بخش های مختلف فضای حالت حرکت کرده و بتواند عمل جستجو را انجام دهد. در اینجا روش هایی جستجو مطرح می شوند که به آنها روش های جستجوی متاهیوریستیکی خواهیم گفت. به همه روش های جستجوی متاهیوریستیکی که در اینجا به بررسی آنها خواهیم پرداخت، در اصطلاح روش های  تصادفی هدایت شده گوییم. همانطور که از نام آنها پیداست هریک از این روش های جستجو به طور تصادفی در فضای حالت مسئله حرکت می کنند. البته باید گفت که انجام حرکات تصادفی با کنترل و هدایت الگوریتم انجام می پذیرد. ممکن است چنین تصور شود که به علت تصادفی بودن حرکت ، کارآیی این الگوریتم ها پایین باشد. در حالی در بیشتر مسائل بهینه سازی این روش های جستجو تنها روش حل مساله خواهند بود.</p>
+<h4>روش های جستجوی محلی</h4>
+<p>برای معرفی هریک از روش های جستجویی که در فصل به بررسی آن ها می پردازیم از مسئله 8 وزیر استفاده خواهیم کرد. در مسئله 8 وزیر هدف قرار دادن 8 وزیر بر روی صفحه شطرنج به گونه ای است که هیچیک از وزیرها همدیگر را گارد ندهند. تعمیم یافته مسئله 8 وزیر، مسئله n وزیر است که در آن بر روی یک صفحه شطرنج n*n باید n وزیر را به گونه ای قرار دهیم که هیچیک همدیگر را گارد ندهند. مسئله n وزیر از جمله مسائل NP در هوش مصنوعی است که روش های جستجوی معمولی قادر به حل آن ها نخواهد بود. از سوی دیگر می توان به مسئله 8 وزیر به عنوان یک مسئله بهینه سازی نیز نگریست که در آن هدف بهینه کردن تعداد گاردهای جفت وزیرها می باشد. به عنوان مثال فرض کنید در صفحه شطرنج معمولی ، 8 وزیر را به دو روش زیر قرار دهیم :</p>
+<p><img src="/assets/images/ai/queen.jpg" alt="الگوریتم های متاهیوریستیک" />
+<img src="/assets/images/ai/queen1.jpg" alt="الگوریتم های متاهیوریستیک" /></p>
+<p>در روش چینش سمت چپ 3 وزیر و در روش چینش سمت راست 4 وزیر همدیگر را گارد می دهند. بنابراین روش چینش قبلی بهینه تر از روش چینش فعلی است. در واقع می توان مسئله بهینه سازی را به صورت زیر تعریف کرد. فرض کنید S مجموعه همه جواب های ممکن برای مسئله باشد. در صورتی S<em> می تواند جواب مسئله باشد که به ازای همه جواب های موجود در S ، S</em> بهینه تر از دیگر جواب ها باشد. در مسئله 8 وزیر دیدیم که جوابی بهینه است که تعداد گاردهای جفت وزیر آن کمتر باشد.</p>
+<p>روش های جستجوی محلی همگی حالت های همسایه حالت فعلی را برای رسیدن به بهینه ترین جواب بررسی می کنند. از این رو وجود دو تابع در همه این روش های جستجو الزامی است. اولین تابع میزان بهینگی جواب مسئله ارزیابی می کند و تابع دوم یکی از حالت های همسایه حالت فعلی را انتخاب می کند.</p>
+<p>سخن آخر اینکه نحوه پیاده سازی و طراحی الگوریتم برای انتخاب حالت هسایه در این روش های جستجو از اهمیت ویژه ای برخوردار است. به عنوان مثال برای مسئله 8 وزیر می توان به شکل های زیر حالت های همسایگی را تولید کرد :</p>
+<ol>
+<li>دو وزیر به تصادف انتخاب شده و جای آن دو باهم عوض گردد.</li>
+<li>یکی از وزیر ها به تصادف انتخاب شده و شماره سطر آن به تصادف تغییر کند.</li>
+<li>ویزیری به تصادف انتخاب شده و یک خانه به سمت بالا یا پایین حرکت کند</li>
+</ol>
+                    </div>
+
+        <div class="col-md-3">
+                <ul class="list-group">
+        <li class="list-group-item list-group-item-info">
+            هوش مصنوعی کلاسیک
+        </li>
+
+                    <li class="list-group-item">
+                <a href="/ai/base/">مقدمه هوش مصنوعی</a>
+            </li>
+                    <li class="list-group-item">
+                <a href="/ai/introduction/">مقدمه هوش مصنوعی</a>
+            </li>
+                    <li class="list-group-item">
+                <a href="/ai/search-types/">انواع روش های جستجو</a>
+            </li>
+                    <li class="list-group-item">
+                <a href="/ai/dfs/">جستجوی عمقی</a>
+            </li>
+                    <li class="list-group-item">
+                <a href="/ai/dls/">جستجوی عمقی محدود شده</a>
+            </li>
+                    <li class="list-group-item">
+                <a href="/ai/bfs/">جستجوی سطحی</a>
+            </li>
+                    <li class="list-group-item">
+                <a href="/ai/ucs/">جستجوی هزینه یکنواخت</a>
+            </li>
+                    <li class="list-group-item">
+                <a href="/ai/greedy/">جستجوی حریصانه</a>
+            </li>
+                    <li class="list-group-item">
+                <a href="/ai/a-star/">جستجوی *A</a>
+            </li>
+            </ul>
+    <ul class="list-group">
+        <li class="list-group-item list-group-item-info">
+            الگوریتم های متاهیوریستیک
+        </li>
+
+                    <li class="list-group-item">
+                <a href="/ai/metaheuristic-introduction/">روش های جستجوی متاهیوریستیکی</a>
+            </li>
+            </ul>
+        </div>
+    </div>
+
+</div>
+
+<footer class="footer">
+    <div class="container">
+        <p class="text-muted"> کلیه مطالب وب سایت با رعایت قوانین  <a href="http://ai.amini.eu/www.gnu.org/copyleft/fdl.html">GNU Free Documentation License</a> قابل دسترس می باشند  | 1395- 1389 © </p>
+    </div>
+</footer>
+
+
+<script type="text/javascript" src="/assets/js/jquery-2.2.4.min.js"></script>
+<script type="text/javascript" src="/assets/js/bootstrap.min.js"></script>
+
+</body>
+</html>
