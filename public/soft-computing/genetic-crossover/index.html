@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+
+    <title>هوش مصنوعی کلاسیک </title>
+
+    <link rel="stylesheet" href="/assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/assets/css/bootstrap-rtl.min.css">
+    <link rel="stylesheet" href="/assets/css/prism.css">
+    <link rel="stylesheet" href="/assets/css/style.css">
+</head>
+
+<body>
+
+<div class="container">
+    <nav class="navbar navbar-default navbar-fixed-top">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar"
+                    aria-expanded="false" aria-controls="navbar">
+                <span class="sr-only">گشودن/بستن منو</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="/">هوش مصنوعی کلاسیک</a>
+        </div>
+        <div id="navbar" class="collapse navbar-collapse">
+            <ul class="nav navbar-nav">
+                <li><a href="/">خانه</a></li>
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
+                       aria-expanded="false">مقالات آموزشی <span class="caret"></span></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="/ai/introduction/">هوش مصنوعی</a></li>
+                        <li><a href="/soft-computing/introduction/">هوش محاسباتی</a></li>
+                        <li><a href="/signal/introduction/">پردازش سیگنال</a></li>
+                        <li><a href="#">پردازش تصویر</a></li>
+                    </ul>
+                </li>
+                <li><a href="/about/">درباره</a></li>
+                <li><a href="/contact/">تماس</a></li>
+            </ul>
+        </div><!--/.nav-collapse -->
+    </div>
+</nav>
+
+    
+    <ol class="breadcrumb">
+        <li><a href="/">خانه</a></li>
+                    <li><a href=" /soft-computing/introduction/ ">هوش محاسباتی</a></li>
+        
+                <li>الگوریتم ژنتیک</li>
+        
+        <li class="active">عملگر ادغام</li>
+    </ol>
+
+    <div id="content" class="row">
+        <div class="col-md-9">
+            <h2>عملگر ادغام</h2>
+                            <p><img src="/assets/images/soft-computing/genetic_crossover.jpg" alt="" /></p>
+<p>بخشی از فرآیند تکامل در طبیعت بدین صورت است که کروموزوم هایی از والدین انتخاب شده و باهم ترکیب می شوند. ما نیز در مرحله انتخاب ، کرموزوم هایی را برای ترکیب به حوضچه ژنتیک منتقل کردیم. حال وقت آن رسیده است که کرموزوم هایی را از این حوضچه انتخاب کرده و باهم ادغام کنیم. به همین منظور در این بخش روش هایی را برای ادغام کرموزوم ها بررسی خواهیم کرد. توجه کنید که در برخی از مسائل و با توجه به روش کدگذاری کروموزوم ها ، عمل ادغام کرموزوم ها موجب نقض برخی از شرایط مسئله می گردد. بنابراین در چنین مواردی باید با استفاده از روش هایی که طراحی می کنیم به اصلاح کرموزوم ها بپردازیم.</p>
+<p>ادغام تک نقطه ای این روش نقطه ای از کرومزوم را به تصادف انتخاب کرده و سپس به روش زیر دو کروموزوم فرزند تولید می کند. نقطه انتخاب شده را pivot می نامیم:</p>
+<p><img src="/assets/images/soft-computing/one-point-cross.jpg" alt="" /></p>
+<h4>ادغام دو نقطه ای</h4>
+<p>این روش دو نقطه متفاوت از کرومزوم را به تصادف انتخاب کرده و سپس به روش زیر دو کروموزوم فرزند تولید می کند. نقطه انتخاب شده را pivot1 و pivot2 می نامیم :</p>
+<p><img src="/assets/images/soft-computing/two-point-cross.jpg" alt="" /></p>
+<h4>ادغام چند نقطه ای</h4>
+<p>این روش که توسعه یافته روش دو نقطه ای است ، از 3 نقطه محوری یا بیشتر برای ادغام استفاده می کند.با این حال تجربه نشان داده است که ادغام چند نقطه ای از کارآیی کمتری نسبت به دو روش دیگر برخوردار است.</p>
+<h4>ادغام با استفاده از ماسک</h4>
+<p>فرض کنید ماسکی به اندازه کروموزوم وجود دارد که مقادیر هر خانه از ماسک می تواند 1 یا 2 باشد. در این روش ابتدا ماسکی را به تصادف ایجاد کرده و سپس به روش زیر یک فرزند تولید می کنیم :</p>
+<ul>
+<li>هر خانه از ماسک که مقدار 1 داشته باشد ، مقدار ژن کروموزوم فرزند در خانه متناظر با آن از پدر اول گرفته می شود</li>
+<li>هر خانه از ماسک که مقدار 2 داشته باشد ، مقدار ژن کروموزوم فرزند در خانه متناظر با آن از پدر دوم گرفته می شود</li>
+</ul>
+<h4>ادغام با نگهداری اولویت</h4>
+<p>مراحل زیر نحوه اعمال این روش ادغام را نشان می دهد :</p>
+<ul>
+<li>لیستی به طول کرومزوم پدر که خانه های آن به طور تصادفی مقدار 1 یا 2 گرفته اند ، ایجاد می کنیم. این لیست را mask می نامیم</li>
+<li>لیست خالی دیگری ایجاد می کنیم • خانه اول لیست mask را خوانده و با توجه به مقدار آن مقدار ژن را از پدر 1 یا پدر 2 انتخاب می کنیم. اگر مقدار خوانده شده 1 باشد ، مقدار ژن را از پدر 1 و اگر مقدار آن 2 باشد ، مقدار ژن را از پدر 2 انتخاب می کنیم.</li>
+<li>هنگامی که ژنی از یک پدر انتخاب شد ، آن ژن را از هر دو پدر حذف کرده و به لیست child اضافه می کنیم</li>
+<li>خانه اول لیست mask را حذف می کنیم</li>
+<li>این عملیات را تا زمانی که لیست mask خالی نشده است تکرار می کنیم.</li>
+</ul>
+<h4>ادغام ترتیبی</h4>
+<p>در مسائلی همچون مسئله فروشنده دوره گرد که ترتیبی هستند ، از این روش ادغام می توانیم استفاده کنیم. روش کار بدین صورت است که دو نقطه متفاوت در کروموزوم انتخاب می کنیم. با انتخاب این دو نقطه ، کروموزوم را به سه قسمت چپ ، وسط و راست تقسیم می کنیم. حال از این دو کروموزوم دو فرزند ایجاد می کنیم :</p>
+<ul>
+<li>فرزند 1 بخش های چپ و راست خود را از پدر 1 به ارث می برد.</li>
+<li>بخش وسط فرزند 1 نیز از پدر 1 ارث برده خواهد شد. اما ترتیب ژن های بخش وسط که از پدر 1 به ارث می بریم ، با توجه به ترتیب آن ها در پدر 2 خواهد بود.</li>
+<li>این عملیات را برای تولید فرزند2 و با استفاده از پدر 2 انجام می دهیم.</li>
+</ul>
+                    </div>
+
+        <div class="col-md-3">
+                <ul class="list-group">
+        <li class="list-group-item list-group-item-info">
+            الگوریتم ژنتیک
+        </li>
+
+                    <li class="list-group-item">
+                                <a href="/soft-computing/introduction/">مقدمه الگوریتم ژنتیک</a>
+            </li>
+                    <li class="list-group-item">
+                                <a href="/soft-computing/genetic-coding/">کدگذاری و نحوه نمایش</a>
+            </li>
+                    <li class="list-group-item">
+                                <a href="/soft-computing/genetic-population/">تولید جمعیت اولیه</a>
+            </li>
+                    <li class="list-group-item">
+                                <a href="/soft-computing/genetic-fitness/">تابع بهینگی</a>
+            </li>
+                    <li class="list-group-item">
+                                <a href="/soft-computing/genetic-selection/">عملگر انتخاب</a>
+            </li>
+                    <li class="list-group-item">
+                                    <span class="glyphicon glyphicon-menu-left" aria-hidden="true"></span>
+                                <a href="/soft-computing/genetic-crossover/">عملگر ادغام</a>
+            </li>
+                    <li class="list-group-item">
+                                <a href="/soft-computing/genetic-mutation/">عملگر جهش و جایگزینی</a>
+            </li>
+            </ul>
+    <ul class="list-group">
+        <li class="list-group-item list-group-item-info">
+            برنامه&zwnj;های نمونه
+        </li>
+
+                    <li class="list-group-item">
+                                <a href="/soft-computing/program-tsp/">فروشنده دوره گرد</a>
+            </li>
+                    <li class="list-group-item">
+                                <a href="/soft-computing/program-queen/">مسئله چند وزیر</a>
+            </li>
+            </ul>
+        </div>
+    </div>
+
+</div>
+
+<footer class="footer">
+    <div class="container">
+        <p class="text-muted"> کلیه مطالب وب سایت با رعایت قوانین  <a href="http://ai.amini.eu/www.gnu.org/copyleft/fdl.html">GNU Free Documentation License</a> قابل دسترس می باشند  | 1395- 1389 © </p>
+    </div>
+</footer>
+
+
+<script type="text/javascript" src="/assets/js/jquery-2.2.4.min.js"></script>
+<script type="text/javascript" src="/assets/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="/assets/js/prism.js"></script>
+
+</body>
+</html>

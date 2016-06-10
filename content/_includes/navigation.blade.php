@@ -18,7 +18,7 @@
                        aria-expanded="false">مقالات آموزشی <span class="caret"></span></a>
                     <ul class="dropdown-menu">
                         <li><a href="@url('ai/introduction')">هوش مصنوعی</a></li>
-                        <li><a href="#">هوش محاسباتی</a></li>
+                        <li><a href="@url('soft-computing/introduction')">هوش محاسباتی</a></li>
                         <li><a href="@url('signal/introduction')">پردازش سیگنال</a></li>
                         <li><a href="#">پردازش تصویر</a></li>
                     </ul>
