@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+
+    <title>هوش مصنوعی کلاسیک </title>
+
+    <link rel="stylesheet" href="/assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/assets/css/bootstrap-rtl.min.css">
+    <link rel="stylesheet" href="/assets/css/prism.css">
+    <link rel="stylesheet" href="/assets/css/style.css">
+</head>
+
+<body>
+
+<div class="container">
+    <nav class="navbar navbar-default navbar-fixed-top">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar"
+                    aria-expanded="false" aria-controls="navbar">
+                <span class="sr-only">گشودن/بستن منو</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="/">هوش مصنوعی کلاسیک</a>
+        </div>
+        <div id="navbar" class="collapse navbar-collapse">
+            <ul class="nav navbar-nav">
+                <li><a href="/">خانه</a></li>
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
+                       aria-expanded="false">مقالات آموزشی <span class="caret"></span></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="/ai/introduction/">هوش مصنوعی</a></li>
+                        <li><a href="#">هوش محاسباتی</a></li>
+                        <li><a href="/signal/introduction/">پردازش سیگنال</a></li>
+                        <li><a href="#">پردازش تصویر</a></li>
+                    </ul>
+                </li>
+                <li><a href="/about/">درباره</a></li>
+                <li><a href="/contact/">تماس</a></li>
+            </ul>
+        </div><!--/.nav-collapse -->
+    </div>
+</nav>
+
+    
+    <ol class="breadcrumb">
+        <li><a href="/">خانه</a></li>
+                    <li><a href=" /signal/introduction/ ">پردازش سیگنال</a></li>
+        
+                <li>مقدمه</li>
+        
+        <li class="active">تبدیل فوریه گسسته</li>
+    </ol>
+
+    <div id="content" class="row">
+        <div class="col-md-9">
+            <h2>تبدیل فوریه گسسته</h2>
+                            <p>همانطور که می دانید مهمترین ویژگی در ادای هر حرف فرکانس های تشکیل دهنده آن حرف می باشد. به عنوان مثال سه فرکانس اصلی حرف &quot; آ &quot; فرکانس های 750 ، 1150 و 2400 هرتر بوده و همین فرکانس های برای حرف &quot; او &quot; 400 ، 1150 و 2300 هرتز می باشند. بنابراین آنچه باعث تفکیک دو حرف &quot; آ &quot; و &quot; او &quot; از همدیگر می شود، فرکانس های تشکیل دهنده آن می باشد. از اینرو در کاربردهای پردازش گفتار پیدا کردن فرکانس های تشکیل دهنده یک سیگنال گفتاری از اهیت بسیار زیادی برخوردار می باشد.</p>
+<p>همانطور که می دانید سیگنال گفتار به شکل یک سیگنال زمانی در اختیار ما قرار دارد و تشخیص فرکانس های تشکیل دهنده یک سیگنال در حوزه زمانی غیرممکن است. به عنوان مثال شکل زیر را که نشان دهنده سیگنال گفتار زمانی حرف &quot; آ &quot; می باشد در نظر بگیرید. بخشی از این سیگنال به شکل زوم شده در شکل نشان داده شده است.</p>
+<p><img src="/assets/images/signal/fourier.jpg" alt="" /></p>
+<p>از این شکل پیداست که پیدا کردن فرکانس های تشکیل دهنده این سیگنال از روی سیگنال زمانی غیررممکن می باشد. از اینرو نیاز به ابزار دیگری داریم که بتواند این کار را برای ما انجام دهد. آقای فوریه نشان دادند که هر تابع متناوب را می توان به شکل ترکیبی از موج های سینوسی ( یا کوسینوسی ) نشان داد که این مطلب را با نام سری های فوریه می شناسیم. از مقاله مربوطه به موج سینوسی به یاد دارید که هر موج سینوسی می تواند به شکل یک صوت در خروجی بلندگو به شنیده شود. در این بین فرکانس موج سینوسی نیز مستقیما زیر و بم بودن صوت تولید شده را تعیین می کند.</p>
+<p>با توجه به این دو حقیقت می توان دریافت که با استفاده از آنالیز فوریه یک سیگنال می توان موج های سینوسی تشکیل دهنده آن را استخراج کرد و از روی موج های سینوسی نیز می توان فرکانس های تشکیل دهنده سیگنال گفتار را به دست آورد. با این حال نمی توان مستقیما از سری های فوریه برای این منظور بهره جست. چراکه سری های فوریه بر روی توابع متناوب تعریف شده اند و این در حالی است که ما در اینجا با سیگنال سروکار داریم که هیچ تابعی را نمی توان برای یک سیگنال گفتار تخمین زد. برای رفع این مشکل ابزاری با نام تبدیل فوریه معرفی شده است که بر روی داده های عددی ( سیگنال ) اعمال می شود. تبدیل فوریه گسسته مختلط سیگنال s به طول N را می توان با استفاده از رابطه زیر تعریف کرد:</p>
+<p><img src="/assets/images/signal/dft1.jpg" alt="" /></p>
+<p>از قانون اویلر نیز به یاد دارید که :</p>
+<p><img src="/assets/images/signal/euler-rule.jpg" alt="" /></p>
+<p>بنابراین رابطه فوق را می توان به شکل زیر بازنویسی کرد :</p>
+<p><img src="/assets/images/signal/dft1.jpg" alt="" /></p>
+<p>که در این رابطه N اندازه سیگنال ورودی ، s(n) مقدار سیگنال ورودی در نقطه n ، m اندیس فرکانس، S(m) اندازه فرکانس در اندیس m ام می باشند. همانطور که می دانید S(m) یک عدد مختلط است و بنابراین برای به دست اندازه فرکانس در اندیس mام باید بزرگی این عدد مختلط را محاسبه کرد. بزرگی یک عدد مختلط از رابطه زیر به دست می آید :</p>
+<p><img src="/assets/images/signal/mag-complex.jpg" alt="" /></p>
+<p>پس از آنکه تبدیل فوریه بر روی سیگنال ورودی اعمال شد، بردار S در فرکانس های تشکیل دهنده سیگنال s دارای مقداری بسیار بزرگتر از 0 و در سایر نقاط بزرگی نزدیک به صفر خواهد داشت. بنابراین می توان برای پیدا کردن فرکانس های تشکیل دهنده یک سیگنال گفتار تبدیل فوریه را بر روی سیگنال ورودی اعالم کرده و پس از محاسبه بزرگی خروجی، فرکانس های تشکیل دهنده آن سیگنال را از روی بزرگی هر فرکانس استخراج کرد. در مقاله بعدی سعی می کنیم این مساله را به همراه سایر پارامترها و خصوصیات سیگنال گفتار مورد بررسی قرار دهیم. برای محاسبه تبدیل فوریه یک سیگنال در محیط MATLAB از تابع fft می توانید استفاده کنید:</p>
+<pre><code class="language-matlab">&gt;&gt; a = sin(2*pi * 200/1000 * t);
+&gt;&gt; b = sin(2*pi * 10/1000 * t);
+&gt;&gt; c = sin(2*pi * 500/1000 * t);
+&gt;&gt; d = a + b + c;
+&gt;&gt; ffd = fft(d);
+&gt;&gt; mffd = abs(ffd);
+&gt;&gt; plot(mffd(1:500))</code></pre>
+<p>در این تکه کد ابتدا سه موج سینوسی با فرکانس های 20، 10 و 500 هرتز تولید کرده و پس از ترکیب آن ها سیگنال جدیدی با نام d به وجود آوردیم. سپس با استفاده از تابع fft تبدیل فوریه سیگنال d را محاسبه کرده و با استفاده از تابع abs بزرگی سیگنال تبدیل شده را به دست آوردیم. در نهایت نیز به رسم سیگنال تبدیل شده پرداختیم.</p>
+<p>در نموداری که بس از فراخوانی دستور plot برای شما نشان داده می شود، در نقاط 10 ، 200 و 500 نمودار دارای مقدار بزرگ بوده و در سایر نقاط دارای مقدار صفر است. این نشان می دهد که سیگنال d شامل فرکانس های 10 ، 200 و 500 هرتز می باشد.</p>
+                    </div>
+
+        <div class="col-md-3">
+                <ul class="list-group">
+        <li class="list-group-item list-group-item-info">
+            مقدمه
+        </li>
+
+                    <li class="list-group-item">
+                                <a href="/signal/introduction/">سیگنال چیست؟</a>
+            </li>
+                    <li class="list-group-item">
+                                <a href="/signal/discretization/">گسسته کردن سیگنال</a>
+            </li>
+                    <li class="list-group-item">
+                                <a href="/signal/fundamentals/">مفاهیم اولیه در سیگنال</a>
+            </li>
+                    <li class="list-group-item">
+                                <a href="/signal/dtmf/">سیگنال های DTMF</a>
+            </li>
+                    <li class="list-group-item">
+                                <a href="/signal/synthesis-decomposition-superposition/">ترکیب ، تفکیک و انطباق</a>
+            </li>
+                    <li class="list-group-item">
+                                <a href="/signal/impulse-decomposition/">تفکیک ضربه ای سیگنال</a>
+            </li>
+                    <li class="list-group-item">
+                                <a href="/signal/delta-function-and-impulse-response/">تابع دلتا و پاسخ ضربه</a>
+            </li>
+                    <li class="list-group-item">
+                                <a href="/signal/convolution/">کانولوشن سیگنال</a>
+            </li>
+                    <li class="list-group-item">
+                                <a href="/signal/domains/">حوزه زمان و حوزه فرکانسی</a>
+            </li>
+                    <li class="list-group-item">
+                                    <span class="glyphicon glyphicon-menu-left" aria-hidden="true"></span>
+                                <a href="/signal/fourier-transform-concept/">تبدیل فوریه گسسته</a>
+            </li>
+            </ul>
+        </div>
+    </div>
+
+</div>
+
+<footer class="footer">
+    <div class="container">
+        <p class="text-muted"> کلیه مطالب وب سایت با رعایت قوانین  <a href="http://ai.amini.eu/www.gnu.org/copyleft/fdl.html">GNU Free Documentation License</a> قابل دسترس می باشند  | 1395- 1389 © </p>
+    </div>
+</footer>
+
+
+<script type="text/javascript" src="/assets/js/jquery-2.2.4.min.js"></script>
+<script type="text/javascript" src="/assets/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="/assets/js/prism.js"></script>
+
+</body>
+</html>

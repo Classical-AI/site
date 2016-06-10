@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+
+    <title>هوش مصنوعی کلاسیک </title>
+
+    <link rel="stylesheet" href="/assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/assets/css/bootstrap-rtl.min.css">
+    <link rel="stylesheet" href="/assets/css/prism.css">
+    <link rel="stylesheet" href="/assets/css/style.css">
+</head>
+
+<body>
+
+<div class="container">
+    <nav class="navbar navbar-default navbar-fixed-top">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar"
+                    aria-expanded="false" aria-controls="navbar">
+                <span class="sr-only">گشودن/بستن منو</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="/">هوش مصنوعی کلاسیک</a>
+        </div>
+        <div id="navbar" class="collapse navbar-collapse">
+            <ul class="nav navbar-nav">
+                <li><a href="/">خانه</a></li>
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
+                       aria-expanded="false">مقالات آموزشی <span class="caret"></span></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="/ai/introduction/">هوش مصنوعی</a></li>
+                        <li><a href="#">هوش محاسباتی</a></li>
+                        <li><a href="/signal/introduction/">پردازش سیگنال</a></li>
+                        <li><a href="#">پردازش تصویر</a></li>
+                    </ul>
+                </li>
+                <li><a href="/about/">درباره</a></li>
+                <li><a href="/contact/">تماس</a></li>
+            </ul>
+        </div><!--/.nav-collapse -->
+    </div>
+</nav>
+
+    
+    <ol class="breadcrumb">
+        <li><a href="/">خانه</a></li>
+                    <li><a href=" /signal/introduction/ ">پردازش سیگنال</a></li>
+        
+                <li>مقدمه</li>
+        
+        <li class="active">تفکیک ضربه ای سیگنال</li>
+    </ol>
+
+    <div id="content" class="row">
+        <div class="col-md-9">
+            <h2>تفکیک ضربه ای سیگنال</h2>
+                            <p>هنگام بررسی مفهوم ترکیب و تفکیک دیدیم که یک سیگنال دیجیتالی را چگونه می توان به سیگنال های ساده تر تفکیک کرد و یا چگونه سیگنال های تفکیک شده را باهم ترکیب کنیم. یکی از مهمترین روش های تفکیک سیگنال های دیجیتالی در حوزه زمانی ، تفکیک ضربه ای است (در حوزه زمانی محور افقی نشان دهنده زمان / مکان و محور عمودی برابر با مقدار سیگنال در آن زمان/مکان می باشد).</p>
+<p>در یک سیگنال ضربه همه مقادیر به جز یکی از آن ها صفر است. در حقیقت تفکیک ضربه ای ، یک سیگنال با N نمونه را به N سیگنال ضربه ای تفکیک می کند. تفکیک ضربه ای از این جهت دارای اهمیت است که با استفاده از آن در هر لحظه می توان تنها به بررسی یک مولفه از سیگنال ورودی پرداخت. دانستن پاسخ سیستم به یک سیگنال ضربه ای موجب می شود که بتوانیم خروجی نهایی سیستم را به ازای هر سیگنال ورودی محاسبه کنیم. برای این منظور نیز از عملگری به نام کانولوشن استفاده می کنیم که در مقاله های بعدی به بررسی آن پرداخته ایم. شکل زیر نحوه تفکیک سیگنال ورودی به سیگنال های ضربه را نشان می دهد:</p>
+<p><img src="/assets/images/signal/impulse-decomposition.jpg" alt="" /></p>
+<p>در مقاله ترکیب و تفکیک نشان دادیم که برای ضرب کردن عدد 2041 در عدد 4 می توانیم ابتدا عدد 2041 را به سه عدد 1+40+2000=2041 تفکیک کنیم ، سپس هریک ازاین اعداد را در عدد چهار ضرب کرده و با ترکیب آن ها نتیجه نهایی را به دست آوریم. به عبارت دیگر :</p>
+<pre><code>8164 = 1*4 + 40 * 4 + 2000 * 4 = ( 1 + 40 + 2000 ) * 4 = 2041 * 4</code></pre>
+<p>در اینجا نیز پس از آنکه سیگنال ورودی به سیگنال های ضربه تفکیک شد، می توانیم تک تک آن ها را وارد سیستم کرده و خروجی همه آن ها را به دست آوریم. سپس با ترکیب همه خروجی ها نتیجه نهایی به دست می آید( منظور از ترکیب سیگنال همان جمع برداری سینگنال ها می باشد). به عبارت دیگر در این روش پس از انکه سیگنال ورودی با N نمونه را به N سیگنال ضربه ای تفکیک کردیم ، هریک از این سیگنال های ضربه را وارد</p>
+<p>سیستم کرده و خروجی سیستم به ازای ورودی ضربه را به دست می آوریم . در نهایت با جمع برداری همه سیگنال ها می توانیم پاسخ نهایی سیستم برای سیگنال ورودی را محاسبه کنیم.</p>
+<p>می توان نتیجه گرفت که منظور از پاسخ ضربه یک سیستم ، خروجی سیستم به ازای ورودی ضربه می باشد. فرض کنید پاسخ ضربه سیستم به سیگنال ورودی همانند شکل روبرو باشد. این بدان معناست که با ورود یک سیگنال ضربه به سیستم ، سیگنال خروجی شکلی همانند این شکل خواهد داشت:</p>
+<p><img src="/assets/images/signal/gaussian.jpg" alt="" /></p>
+<p>در مقاله پاسخ ضربه این بحث را با جزئیات بیشتری بررسی خواهیم کرد. تکه کد زیر در محیط MATLAB برای تفکیک یک سیگنال به سیگنال های ضربه می تواند بکار رود:</p>
+<pre><code class="language-matlab">function dec = impulseDecompose(signal)
+     sz = size(signal);
+     dec = zeros(sz(2),sz(2));
+     for i= 1:sz(2)
+          dec(i,i) = signal(i);
+     end
+end</code></pre>
+                    </div>
+
+        <div class="col-md-3">
+                <ul class="list-group">
+        <li class="list-group-item list-group-item-info">
+            مقدمه
+        </li>
+
+                    <li class="list-group-item">
+                                <a href="/signal/introduction/">سیگنال چیست؟</a>
+            </li>
+                    <li class="list-group-item">
+                                <a href="/signal/discretization/">گسسته کردن سیگنال</a>
+            </li>
+                    <li class="list-group-item">
+                                <a href="/signal/fundamentals/">مفاهیم اولیه در سیگنال</a>
+            </li>
+                    <li class="list-group-item">
+                                <a href="/signal/dtmf/">سیگنال های DTMF</a>
+            </li>
+                    <li class="list-group-item">
+                                <a href="/signal/synthesis-decomposition-superposition/">ترکیب ، تفکیک و انطباق</a>
+            </li>
+                    <li class="list-group-item">
+                                    <span class="glyphicon glyphicon-menu-left" aria-hidden="true"></span>
+                                <a href="/signal/impulse-decomposition/">تفکیک ضربه ای سیگنال</a>
+            </li>
+                    <li class="list-group-item">
+                                <a href="/signal/delta-function-and-impulse-response/">تابع دلتا و پاسخ ضربه</a>
+            </li>
+                    <li class="list-group-item">
+                                <a href="/signal/convolution/">کانولوشن سیگنال</a>
+            </li>
+                    <li class="list-group-item">
+                                <a href="/signal/domains/">حوزه زمان و حوزه فرکانسی</a>
+            </li>
+                    <li class="list-group-item">
+                                <a href="/signal/fourier-transform-concept/">تبدیل فوریه گسسته</a>
+            </li>
+            </ul>
+        </div>
+    </div>
+
+</div>
+
+<footer class="footer">
+    <div class="container">
+        <p class="text-muted"> کلیه مطالب وب سایت با رعایت قوانین  <a href="http://ai.amini.eu/www.gnu.org/copyleft/fdl.html">GNU Free Documentation License</a> قابل دسترس می باشند  | 1395- 1389 © </p>
+    </div>
+</footer>
+
+
+<script type="text/javascript" src="/assets/js/jquery-2.2.4.min.js"></script>
+<script type="text/javascript" src="/assets/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="/assets/js/prism.js"></script>
+
+</body>
+</html>

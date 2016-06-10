@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+
+    <title>هوش مصنوعی کلاسیک </title>
+
+    <link rel="stylesheet" href="/assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/assets/css/bootstrap-rtl.min.css">
+    <link rel="stylesheet" href="/assets/css/prism.css">
+    <link rel="stylesheet" href="/assets/css/style.css">
+</head>
+
+<body>
+
+<div class="container">
+    <nav class="navbar navbar-default navbar-fixed-top">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar"
+                    aria-expanded="false" aria-controls="navbar">
+                <span class="sr-only">گشودن/بستن منو</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="/">هوش مصنوعی کلاسیک</a>
+        </div>
+        <div id="navbar" class="collapse navbar-collapse">
+            <ul class="nav navbar-nav">
+                <li><a href="/">خانه</a></li>
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
+                       aria-expanded="false">مقالات آموزشی <span class="caret"></span></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="/ai/introduction/">هوش مصنوعی</a></li>
+                        <li><a href="#">هوش محاسباتی</a></li>
+                        <li><a href="/signal/introduction/">پردازش سیگنال</a></li>
+                        <li><a href="#">پردازش تصویر</a></li>
+                    </ul>
+                </li>
+                <li><a href="/about/">درباره</a></li>
+                <li><a href="/contact/">تماس</a></li>
+            </ul>
+        </div><!--/.nav-collapse -->
+    </div>
+</nav>
+
+    
+    <ol class="breadcrumb">
+        <li><a href="/">خانه</a></li>
+                    <li><a href=" /signal/introduction/ ">پردازش سیگنال</a></li>
+        
+                <li>مقدمه</li>
+        
+        <li class="active">کانولوشن سیگنال</li>
+    </ol>
+
+    <div id="content" class="row">
+        <div class="col-md-9">
+            <h2>کانولوشن سیگنال</h2>
+                            <p>در دومقاله قبلی نشان دادیم که چگونه می توان یک سیگنال دیجیتالی را با استفاده از سیگنال های ضربه تفکیک کرد. سپس مفهوم پاسخ ضربه را بررسی کردیم و دیدیم که هرگونه انتقال و تغییر مقیاس در ورودی موجب همان اندازه انتقال و تغییر مقیاس در خروجی خواهد شد. در این مقاله می خواهیم در عمل نشان دهیم که چگونه می توان با در دست داشتن پاسخ ضربه یک سیستم، خروجی آن سیستم را به ازای هر سیگنال ورودی محاسبه کرد. برای این منظور نیز از عملگری به نام عملگر کانولوشن استفاده خواهیم کرد. همانطور که می دانید هر سیگنال را می توان به شکل یک بردار تصور کرد. با دانستن این نکته می توان حدس زد که منظور از جمع/تفریق دو سیگنال همان جمع/تفریق دو بردار می باشد. به عبارت دیگر عملگر جمع و تفریق با گرفتن دو سیگنال هم اندازه در ورودی خود آن دو را ترکیب کرده و سیگنال خروجی را تولید می کند.</p>
+<p>فرض کنید پاسخ ضربه یک سیستم نمونه را داریم و می خواهیم به ازای هر ورودی سیگنال، خروجی سیستم را به دست آوریم. واضح است که پاسخ ضربه می تواند هم اندازه با سیگنال ورودی نباشد (در اکثر موارد نیز چنین است ). خروجی نهایی سیستم از کانوالو کردن سیگنال ورودی با پاسخ ضربه سیستم به دست می آید.</p>
+<p>شکل زیر نشان می دهد که عملگر کانولوشن چگونه بر روی سیگنال ورودی اعمال می شود. فرض کنید سیگنال ورودی X و سیگنال خروجی Y ثابت باشند. درمقابل، ماشین کانولوشن ( هرچیزی که داخل کادر خط چین است ) می تواند به چپ یا راست حرکت کند. پس از آنکه ماشین کانولوشن حرکت کرد، مقادیر آن زیر مقادیر سیگنال ورودی قرار می گیرند. سپس چهار نمونه از سیگنال ورودی وارد ماشین کانولوشن شده و با مقادیر نشان داده شده در ماشین کانولوشن (پاسخ ضربه) یک به یک ضرب می شوند. در نهایت نیزجمع کل حاصلضرب ها در نقطه متناظر از سیگنال خروجی قرار می گیرد. به عنوان مثال در شکل نشان داده شده، مقدار y[6] در خروجی با استفاده از مقادیر x(3..6) از سیگنال ورودی محاسبه شده است.</p>
+<p><img src="/assets/images/signal/convolution-machine.jpg" alt="" /></p>
+<p>برای محاسبه مقدار y(7) ماشین کانولوشن یک واحد به سمت راست حرکت کرده و مقادیری از سیگنال ورودی که بالای ماشین کانولوشن قرار دارند وارد ماشین شده و با مقادیر پاسخ ضربه ضرب می شوند در نهایت نیز جمع کل آن ها به عنوان مقدار y(7) برگردانده می شود. همین روند برای محاسبه کلیه نمونه های سیگنال خروجی تکرار می شود.</p>
+<p>توجه کنید که نحوه چینش مقادیر پاسخ ضربه در داخل ماشین کانولوشن از اهمیت ویژه ای برخوردار است و باید به شکل راست به چپ باشد. راست به چپ کردن مقادیر پاسخ ضربه در داخل ماشین کانولوشن باعث می شود تا مقدار شماره 0 در سمت راست و سایر مقادیر به ترتیب و در سمت چپ آن قرار گیرند. حال که عمگر کانولوشن را توضیح دادیم می توانیم فرموله کردن آن بپردازیم. اگر x[n] سیگنال ورودی با N نمونه از 0 تا N-1 باشد و h[n] نیز سیگنالی M نقطه ای با اندیس 0 تا M-1 باشد کانولوشن این دو، سیگنالی با N+M-1 نمونه است که مقدار آن در هر نقطه به صورت زیر محاسبه می گردد:</p>
+<p><img src="/assets/images/signal/convolution-eq.jpg" alt="" /></p>
+<p>در محیط MATLAB از تابع conv برای کانولوشن دو سیگنال می توانیم استفاده کنیم. به عنوان مثال مجموعه دستورات زیر را وارد کرده و نتایج آن مشاهده کنید.</p>
+<pre><code class="language-matlab">&gt;&gt; a = 0.5 * sin(2*pi*200/8000*[1:8000]);
+&gt;&gt; plot(a(1:300))
+&gt;&gt; r = rand(1,8000) ./ 10;
+&gt;&gt; plot(r(1:300))
+&gt;&gt; b = a + r;
+&gt;&gt; plot(a(1:300)), hold on, plot(b(1:300),'r')
+&gt;&gt; i = -50:50;
+&gt;&gt;filter = exp( (i .* i) ./ (zeros(1,101)- 18)) ./ (ones(1,101) * (sqrt(2*pi)*3));
+&gt;&gt; plot(filter)
+&gt;&gt; c = conv(b,filter);
+&gt;&gt; wavplay(a)
+&gt;&gt; wavplay(b)
+&gt;&gt; wavplay(c)
+&gt;&gt; plot(a(1:300)), hold on, plot(b(1:300),'r'),plot(c(1:300),'k')</code></pre>
+<p>همانطور که در مقاله مربوط به موج سینوسی نشان دادیم، 2 دستور اول موج سینوسی با فرکانس 200 فرتز و نرخ نمونه برداری 8000 نمونه در ثانیه ایجاد می کند. سپس یک سیگنال تصادفی تولید شده و پس از جمع شدن با موج سینوسی، سیگنال جدیدی به دست می آید. در مرحله بعد یک فیلتر گاوسین (شکل روبرو) به اندازه 101 نمونه ایجاد می شود( این همان پاسخ ضربه سیستم را نشان می دهد). در نهایت سیگنال b با فیلتر گاوسین کانوالو شده و سیگنال c تولید می گردد.</p>
+<p><img src="/assets/images/signal/gaussian_1.jpg" alt="" /></p>
+<p>زمانی که این سه سیگنال را پخش می کنید متوجه خواهید شد که سیگنال اول یک صدای ایده آل با فرکانس 200 هرتز در خروجی تولید می کند. اما زمانی که سیگنال دوم را پخش می کنید به دلیل افزودن مقادیر تصادفی به آن نویزهایی در خروجی خواهید شنید. نهایتا در    سیگنال سوم نیز خواهید شنید که نویزهای سیگنال تا حدود بسیار زیادی از سیگنال نویزدار حذف شده است. در حقیقت حذف نویز به دلیل اعمال پاسخ ضربه گاوسین (فیلتر گاوسین) به سیگنال صورت پذیرفته است.</p>
+                    </div>
+
+        <div class="col-md-3">
+                <ul class="list-group">
+        <li class="list-group-item list-group-item-info">
+            مقدمه
+        </li>
+
+                    <li class="list-group-item">
+                                <a href="/signal/introduction/">سیگنال چیست؟</a>
+            </li>
+                    <li class="list-group-item">
+                                <a href="/signal/discretization/">گسسته کردن سیگنال</a>
+            </li>
+                    <li class="list-group-item">
+                                <a href="/signal/fundamentals/">مفاهیم اولیه در سیگنال</a>
+            </li>
+                    <li class="list-group-item">
+                                <a href="/signal/dtmf/">سیگنال های DTMF</a>
+            </li>
+                    <li class="list-group-item">
+                                <a href="/signal/synthesis-decomposition-superposition/">ترکیب ، تفکیک و انطباق</a>
+            </li>
+                    <li class="list-group-item">
+                                <a href="/signal/impulse-decomposition/">تفکیک ضربه ای سیگنال</a>
+            </li>
+                    <li class="list-group-item">
+                                <a href="/signal/delta-function-and-impulse-response/">تابع دلتا و پاسخ ضربه</a>
+            </li>
+                    <li class="list-group-item">
+                                    <span class="glyphicon glyphicon-menu-left" aria-hidden="true"></span>
+                                <a href="/signal/convolution/">کانولوشن سیگنال</a>
+            </li>
+                    <li class="list-group-item">
+                                <a href="/signal/domains/">حوزه زمان و حوزه فرکانسی</a>
+            </li>
+                    <li class="list-group-item">
+                                <a href="/signal/fourier-transform-concept/">تبدیل فوریه گسسته</a>
+            </li>
+            </ul>
+        </div>
+    </div>
+
+</div>
+
+<footer class="footer">
+    <div class="container">
+        <p class="text-muted"> کلیه مطالب وب سایت با رعایت قوانین  <a href="http://ai.amini.eu/www.gnu.org/copyleft/fdl.html">GNU Free Documentation License</a> قابل دسترس می باشند  | 1395- 1389 © </p>
+    </div>
+</footer>
+
+
+<script type="text/javascript" src="/assets/js/jquery-2.2.4.min.js"></script>
+<script type="text/javascript" src="/assets/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="/assets/js/prism.js"></script>
+
+</body>
+</html>
