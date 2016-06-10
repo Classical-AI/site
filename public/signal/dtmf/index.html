@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+
+    <title>هوش مصنوعی کلاسیک </title>
+
+    <link rel="stylesheet" href="/assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/assets/css/bootstrap-rtl.min.css">
+    <link rel="stylesheet" href="/assets/css/prism.css">
+    <link rel="stylesheet" href="/assets/css/style.css">
+</head>
+
+<body>
+
+<div class="container">
+    <nav class="navbar navbar-default navbar-fixed-top">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar"
+                    aria-expanded="false" aria-controls="navbar">
+                <span class="sr-only">گشودن/بستن منو</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="/">هوش مصنوعی کلاسیک</a>
+        </div>
+        <div id="navbar" class="collapse navbar-collapse">
+            <ul class="nav navbar-nav">
+                <li><a href="/">خانه</a></li>
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
+                       aria-expanded="false">مقالات آموزشی <span class="caret"></span></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="/ai/introduction/">هوش مصنوعی</a></li>
+                        <li><a href="#">هوش محاسباتی</a></li>
+                        <li><a href="/signal/introduction/">پردازش سیگنال</a></li>
+                        <li><a href="#">پردازش تصویر</a></li>
+                    </ul>
+                </li>
+                <li><a href="/about/">درباره</a></li>
+                <li><a href="/contact/">تماس</a></li>
+            </ul>
+        </div><!--/.nav-collapse -->
+    </div>
+</nav>
+
+    
+    <ol class="breadcrumb">
+        <li><a href="/">خانه</a></li>
+                    <li><a href=" /signal/introduction/ ">پردازش سیگنال</a></li>
+        
+                <li>مقدمه</li>
+        
+        <li class="active">سیگنال های DTMF</li>
+    </ol>
+
+    <div id="content" class="row">
+        <div class="col-md-9">
+            <h2>سیگنال های DTMF</h2>
+                            <p>همگی با سیگنال هایی که به هنگام فشردن دکمه های تلفن از گوشی آن می شنویم آشنا هستیم. به این سیگنال های در اصطلاح سیگنال های DTMF گویند.در کل 12 سیگنال DTMF متفاوت بر روی صفحه کلید تلفن وجود دارد ( البته با احتساب حروف A ، B ، C و D تعداد کل سیگنال های DTMF 16 عدد می باشد). هریک از سیگنال های DTMF نیز از ترکیب دو موج سینوسی با فرکانس های مختلف تشکیل شده است. به عنوان مثال فشردن کلید 1 موجب تولید صدایی می شود که از ترکیب دو موج سینوسی با فرکانس های 697 هرتز و 1209 هرتز تشکیل شده است. جدول زیر فرکانس های تشکیل دهنده هر یک از 12 سیگنال DTMF را نشان می دهد:</p>
+<p><img src="/assets/images/signal/dtmf-table.jpg" alt="" /></p>
+<p>سیگنال های A ، B ، C و D نیز با افزودن ستون 1633 هرتزی می توانند تولید شوند. در این فرآیند انتخاب فرکانس ها به گونه ای صورت گرفته است که 1) هیچ فرکانسی مضربی از فرکانس دیگر نیست 2) اختلاف هیچ دو فرکانسی برابر با مقدار فرکانس دیگری در جدول نیست و 3) جمع هیچ دو فرکانسی برابر با مقدار فرکانسی دیگری در جدول نیست ( کار مهندسی یعنی این! ). شکل موج هریک از این 12 سیگنال نیز در زیر آمده است(به همان ترتیبی که در جدول فوق نشان داده شده است) :</p>
+<p><img src="/assets/images/signal/dtmf.jpg" alt="" /></p>
+<p>تکه کد زیر نیز نحوه تولید سیگنال DTMF مربوط به کلید 1 را در محیط MATLAB نشان می دهد :</p>
+<pre><code class="language-matlab">&gt;&gt; i= 1:44096;
+&gt;&gt; wv1 = (0.5*sin(2*pi* (697/44096) * i)) + (0.5*sin(2*pi* (1209/44096) * i)); &gt;&gt; wavplay(wv1,44096);</code></pre>
+<p>دیگر سیگنال های DTMF نیز به همین ترتیب و تنها با تغییر دادن مقادیر فرکانس موج ها تولید می شوند. کار کردن بر روی سیگنال های DTMF می تواند تمرین بسیار خوبی برای افرادی باشد که تازه پا در دنیای  سیگنال دیجیتال گذارده اند. به عنوان مثال می توانید سیگنالی را تولید کرده و یک نویز تصادفی به آن اضافه کنید. سپس با پخش صدا تاثیر نویز در خروجی را مشاهده کنید.</p>
+                    </div>
+
+        <div class="col-md-3">
+                <ul class="list-group">
+        <li class="list-group-item list-group-item-info">
+            مقدمه
+        </li>
+
+                    <li class="list-group-item">
+                                <a href="/signal/introduction/">سیگنال چیست؟</a>
+            </li>
+                    <li class="list-group-item">
+                                <a href="/signal/discretization/">گسسته کردن سیگنال</a>
+            </li>
+                    <li class="list-group-item">
+                                <a href="/signal/fundamentals/">مفاهیم اولیه در سیگنال</a>
+            </li>
+                    <li class="list-group-item">
+                                    <span class="glyphicon glyphicon-menu-left" aria-hidden="true"></span>
+                                <a href="/signal/dtmf/">سیگنال های DTMF</a>
+            </li>
+                    <li class="list-group-item">
+                                <a href="/signal/synthesis-decomposition-superposition/">ترکیب ، تفکیک و انطباق</a>
+            </li>
+                    <li class="list-group-item">
+                                <a href="/signal/impulse-decomposition/">تفکیک ضربه ای سیگنال</a>
+            </li>
+                    <li class="list-group-item">
+                                <a href="/signal/delta-function-and-impulse-response/">تابع دلتا و پاسخ ضربه</a>
+            </li>
+                    <li class="list-group-item">
+                                <a href="/signal/convolution/">کانولوشن سیگنال</a>
+            </li>
+                    <li class="list-group-item">
+                                <a href="/signal/domains/">حوزه زمان و حوزه فرکانسی</a>
+            </li>
+                    <li class="list-group-item">
+                                <a href="/signal/fourier-transform-concept/">تبدیل فوریه گسسته</a>
+            </li>
+            </ul>
+        </div>
+    </div>
+
+</div>
+
+<footer class="footer">
+    <div class="container">
+        <p class="text-muted"> کلیه مطالب وب سایت با رعایت قوانین  <a href="http://ai.amini.eu/www.gnu.org/copyleft/fdl.html">GNU Free Documentation License</a> قابل دسترس می باشند  | 1395- 1389 © </p>
+    </div>
+</footer>
+
+
+<script type="text/javascript" src="/assets/js/jquery-2.2.4.min.js"></script>
+<script type="text/javascript" src="/assets/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="/assets/js/prism.js"></script>
+
+</body>
+</html>

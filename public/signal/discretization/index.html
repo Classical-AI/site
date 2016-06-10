@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+
+    <title>هوش مصنوعی کلاسیک </title>
+
+    <link rel="stylesheet" href="/assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/assets/css/bootstrap-rtl.min.css">
+    <link rel="stylesheet" href="/assets/css/prism.css">
+    <link rel="stylesheet" href="/assets/css/style.css">
+</head>
+
+<body>
+
+<div class="container">
+    <nav class="navbar navbar-default navbar-fixed-top">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar"
+                    aria-expanded="false" aria-controls="navbar">
+                <span class="sr-only">گشودن/بستن منو</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="/">هوش مصنوعی کلاسیک</a>
+        </div>
+        <div id="navbar" class="collapse navbar-collapse">
+            <ul class="nav navbar-nav">
+                <li><a href="/">خانه</a></li>
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
+                       aria-expanded="false">مقالات آموزشی <span class="caret"></span></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="/ai/introduction/">هوش مصنوعی</a></li>
+                        <li><a href="#">هوش محاسباتی</a></li>
+                        <li><a href="/signal/introduction/">پردازش سیگنال</a></li>
+                        <li><a href="#">پردازش تصویر</a></li>
+                    </ul>
+                </li>
+                <li><a href="/about/">درباره</a></li>
+                <li><a href="/contact/">تماس</a></li>
+            </ul>
+        </div><!--/.nav-collapse -->
+    </div>
+</nav>
+
+    
+    <ol class="breadcrumb">
+        <li><a href="/">خانه</a></li>
+                    <li><a href=" /signal/introduction/ ">پردازش سیگنال</a></li>
+        
+                <li>مقدمه</li>
+        
+        <li class="active">گسسته کردن سیگنال</li>
+    </ol>
+
+    <div id="content" class="row">
+        <div class="col-md-9">
+            <h2>گسسته کردن سیگنال</h2>
+                            <p><img src="/assets/images/signal/discretization.jpg" alt="مقدمه پردازش سیگنال" /></p>
+<h3>نمونه برداری و چندی کردن سیگنال</h3>
+<p>فرض کنید میکروفورنی را به کارت صوتی وصل کرده اید و در حال ضبط صدا هستید. خروجی میکروفون یک خروجی آنالوگ می باشد و بنابراین نمی تواند به طور مستقیم وارد سیستم کامپیوتری گردد. چرا که همه سیستم های دیجیتالی اعم از یک کامپیوتر تنها با ورودی های دیجیتال می تواند کار کنند. بنابراین سیگنال آنالوگ تولید شده در خروجی میکروفون قبل از ورود به سیستم کامپیوتری باید به سیگنال دیجیتال تبدیل گردد. دیجیتال کردن سیگنال بر روی سیستم های کامپیوتری امروزی توسط کارت های صوتی انجام می پذیرد. یک سیگنال آنالوگ از لحظه ورود تا دیجیتال شدن مراحل زیر را به ترتیب طی می کند:</p>
+<ul>
+<li>آماده کردن سیگنال ورودی</li>
+<li>فیلتر کردن سیگنال ورودی</li>
+<li>نمونه برداری</li>
+<li>چندی کردن</li>
+</ul>
+<p>شماتیک زیر نیز فرآیند تبدیل سیگنال آنالوگ به دیجیتال را نشان می دهد:</p>
+<p><img src="/assets/images/signal/signal-discretization.jpg" alt="مقدمه پردازش سیگنال" /></p>
+<h4>آماده کردن سیگنال ورودی :</h4>
+<p>فرض کنید خروجی سنسوری که موجب تولید سیگنال می شود ، ولتاژ باشد. به عنوان مثال زمانی که در میکروفون صحبت می کنید، متناظر با صدای تولید شده توسط شما، خروجی میکرفون نیز در یک بازه مشخص به شکل ولتاژ تغییر می کند. یا به عنوان مثال خروجی سنسوری که برای ضبط نوار قلبی بکار می رود، در بازه های بسیار کوچک ولتاژ ( میلی ولت ) در حال تغییر است.</p>
+<p>در مراحل بعدی عمل دیجیتال کردن زمانی که از مبدل آنالوگ به دیجیتال استفاده می کنیم، عملا نیاز به ولتاژهایی در بازه ( 5..0) ، ( 5-..5 ) یا ... ولت نیاز داریم. اما همانطور که دیدیم خروجی برخی از سنسورها ( همانند سنسور نوار قلبی ) در حد میلی ولت است. بنابراین نیاز به روشی داریم که بتوانیم خروجی سنسورها را تقویت کرده و آن ها را برای ورود به مبدل های آنالوگ به دیجیتال آماده کنیم.</p>
+<p>این مرحله از عمل دیجیتال کردن ورودی را آماده سازی سیگنال ورودی می گوییم که در آن از تقویت کننده ها ( آمپلی فایر ) برای افزایش/ کاهش بهره ولتاژ استفاده می کنیم. لازم به ذکر است که امروزه سیستم تقویت کننده سیگنال به شکل توکار بر روی کارت های صوتی وجود دارد و در کارهای معمول خود نیاز به نصب تقویت کننده خارجی به کارت صوتی نداریم.در سیستم عامل ویندوز ضریب بهره آمپلی فایر کارت صوتی توسط Volume Controller خود سیستم عامل تعیین می شود.</p>
+<h4>فیلتر کردن سیگنال</h4>
+<p>خطوط تلفن دیجیتال قابلیت حمل سیگنال هایی در بازه 0 تا 3400 هرتز را دارند. از اینرو سیگنال هایی که فرکانسی خارج از این محدوده دارند، باید قبل از دیجیتال شدن فیلتر شوند. این عمل نیز با طراحی فیلترهایی امکان پذیر است. در واقع پس از آنکه سیگنال ورودی آماده شد ( تقویت گردید ) وارد سیتم فیلترینگ می گردد تا سیگنال های خارج از محدوده فرکانسی آن کاربرد ، از سیستم حذف گردند.</p>
+<h4>طراحی فیلترها</h4>
+<p>از اهمیت ویژه ای برخوردار است چراکه اگر سیگنال به شکل صحیح فیلتر نشود، دچار اختلال هایی خواهد شد. با توجه به اینکه طراحی فیلترهای آنالوگ خارج از حیطه تخصصی ما می باشد، بنابراین از ذکر مطالب در مورد آن ها خودداری می کنیم. با این حال زمانی که نحوه طراحی فیلترهای دیجیتال را شرح می دهیم، پارمترهایی را که برای طراحی یک فیلتر مناسب باید در نظر گرفت ، نشان خواهیم داد.</p>
+<h4>نمونه برداری کردن</h4>
+<p>پس از آنکه سیگنال ورودی آماده شد و فیلترکردن آن نیز انجام پذیرفت، دیجیتال کردن سیگنال آنالوگ آغاز می شود. نمونه برداری بدین مفهوم است که در بازه های زمانی مشخص مقدار سیگنال ورودی را خوانده و برای چندی شدن به مرحله بعد انتقال دهیم. به عنوان مثال زمانی که می خواهیم در هر ثانیه 44000 نمونه از سیگنال ورودی برداریم، باید در بازه های زمانی 0.00002 ثانیه مقدار سیگنال آنالوگ را خوانده و به مرحله بعد منتقل کنیم. به عنوان مثال زمانی که در میکروفون صحبت می کنید، با فرض اینکه نرخ نمونه برداری 44000 نمونه در ثانیه باشد، سیستم دیجیتال کننده هر 0.00002 ثانیه یکبار ولتاز خروجی میکروفون را - که تقویت و فیلتر شده است - خوانده و مقدار آن را به چندی کننده ارسال می کند.</p>
+<h4>چندی کردن سیگنال</h4>
+<p>در مرحله نمونه برداری دیدیم که یک نمونه از سیگنال به شکل ولتاژ نمونه برداری شد. در این مرحله ولتاز نمونه برداری شده باید به شکل دیجیتالی ( عدد باینری ) تبدیل شود. برای این منظور نیز از مبدل های آنالوگ به دیجیتال استفاده می کنیم. به عنوان مثال یک مبدل انالوگ به دیجیتال 8 بیتی به ازای ورودی خود عددی بین 0 تا 255 تولید می کند. فرض کنید ورودی مبدل در بازه 0 تا 5 ولت باشد. این بدان معناست که به ازای ورودی 0 ولت ، خروجی مبدل عدد باینری 0 و به ازای ورودی 5 ولت خروجی مبدل عدد باینری 255 خواهد بود. بدیهی است که افزایش تعداد بیت های مبدل موجب افزایش دقت چندی شدن خواهد شد.</p>
+                    </div>
+
+        <div class="col-md-3">
+                <ul class="list-group">
+        <li class="list-group-item list-group-item-info">
+            مقدمه
+        </li>
+
+                    <li class="list-group-item">
+                                <a href="/signal/introduction/">سیگنال چیست؟</a>
+            </li>
+                    <li class="list-group-item">
+                                    <span class="glyphicon glyphicon-menu-left" aria-hidden="true"></span>
+                                <a href="/signal/discretization/">گسسته کردن سیگنال</a>
+            </li>
+                    <li class="list-group-item">
+                                <a href="/signal/fundamentals/">مفاهیم اولیه در سیگنال</a>
+            </li>
+                    <li class="list-group-item">
+                                <a href="/signal/dtmf/">سیگنال های DTMF</a>
+            </li>
+                    <li class="list-group-item">
+                                <a href="/signal/synthesis-decomposition-superposition/">ترکیب ، تفکیک و انطباق</a>
+            </li>
+                    <li class="list-group-item">
+                                <a href="/signal/impulse-decomposition/">تفکیک ضربه ای سیگنال</a>
+            </li>
+                    <li class="list-group-item">
+                                <a href="/signal/delta-function-and-impulse-response/">تابع دلتا و پاسخ ضربه</a>
+            </li>
+                    <li class="list-group-item">
+                                <a href="/signal/convolution/">کانولوشن سیگنال</a>
+            </li>
+                    <li class="list-group-item">
+                                <a href="/signal/domains/">حوزه زمان و حوزه فرکانسی</a>
+            </li>
+                    <li class="list-group-item">
+                                <a href="/signal/fourier-transform-concept/">تبدیل فوریه گسسته</a>
+            </li>
+            </ul>
+        </div>
+    </div>
+
+</div>
+
+<footer class="footer">
+    <div class="container">
+        <p class="text-muted"> کلیه مطالب وب سایت با رعایت قوانین  <a href="http://ai.amini.eu/www.gnu.org/copyleft/fdl.html">GNU Free Documentation License</a> قابل دسترس می باشند  | 1395- 1389 © </p>
+    </div>
+</footer>
+
+
+<script type="text/javascript" src="/assets/js/jquery-2.2.4.min.js"></script>
+<script type="text/javascript" src="/assets/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="/assets/js/prism.js"></script>
+
+</body>
+</html>

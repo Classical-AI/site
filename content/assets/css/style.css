@@ -89,3 +89,12 @@ pre, code {
     max-width: 100%;
 }
 
+#content img + em {
+    color: #666;
+    font-size: 0.8em;
+    margin-right: auto;
+    margin-left: auto;
+    display: block;
+    text-align: center;
+    margin-bottom: 15px;
+}

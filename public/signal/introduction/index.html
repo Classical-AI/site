@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+
+    <title>هوش مصنوعی کلاسیک </title>
+
+    <link rel="stylesheet" href="/assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/assets/css/bootstrap-rtl.min.css">
+    <link rel="stylesheet" href="/assets/css/prism.css">
+    <link rel="stylesheet" href="/assets/css/style.css">
+</head>
+
+<body>
+
+<div class="container">
+    <nav class="navbar navbar-default navbar-fixed-top">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar"
+                    aria-expanded="false" aria-controls="navbar">
+                <span class="sr-only">گشودن/بستن منو</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="/">هوش مصنوعی کلاسیک</a>
+        </div>
+        <div id="navbar" class="collapse navbar-collapse">
+            <ul class="nav navbar-nav">
+                <li><a href="/">خانه</a></li>
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
+                       aria-expanded="false">مقالات آموزشی <span class="caret"></span></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="/ai/introduction/">هوش مصنوعی</a></li>
+                        <li><a href="#">هوش محاسباتی</a></li>
+                        <li><a href="/signal/introduction/">پردازش سیگنال</a></li>
+                        <li><a href="#">پردازش تصویر</a></li>
+                    </ul>
+                </li>
+                <li><a href="/about/">درباره</a></li>
+                <li><a href="/contact/">تماس</a></li>
+            </ul>
+        </div><!--/.nav-collapse -->
+    </div>
+</nav>
+
+    
+    <ol class="breadcrumb">
+        <li><a href="/">خانه</a></li>
+                    <li><a href=" /signal/introduction/ ">پردازش سیگنال</a></li>
+        
+                <li>مقدمه</li>
+        
+        <li class="active">سیگنال چیست؟</li>
+    </ol>
+
+    <div id="content" class="row">
+        <div class="col-md-9">
+            <h2>سیگنال چیست؟</h2>
+                            <p><img src="/assets/images/signal/signal_introduction.jpg" alt="مقدمه پردازش سیگنال" /></p>
+<p>به طور ساده هر کیمیت متغیر در زمان یا مکان که قابل اندازه گیری باشد را سیگنال می گوییم. به عنوان مثال سرعت کمیتی است که در واحد زمان متغیر بوده و مقدار آن قابل اندازه گیری است. چراکه در بازه های زمانی مشخص می توانید مقدار سرعت را اندازه گیری کرده و ثبت کنید. مجموعه اعدادی که از ثبت سرعت در بازه های زمانی مختلف به وجود می آیند، باهمدیگر تشکیل یک سیگنال می دهند.</p>
+<p>کمیت هایی همچون شتاب ، دما ، رطوبت و... نیز در واحد زمان متغیر بوده و همچنین قابل   اندازه گیری هستند. بنابراین با نمونه گیری از این کمیت ها در واحد های زمانی مختلف می توان تشکیل یک سیگنال داد. پردازش سیگنال نیز علمی است که به آنالیز سیگنال ها می پردازد. به علت کاربرد گسترده و همچنین قابل لمس بودن سیگنال های صوتی برای خوانندگان ، در ادامه مقالاتی که برای پردازش سیگنال قرار داده ایم ، تمرکز خود را بر روی سیگنال های صوتی و گفتار متمرکز کرده ایم. شکل زیر سیگنال صوتی را نشان می دهد که هنگام فشار دادن کلید 1 بر روی تلفن تولید می شود:</p>
+<p><img src="/assets/images/signal/signal-discrete.jpg" alt="سیگنال گسسته" />
+<em>سیگنال گسسته</em></p>
+<p><img src="/assets/images/signal/signal-continues.jpg" alt="سیگنال پیوسته" />
+<em>سیگنال پیوسته</em></p>
+<p>شکل اول سیگنال را به شکل گسسته و شکل دوم سیگنال را به صورت پیوسته نشان می دهند. محور افقی زمان و محور عمودی نیز مقدار شدت سیگنال را نمایش می دهند.</p>
+<p>همگام با ورود این سیگنال دیجیتالی به کارت صوتی خروجی آنالوگ (سیگنال پیوسته) در آن تولید می شود که این خروجی نیز وارد سیستم پخش صدا شده و موج تولید شده توسط بلندگو پس از پخش در فضا توسط گوش ما حس می گردد. این کل فرآیندی است که یک سیگنال صوتی دیجیتالی طی می کند تا توسط گوش ما شنیده شود.  عکس این فرآیند نیز امکان پذیر است، بدین صورت که همگام با صحبت کردن ما در یک میکروفون، سیگنال آنالوگ تولید شده توسط آن وارد کارت صوتی شده و توسط کارت صوتی نمونه برداری می گردد وهمین نمونه برداری است که موجب تولید یک سیگنال زمانی در سمت کامپیوتر می گردد.</p>
+<p>حال فرض کنید می خواهیم نویزی را که در یک فایل صوتی وجود دارد، یا نویزی که هنگام صحبت کردن ما در میکروفون ممکن است تحت تاثیر محیط اطراف به وجود آید را حذف کنیم. برای این منظور نیاز داریم که سیگنال دیجیتالی موجود بر روی سیستم کامپیوتری را پردازش کرده و پس از شناسایی نویز ها با استفاده از روشی به حذف آن ها پبردازیم. یا فرض کنید قصد داریم نرم افزاری را طراحی کنیم که این نرم افزار کلمات بیان شده در میکروفون را تایپ کند. پردازش گفتار علمی است که با بهره گرفتن از روش های پردازش سیگنال به انجام این عمل می پردازد. در ادامه این بخش سعی کرده ایم مفاهیم کلی پردازش سیگنال را مورد بررسی قرار دهیم. توجه داشته باشید که تمام روش های پردازش سیگنال های دیجیتالی برای آنالیز گفتار نیز به کار می روند.</p>
+                    </div>
+
+        <div class="col-md-3">
+                <ul class="list-group">
+        <li class="list-group-item list-group-item-info">
+            مقدمه
+        </li>
+
+                    <li class="list-group-item">
+                                    <span class="glyphicon glyphicon-menu-left" aria-hidden="true"></span>
+                                <a href="/signal/introduction/">سیگنال چیست؟</a>
+            </li>
+                    <li class="list-group-item">
+                                <a href="/signal/discretization/">گسسته کردن سیگنال</a>
+            </li>
+                    <li class="list-group-item">
+                                <a href="/signal/fundamentals/">مفاهیم اولیه در سیگنال</a>
+            </li>
+                    <li class="list-group-item">
+                                <a href="/signal/dtmf/">سیگنال های DTMF</a>
+            </li>
+                    <li class="list-group-item">
+                                <a href="/signal/synthesis-decomposition-superposition/">ترکیب ، تفکیک و انطباق</a>
+            </li>
+                    <li class="list-group-item">
+                                <a href="/signal/impulse-decomposition/">تفکیک ضربه ای سیگنال</a>
+            </li>
+                    <li class="list-group-item">
+                                <a href="/signal/delta-function-and-impulse-response/">تابع دلتا و پاسخ ضربه</a>
+            </li>
+                    <li class="list-group-item">
+                                <a href="/signal/convolution/">کانولوشن سیگنال</a>
+            </li>
+                    <li class="list-group-item">
+                                <a href="/signal/domains/">حوزه زمان و حوزه فرکانسی</a>
+            </li>
+                    <li class="list-group-item">
+                                <a href="/signal/fourier-transform-concept/">تبدیل فوریه گسسته</a>
+            </li>
+            </ul>
+        </div>
+    </div>
+
+</div>
+
+<footer class="footer">
+    <div class="container">
+        <p class="text-muted"> کلیه مطالب وب سایت با رعایت قوانین  <a href="http://ai.amini.eu/www.gnu.org/copyleft/fdl.html">GNU Free Documentation License</a> قابل دسترس می باشند  | 1395- 1389 © </p>
+    </div>
+</footer>
+
+
+<script type="text/javascript" src="/assets/js/jquery-2.2.4.min.js"></script>
+<script type="text/javascript" src="/assets/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="/assets/js/prism.js"></script>
+
+</body>
+</html>

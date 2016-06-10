@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+
+    <title>هوش مصنوعی کلاسیک </title>
+
+    <link rel="stylesheet" href="/assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/assets/css/bootstrap-rtl.min.css">
+    <link rel="stylesheet" href="/assets/css/prism.css">
+    <link rel="stylesheet" href="/assets/css/style.css">
+</head>
+
+<body>
+
+<div class="container">
+    <nav class="navbar navbar-default navbar-fixed-top">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar"
+                    aria-expanded="false" aria-controls="navbar">
+                <span class="sr-only">گشودن/بستن منو</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="/">هوش مصنوعی کلاسیک</a>
+        </div>
+        <div id="navbar" class="collapse navbar-collapse">
+            <ul class="nav navbar-nav">
+                <li><a href="/">خانه</a></li>
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
+                       aria-expanded="false">مقالات آموزشی <span class="caret"></span></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="/ai/introduction/">هوش مصنوعی</a></li>
+                        <li><a href="#">هوش محاسباتی</a></li>
+                        <li><a href="/signal/introduction/">پردازش سیگنال</a></li>
+                        <li><a href="#">پردازش تصویر</a></li>
+                    </ul>
+                </li>
+                <li><a href="/about/">درباره</a></li>
+                <li><a href="/contact/">تماس</a></li>
+            </ul>
+        </div><!--/.nav-collapse -->
+    </div>
+</nav>
+
+    
+    <ol class="breadcrumb">
+        <li><a href="/">خانه</a></li>
+                    <li><a href=" /signal/introduction/ ">پردازش سیگنال</a></li>
+        
+                <li>مقدمه</li>
+        
+        <li class="active">مفاهیم اولیه در سیگنال</li>
+    </ol>
+
+    <div id="content" class="row">
+        <div class="col-md-9">
+            <h2>مفاهیم اولیه در سیگنال</h2>
+                            <p><img src="/assets/images/signal/fundamentals.jpg" alt="مفاهیم اولیه در سیگنال " /></p>
+<p>به جرات می توان گفت که مهمترین مفاهیم در پردازش سیگنال مفاهیم کانولوشن و فرکانس می باشد. به طوریکه مباحثی همچون طراحی فیلترهای دیجیتالی به شدت تحت تاثیر این مفاهیم هستند. در این بین مفهوم فرکانس برای اغلب دانشجویانی که در علوم مهندسی به غیراز مهندسی الکترونیک تحصیل کرده اند نامفهوم است. در این بخش سعی می کنیم مفاهیم مرتبط با حوزه فرکانس را به زبانی ساده شرح دهیم. مفهوم فرکانس در پردازش سیگنال ارتباط بسیار قوی با موج سینوسی دارد ( در مقاله مربوط به بسط فوریه علت این امر بیان شده است ). از اینرو همه مفاهیم مرتبط با حوزه فرکانس را بر روی موج سینوسی شرح می دهیم.
+کمیت هایی همچون شتاب ، دما ، رطوبت و... نیز در واحد زمان متغیر بوده و همچنین قابل   اندازه گیری هستند. بنابراین با نمونه گیری از این کمیت ها در واحد های زمانی مختلف می توان تشکیل یک سیگنال داد. پردازش سیگنال نیز علمی است که به آنالیز سیگنال ها می پردازد. به علت کاربرد گسترده و همچنین قابل لمس بودن سیگنال های صوتی برای خوانندگان ، در ادامه مقالاتی که برای پردازش سیگنال قرار داده ایم ، تمرکز خود را بر روی سیگنال های صوتی و گفتار متمرکز کرده ایم. شکل زیر سیگنال صوتی را نشان می دهد که هنگام فشار دادن کلید 1 بر روی تلفن تولید می شود:</p>
+<h4>موج سینوسی</h4>
+<p>یک موج سینوسی که شکل آن در روبرو آمده است، با استفاده از رابطه زیر تعریف می گردد:</p>
+<p><img src="/assets/images/signal/sinus.jpg" alt="" /></p>
+<p>که در این رابطه A ، f ، t و... به ترتیب نشان دهنده دامنه ، فرکانس، زمان و فاز موج سینوسی هستند. شکل بالا نمودار موج سینوسی را نشان می دهد. در یک موج سینوسی دامنه ، شدت موج سینوسی را تعیین می کند. همچنین فرکانس نیز نشان دهنده تعداد دفعات تکرار موج سینوسی در واحد زمان است. جناب آقای زوزف فوریه در قرن 18 نشان دادند که همه سیگنال های موجود در جهان را می توان به شکل ترکیبی از امواج سینوسی نشان داد. سیگنال های صوتی نیز از این قائله مستثنی نیستند و هر سیگنال صوتی را می توان به امواج سینوسی تشکیل دهنده آن شکست. در این بخش قصد تفکیک سیگنال های به امواج سینوسی تشکیل دهنده آن را نداریم. بلکه می خواهیم نشان دهیم چگونه می توان با استفاده از امواج سینوسی ، به تولید صدا پرداخت.</p>
+<p>برای ملموس تر شدن مفهوم موج سینوسی در اینجا به ارائه چند مثال با استفاده از MATLAB می پردازیم. دستورات زیر را به ترتیب در محیط MATLAB وارد کنید:</p>
+<pre><code class="language-matlab">&gt;&gt; i = 1:44000;
+&gt;&gt; w1 = sin( 2*pi * 500/44000 * i);
+&gt;&gt; w2 = sin( 2*pi * 1000/44000 * i);
+&gt;&gt; w11 =10* sin( 2*pi * 500/44000 * i);
+&gt;&gt; w22 =10* sin( 2*pi * 1000/44000 * i);
+&gt;&gt; wavplay(w1,44000);
+&gt;&gt; wavplay(w2,44000);
+&gt;&gt; wavplay(w11,44000);
+&gt;&gt; wavplay(w22,44000);</code></pre>
+<p>دستور اول یک آرایه شامل مقادیر 1 تا 44000 تولید می کند که از این آرایه برای تولید موج سینوسی استفاده می کنیم. دستور دوم یک موج سینوسی با دامنه 1 و فرکانس 500 هرتز تولید می کند. دستور سوم نیز یک موج سینوسی با دامنه 1 و فرکانس 1000 هرتز ایجاد می کند. همانطور که در دستورات نیز مشاهده می کنید، w11 و w22 نیز موج های سینوسی با فرکانس 500 و 1000 هرتز تولید می کنند و تنها تفاوت آن ها با w1 و w2 در مقدار دامنه موج ها است.</p>
+<p>زمانی که دستور wavplay را اجرا کنید، هریک از موج های تولید شده به شکل صوت از بلندگوی کامپیوتر شما خارج خواهند شد. از این چهار موج سینوسی می توان چنین نتیجه گرفت که 1) فرکانس موج سینوسی زیر و بم بودن صدا تعیین می کند و 2) دامنه موج سینوسی نیز بلندی صدای تولید شده را نشان می دهد. همانطور که شما نیز حدس می زنید برای ما مقدار فرکانس از اهمیت بیتشری نسبت به دامنه برخوردار است. نکته دیگری که در این تکه کد آن را مشاهده می کنید نحوه تولید موج سینوسی است. در ابتدا رابطه تولید یک موج سینوسی را نشان دادیم. با این حال زمانی که بخواهیم موج سینوسی را برای تولید صدا ایجاد کنیم، پارامتر دیگری نیز به این رابطه افزوده می شود:</p>
+<p><img src="/assets/images/signal/sinus-1.jpg" alt="" /></p>
+<p>که در این رابطه fs نشان دهنده این واقعیت است که در یک ثانیه چند عدد نمونه برداری باید انجام گیرد. در تکه کد بالا مقدار 44000 نشان می دهد که در یک ثانیه 44000 داده در فایل صوتی وجود دارد. نکته دیگر آن که ماکزیمم فرکانس قابل تولید با fs نمونه ، برابر با fs/2 خواهد بود. به عنوان مثال در تکه کد بالا ماکزیمم فرکانس قابل تولید با نرخ نمونه برداری 44000 در ثانیه برابر با 24 کیلوهرتز ( آستانه شنوایی انسان ) است. حال می توانید حدس یزنید که در نرم افزارهای صوتی، چرا فایل های با بیش از 44000 نرخ نمونه برداری نمی توان پیدا کرد!</p>
+<p>هریک از موج های w1 ، w2 ، w11 و w22 به مدت 1 ثانیه از کارت صوتی پخش می شوند. این بدان دلیل است که تعداد نمونه هایی که برای هریک از آن ها تولید گردیده دقیقا 44000 نمونه است ( مقدار i که از 1 تا 44000 است ). در صورتی که بخواهید هریک از امواج فوق به مدت 2 ثانیه از کارت صوتی پخش شوند ، دستور اول را به صورت زیر تغییر دهید:</p>
+<pre><code class="language-matlab">i = 1:88000;</code></pre>
+<p>به عنوان مثال می توانید موج های سینوسی مختلف با فرکانس های گوناگون و دامنه ها و مدت زمان های متفاوت تولید کرده و نتایج هریک را با دیگری مقایسه کنید ( در صورتی که کارت صوتی سیستم تان به آمپلی فایر متصل نیست، از تولید فرکانس های کمتر از 100 هرتز و موج های با دامنه بالا تا حد ممکن خودداری کنید. چرا که ممکن است به سیستم آسیب برساند).</p>
+                    </div>
+
+        <div class="col-md-3">
+                <ul class="list-group">
+        <li class="list-group-item list-group-item-info">
+            مقدمه
+        </li>
+
+                    <li class="list-group-item">
+                                <a href="/signal/introduction/">سیگنال چیست؟</a>
+            </li>
+                    <li class="list-group-item">
+                                <a href="/signal/discretization/">گسسته کردن سیگنال</a>
+            </li>
+                    <li class="list-group-item">
+                                    <span class="glyphicon glyphicon-menu-left" aria-hidden="true"></span>
+                                <a href="/signal/fundamentals/">مفاهیم اولیه در سیگنال</a>
+            </li>
+                    <li class="list-group-item">
+                                <a href="/signal/dtmf/">سیگنال های DTMF</a>
+            </li>
+                    <li class="list-group-item">
+                                <a href="/signal/synthesis-decomposition-superposition/">ترکیب ، تفکیک و انطباق</a>
+            </li>
+                    <li class="list-group-item">
+                                <a href="/signal/impulse-decomposition/">تفکیک ضربه ای سیگنال</a>
+            </li>
+                    <li class="list-group-item">
+                                <a href="/signal/delta-function-and-impulse-response/">تابع دلتا و پاسخ ضربه</a>
+            </li>
+                    <li class="list-group-item">
+                                <a href="/signal/convolution/">کانولوشن سیگنال</a>
+            </li>
+                    <li class="list-group-item">
+                                <a href="/signal/domains/">حوزه زمان و حوزه فرکانسی</a>
+            </li>
+                    <li class="list-group-item">
+                                <a href="/signal/fourier-transform-concept/">تبدیل فوریه گسسته</a>
+            </li>
+            </ul>
+        </div>
+    </div>
+
+</div>
+
+<footer class="footer">
+    <div class="container">
+        <p class="text-muted"> کلیه مطالب وب سایت با رعایت قوانین  <a href="http://ai.amini.eu/www.gnu.org/copyleft/fdl.html">GNU Free Documentation License</a> قابل دسترس می باشند  | 1395- 1389 © </p>
+    </div>
+</footer>
+
+
+<script type="text/javascript" src="/assets/js/jquery-2.2.4.min.js"></script>
+<script type="text/javascript" src="/assets/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="/assets/js/prism.js"></script>
+
+</body>
+</html>
