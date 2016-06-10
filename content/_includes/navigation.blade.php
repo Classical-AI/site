@@ -20,7 +20,7 @@
                         <li><a href="@url('ai/introduction')">هوش مصنوعی</a></li>
                         <li><a href="@url('soft-computing/introduction')">هوش محاسباتی</a></li>
                         <li><a href="@url('signal/introduction')">پردازش سیگنال</a></li>
-                        <li><a href="#">پردازش تصویر</a></li>
+                        <li><a href="@url('image-processing/introduction')">پردازش تصویر</a></li>
                     </ul>
                 </li>
                 <li><a href="@url('about')">درباره</a></li>
