@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+
+    <title>هوش مصنوعی کلاسیک </title>
+
+    <link rel="stylesheet" href="/assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/assets/css/bootstrap-rtl.min.css">
+    <link rel="stylesheet" href="/assets/css/prism.css">
+    <link rel="stylesheet" href="/assets/css/style.css">
+</head>
+
+<body>
+
+<div class="container">
+    <nav class="navbar navbar-default navbar-fixed-top">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar"
+                    aria-expanded="false" aria-controls="navbar">
+                <span class="sr-only">گشودن/بستن منو</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="/">هوش مصنوعی کلاسیک</a>
+        </div>
+        <div id="navbar" class="collapse navbar-collapse">
+            <ul class="nav navbar-nav">
+                <li><a href="/">خانه</a></li>
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
+                       aria-expanded="false">مقالات آموزشی <span class="caret"></span></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="/ai/introduction/">هوش مصنوعی</a></li>
+                        <li><a href="/soft-computing/introduction/">هوش محاسباتی</a></li>
+                        <li><a href="/signal/introduction/">پردازش سیگنال</a></li>
+                        <li><a href="#">پردازش تصویر</a></li>
+                    </ul>
+                </li>
+                <li><a href="/about/">درباره</a></li>
+                <li><a href="/contact/">تماس</a></li>
+            </ul>
+        </div><!--/.nav-collapse -->
+    </div>
+</nav>
+
+    
+    <ol class="breadcrumb">
+        <li><a href="/">خانه</a></li>
+                    <li><a href=" /soft-computing/introduction/ ">هوش محاسباتی</a></li>
+        
+                <li>الگوریتم ژنتیک</li>
+        
+        <li class="active">مقدمه الگوریتم ژنتیک</li>
+    </ol>
+
+    <div id="content" class="row">
+        <div class="col-md-9">
+            <h2>مقدمه الگوریتم ژنتیک</h2>
+                            <p><img src="/assets/images/soft-computing/genetic_intro.jpg" alt="" /></p>
+<p>تا بحال با روش های جستجوی ناآگاهانه ، اگاهانه و متاهیوریستیک برای حل مسائل هوش مصنوعی آشنا شدیم. همچنین دیدیم که در مورد مسادل بهینه سازی اغلب روش های آگاهانه و ناآگاهانه جوابگوی نیاز ما نخواهند بود. چرا که بیشتر مسائل بهینه سازی در رده مسادل NP قرار دارند. بنابراین نیاز به روش جستجوی دیگری داریم که بتواند در فضای حالت مسائل NP به طرف جواب بهینه سراسری حرکت کند. بدین منظور روش های جستجوی متاهیوریستیک را مطرح کردیم و دیدیم که این روش های جستجو می توانند به سمت بیهنگی های سراسری مسئله حرکت کنند. در کنار روش های جستجوی متاهیوریستیکی ، روش های جستجوی دیگری نیز وجود دارند که به روش های تکاملی معروفند. بر اساس نظریه داروین نسل هایی که از ویژگی های و خصوصیات برتری نسبت به نسل های دیگر برخوردارند شانس بیشتری نیز برای بقا و تکثیر خواهند داشت و ویژگی ها و خصوصیات برتر آنها به نسل های بعدی آنان نیز منتقل خواهد شد. همچنین بخش دوم نظریه داروین بیان می کند که هنگام تکثیر یک ارگان فرزند ، به تصادف رویدادهایی اتفاق می افتد که موجب تغییر خصوصیات ارگان فرزند می شود و در صورتی که این تغییر فایده ای برای ارگان فرزند داشته باشد موجب افزایش احتمال بقای آن ارگان فرزند خواهد شد. در محاسبات کامپیوتری ، بر اساس این نظریه داروین روش هایی برای مسائل بهینه سازی مطرح شدند که همه این  روش ها از پردازش تکاملی در طبیعت نشات گرفته اند. ما نیز به این روش های جستجو ، الگوریتم های جستجوی تکاملی می گوییم. انواع مختلف الگوریتم های تکاملی که تا بحال مطرح شده اند، به شرح زیر می باشد :</p>
+<ul>
+<li>Genetic Algorithm</li>
+<li>Genetic Programming</li>
+<li>Evolutionary Strategies</li>
+<li>Evolutionary Programming</li>
+<li>Differential Evolution</li>
+<li>Cultural Evolution</li>
+<li>Co-evolution</li>
+</ul>
+<p>الگوریتم های تکاملی نیز همانند الگوریتم های متاهیوریستیکی ، به شکل تصادفی اما هدایت شده در فضای حالت مسئله حرکت می کنند. با توجه به نظریه داروین پیاده سازی یک الگوریتم تکاملی طی مراحل زیر انجام می پذیرد :</p>
+<ul>
+<li>کدگذاری و نحوه نمایش</li>
+<li>تولید جمعیت اولیه</li>
+<li>محاسبه میزان بهینگی هریک از افراد جمعیت</li>
+<li>انتخاب</li>
+<li>تولید نسل جدید</li>
+<li>جهش در نسل جدید</li>
+</ul>
+<p>در واقع تفاوت الگوریتم های تکاملی گوناگون در نحوه اعمال این مراحل می باشد. الگوریتم های ژنتیک نیز به عنوان یکی از ابزارهای قدرتمند در حل مسائل بهینه سازی از مراحل مذکور برای رسیدن به راه حل بهینه استفاده می کند. شبه کد زیر مراحل کلی اجرای الگوریتم ژنتیک را نشان می دهد.</p>
+<pre><code class="language-basic">Procedure Genetic
+  Generate Population
+    LOOP
+      Calculate Fitness Value of Each Chromosome
+      Select some Chromosomes
+      Crossover the Selected Chromosomes
+      Mutate the Chromosomes
+    Replace Current Population with Offspring
+  UNTIL stop criterion is not satisfied
+END</code></pre>
+                    </div>
+
+        <div class="col-md-3">
+                <ul class="list-group">
+        <li class="list-group-item list-group-item-info">
+            الگوریتم ژنتیک
+        </li>
+
+                    <li class="list-group-item">
+                                    <span class="glyphicon glyphicon-menu-left" aria-hidden="true"></span>
+                                <a href="/soft-computing/introduction/">مقدمه الگوریتم ژنتیک</a>
+            </li>
+                    <li class="list-group-item">
+                                <a href="/soft-computing/genetic-coding/">کدگذاری و نحوه نمایش</a>
+            </li>
+                    <li class="list-group-item">
+                                <a href="/soft-computing/genetic-population/">تولید جمعیت اولیه</a>
+            </li>
+                    <li class="list-group-item">
+                                <a href="/soft-computing/genetic-fitness/">تابع بهینگی</a>
+            </li>
+                    <li class="list-group-item">
+                                <a href="/soft-computing/genetic-selection/">عملگر انتخاب</a>
+            </li>
+                    <li class="list-group-item">
+                                <a href="/soft-computing/genetic-crossover/">عملگر ادغام</a>
+            </li>
+                    <li class="list-group-item">
+                                <a href="/soft-computing/genetic-mutation/">عملگر جهش و جایگزینی</a>
+            </li>
+            </ul>
+    <ul class="list-group">
+        <li class="list-group-item list-group-item-info">
+            برنامه&zwnj;های نمونه
+        </li>
+
+                    <li class="list-group-item">
+                                <a href="/soft-computing/program-tsp/">فروشنده دوره گرد</a>
+            </li>
+                    <li class="list-group-item">
+                                <a href="/soft-computing/program-queen/">مسئله چند وزیر</a>
+            </li>
+            </ul>
+        </div>
+    </div>
+
+</div>
+
+<footer class="footer">
+    <div class="container">
+        <p class="text-muted"> کلیه مطالب وب سایت با رعایت قوانین  <a href="http://ai.amini.eu/www.gnu.org/copyleft/fdl.html">GNU Free Documentation License</a> قابل دسترس می باشند  | 1395- 1389 © </p>
+    </div>
+</footer>
+
+
+<script type="text/javascript" src="/assets/js/jquery-2.2.4.min.js"></script>
+<script type="text/javascript" src="/assets/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="/assets/js/prism.js"></script>
+
+</body>
+</html>

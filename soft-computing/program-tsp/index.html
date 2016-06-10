@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+
+    <title>هوش مصنوعی کلاسیک </title>
+
+    <link rel="stylesheet" href="/assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/assets/css/bootstrap-rtl.min.css">
+    <link rel="stylesheet" href="/assets/css/prism.css">
+    <link rel="stylesheet" href="/assets/css/style.css">
+</head>
+
+<body>
+
+<div class="container">
+    <nav class="navbar navbar-default navbar-fixed-top">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar"
+                    aria-expanded="false" aria-controls="navbar">
+                <span class="sr-only">گشودن/بستن منو</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="/">هوش مصنوعی کلاسیک</a>
+        </div>
+        <div id="navbar" class="collapse navbar-collapse">
+            <ul class="nav navbar-nav">
+                <li><a href="/">خانه</a></li>
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
+                       aria-expanded="false">مقالات آموزشی <span class="caret"></span></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="/ai/introduction/">هوش مصنوعی</a></li>
+                        <li><a href="/soft-computing/introduction/">هوش محاسباتی</a></li>
+                        <li><a href="/signal/introduction/">پردازش سیگنال</a></li>
+                        <li><a href="#">پردازش تصویر</a></li>
+                    </ul>
+                </li>
+                <li><a href="/about/">درباره</a></li>
+                <li><a href="/contact/">تماس</a></li>
+            </ul>
+        </div><!--/.nav-collapse -->
+    </div>
+</nav>
+
+    
+    <ol class="breadcrumb">
+        <li><a href="/">خانه</a></li>
+                    <li><a href=" /soft-computing/introduction/ ">هوش محاسباتی</a></li>
+        
+                <li>برنامه‌های نمونه</li>
+        
+        <li class="active">فروشنده دوره گرد</li>
+    </ol>
+
+    <div id="content" class="row">
+        <div class="col-md-9">
+            <h2>فروشنده دوره گرد</h2>
+                            <p><img src="/assets/images/soft-computing/tsp.jpg" alt="" /></p>
+<p>فرض کنید فروشنده ای بخواهد برای فروش کالاهایش به 20 شهر مسافرت کند . هر شهر توسط یک جاده به چند شهر دیگر متصل است . برای به حداقل رساندن زمان مسافرت ، می خواهیم کوتاهترین مسیری را پیدا کنیم که از شهر محل سکونت فروشنده شروع می شود و از هر شهر دقیقا یکبار عبور می کند و مجددا به شهر محل سکونت فروشنده باز می گردد. تعیین کوتاهترین مسیر در این مسئله را مسئله فروشنده دوره گرد می نامیم.</p>
+<h4>درباره برنامه</h4>
+<p>الگوریتم هایی با استفاده از روش برنامه نویسی پویا و الگوریتم های ژنتیک برای حل مسئله فروشنده دوره گرد ارائه شده اند . در این برنامه از الگوریتم های جدیدی ارائه شده است که پس از مطالعه دیگر الگوریتم ها و بهبود و اضافه کردن روش های جدید به آنها پیاده سازی شده است.</p>
+<p>در این برنامه از الگوریتم های ژنتیک و روش Simulated Annealing برای حل مسئله فروشنده دوره گرد استفاده شده است. عملگر های ادغام ، جهش و انتخاب الگوریتم ژنتیک نیز به چند روش مختلف پیاده سازی شده اند که می توان بر هر مسئله ترکیبی از آنها را امتحان کرد.</p>
+<h4>نحوه استفاده از برنامه</h4>
+<p>برنامه از سه قسمت مختلف تشکیل شده است که به شرح زیر می باشند :</p>
+<ol>
+<li>قسمت سمت چپ برای تنظیم پارامترهای الگوریتم ژنتیک می باشد</li>
+<li>قسمت سمت راست نقشه ای است که بر روی آن شهر ها را مشخص می کنیم</li>
+<li>قسمت پایینی برای تنظیم پارامترهای الکوریتم Simulated Annealing می باشد .</li>
+</ol>
+<h4>مشخص کردن شهر ها بر روی نقشه</h4>
+<p>برای ایجاد یک نقشه جدید دو روش مختلف وجود دارد ، در روش اول برنامه به صورت تصادفی تعداد مشخصی شهر را بر روی نقشه قرار می دهد و در روش دوم ، شما محل شهر ها را بر روی نقشه مشخص می کنید.</p>
+<p>برای تولید نقشه به صورت تصادفی از قسمت سمت چپ و در فیلد City تعداد شهر های نقشه را وارد کرده و بر روی دکمه Random کلیک کنید . برنامه به تعداد شهر هایی که مشخص کرده اید به ثورت تصادفی شهر بر روی نقشه قرار می دهد. در صورتی که بخواهید به طور دستی نقشه را طراحی کنید ، کافی است در محل مورد نظر بر روی نقشه یک بار کلیک کنید . در نقظه کلیک شده به نقطه به رنگ قرمز قرار می گیرد که نشان دهنده یک شهر بر روی نقشه است. برای پاک کردن نقشه نیز بر روی دکمه Clear کیلک کنید .</p>
+                    </div>
+
+        <div class="col-md-3">
+                <ul class="list-group">
+        <li class="list-group-item list-group-item-info">
+            الگوریتم ژنتیک
+        </li>
+
+                    <li class="list-group-item">
+                                <a href="/soft-computing/introduction/">مقدمه الگوریتم ژنتیک</a>
+            </li>
+                    <li class="list-group-item">
+                                <a href="/soft-computing/genetic-coding/">کدگذاری و نحوه نمایش</a>
+            </li>
+                    <li class="list-group-item">
+                                <a href="/soft-computing/genetic-population/">تولید جمعیت اولیه</a>
+            </li>
+                    <li class="list-group-item">
+                                <a href="/soft-computing/genetic-fitness/">تابع بهینگی</a>
+            </li>
+                    <li class="list-group-item">
+                                <a href="/soft-computing/genetic-selection/">عملگر انتخاب</a>
+            </li>
+                    <li class="list-group-item">
+                                <a href="/soft-computing/genetic-crossover/">عملگر ادغام</a>
+            </li>
+                    <li class="list-group-item">
+                                <a href="/soft-computing/genetic-mutation/">عملگر جهش و جایگزینی</a>
+            </li>
+            </ul>
+    <ul class="list-group">
+        <li class="list-group-item list-group-item-info">
+            برنامه&zwnj;های نمونه
+        </li>
+
+                    <li class="list-group-item">
+                                    <span class="glyphicon glyphicon-menu-left" aria-hidden="true"></span>
+                                <a href="/soft-computing/program-tsp/">فروشنده دوره گرد</a>
+            </li>
+                    <li class="list-group-item">
+                                <a href="/soft-computing/program-queen/">مسئله چند وزیر</a>
+            </li>
+            </ul>
+        </div>
+    </div>
+
+</div>
+
+<footer class="footer">
+    <div class="container">
+        <p class="text-muted"> کلیه مطالب وب سایت با رعایت قوانین  <a href="http://ai.amini.eu/www.gnu.org/copyleft/fdl.html">GNU Free Documentation License</a> قابل دسترس می باشند  | 1395- 1389 © </p>
+    </div>
+</footer>
+
+
+<script type="text/javascript" src="/assets/js/jquery-2.2.4.min.js"></script>
+<script type="text/javascript" src="/assets/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="/assets/js/prism.js"></script>
+
+</body>
+</html>

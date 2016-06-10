@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+
+    <title>هوش مصنوعی کلاسیک </title>
+
+    <link rel="stylesheet" href="/assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/assets/css/bootstrap-rtl.min.css">
+    <link rel="stylesheet" href="/assets/css/prism.css">
+    <link rel="stylesheet" href="/assets/css/style.css">
+</head>
+
+<body>
+
+<div class="container">
+    <nav class="navbar navbar-default navbar-fixed-top">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar"
+                    aria-expanded="false" aria-controls="navbar">
+                <span class="sr-only">گشودن/بستن منو</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="/">هوش مصنوعی کلاسیک</a>
+        </div>
+        <div id="navbar" class="collapse navbar-collapse">
+            <ul class="nav navbar-nav">
+                <li><a href="/">خانه</a></li>
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
+                       aria-expanded="false">مقالات آموزشی <span class="caret"></span></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="/ai/introduction/">هوش مصنوعی</a></li>
+                        <li><a href="/soft-computing/introduction/">هوش محاسباتی</a></li>
+                        <li><a href="/signal/introduction/">پردازش سیگنال</a></li>
+                        <li><a href="#">پردازش تصویر</a></li>
+                    </ul>
+                </li>
+                <li><a href="/about/">درباره</a></li>
+                <li><a href="/contact/">تماس</a></li>
+            </ul>
+        </div><!--/.nav-collapse -->
+    </div>
+</nav>
+
+    
+    <ol class="breadcrumb">
+        <li><a href="/">خانه</a></li>
+                    <li><a href=" /soft-computing/introduction/ ">هوش محاسباتی</a></li>
+        
+                <li>الگوریتم ژنتیک</li>
+        
+        <li class="active">تولید جمعیت اولیه</li>
+    </ol>
+
+    <div id="content" class="row">
+        <div class="col-md-9">
+            <h2>تولید جمعیت اولیه</h2>
+                            <p><img src="/assets/images/soft-computing/genetic_population.jpg" alt="" /></p>
+<p>الگوریتم ژنتیک کارخود را با تولید جمعیت اولیه ای از کروموزوم ها آغاز می کند و سپس در یک حلقه به طور مکرر تعدادی از کروموزوم های برتر نسل فعلی را انتخاب کرده و سپس نسل جدیدی را از این کروموزوم ها تولید می کند. همانطور که دیدیم هر کروموزوم نشان دهنده یک حالت از فضای حالت مسئله می باشد و بنابراین منظور از تولید جمعیت اولیه، تولید تعدادی جواب برای مسئله خواهد بود.</p>
+<p>تولید جواب های اولیه نیز به دو صورت تصادفی و هیوریستیکی می تواند انجام پذیرد. به عنوان   مثال در مسئله 8 وزیر می توانیم به شکل تصادفی وزیرها را در خانه های صفحه شطرنج قرار دهیم و یا در مسئله فروشنده دوره گرد می توانیم ترتیب ملاقات شهرها هم به شکل تصادفی و هم به شکل هیوریستیکی انتخاب کنیم.</p>
+<p>نکته مهم هنگام تولید جمعیت اولیه آن است که هنگام تولید جواب برای مسئله ( تصادفی یا هیوریستیکی ) جواب تولید شده باید به شکل کروموزومی که در مرحله قبل تعیین کردیم کدگذاری شده و به مجموعه جمعیت اضافه گردد. بنابراین از تولید جواب هایی که موجب نقض نحوه کدگذاری تعیین شده برای کروموزوم گردد باید اجتناب کنیم.</p>
+<p>حال ممکن است این سوال مطرح شود که تعداد کروموزوم هایی که برای جمعیت اولیه تولید می کنیم چگونه تعیین می گردد؟ جواب قطعی برای این سوال وجود ندارد و در برخی موارد تعداد افراد ( کروموزوم ) جمعیت به شکل تجربی انتخاب می شود. اما یک اصل کلی وجود دارد که در تعیین اندازه جمعیت اولیه باید مدنظر قرار دهیم. افزایش اندازه جمعیت با اینکه موجب افزایش قدرت محاسباتی الگوریتم می گردد ، از طرف دیگر نیز به طور چشمگیری مدت زمان اجرای الگوریتم را افزایش می دهد. همچنین در برخی موارد بزرگی جمعیت موجب همگرایی سریع الگوریتم خواهد شد که در نتیجه آن جواب هایی دور از نقاط بهینگی سراسری را تولید خواهد کرد. در مقابل جمعیت با اندازه کوچک نیز توانایی چندانی به خصوص در مسائل پیچیده برای حل مسئله نخواهد داشت.</p>
+                    </div>
+
+        <div class="col-md-3">
+                <ul class="list-group">
+        <li class="list-group-item list-group-item-info">
+            الگوریتم ژنتیک
+        </li>
+
+                    <li class="list-group-item">
+                                <a href="/soft-computing/introduction/">مقدمه الگوریتم ژنتیک</a>
+            </li>
+                    <li class="list-group-item">
+                                <a href="/soft-computing/genetic-coding/">کدگذاری و نحوه نمایش</a>
+            </li>
+                    <li class="list-group-item">
+                                    <span class="glyphicon glyphicon-menu-left" aria-hidden="true"></span>
+                                <a href="/soft-computing/genetic-population/">تولید جمعیت اولیه</a>
+            </li>
+                    <li class="list-group-item">
+                                <a href="/soft-computing/genetic-fitness/">تابع بهینگی</a>
+            </li>
+                    <li class="list-group-item">
+                                <a href="/soft-computing/genetic-selection/">عملگر انتخاب</a>
+            </li>
+                    <li class="list-group-item">
+                                <a href="/soft-computing/genetic-crossover/">عملگر ادغام</a>
+            </li>
+                    <li class="list-group-item">
+                                <a href="/soft-computing/genetic-mutation/">عملگر جهش و جایگزینی</a>
+            </li>
+            </ul>
+    <ul class="list-group">
+        <li class="list-group-item list-group-item-info">
+            برنامه&zwnj;های نمونه
+        </li>
+
+                    <li class="list-group-item">
+                                <a href="/soft-computing/program-tsp/">فروشنده دوره گرد</a>
+            </li>
+                    <li class="list-group-item">
+                                <a href="/soft-computing/program-queen/">مسئله چند وزیر</a>
+            </li>
+            </ul>
+        </div>
+    </div>
+
+</div>
+
+<footer class="footer">
+    <div class="container">
+        <p class="text-muted"> کلیه مطالب وب سایت با رعایت قوانین  <a href="http://ai.amini.eu/www.gnu.org/copyleft/fdl.html">GNU Free Documentation License</a> قابل دسترس می باشند  | 1395- 1389 © </p>
+    </div>
+</footer>
+
+
+<script type="text/javascript" src="/assets/js/jquery-2.2.4.min.js"></script>
+<script type="text/javascript" src="/assets/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="/assets/js/prism.js"></script>
+
+</body>
+</html>
