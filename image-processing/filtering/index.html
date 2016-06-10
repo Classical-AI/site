@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+
+    <title>هوش مصنوعی کلاسیک </title>
+
+    <link rel="stylesheet" href="/assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/assets/css/bootstrap-rtl.min.css">
+    <link rel="stylesheet" href="/assets/css/prism.css">
+    <link rel="stylesheet" href="/assets/css/style.css">
+</head>
+
+<body>
+
+<div class="container">
+    <nav class="navbar navbar-default navbar-fixed-top">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar"
+                    aria-expanded="false" aria-controls="navbar">
+                <span class="sr-only">گشودن/بستن منو</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="/">هوش مصنوعی کلاسیک</a>
+        </div>
+        <div id="navbar" class="collapse navbar-collapse">
+            <ul class="nav navbar-nav">
+                <li><a href="/">خانه</a></li>
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
+                       aria-expanded="false">مقالات آموزشی <span class="caret"></span></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="/ai/introduction/">هوش مصنوعی</a></li>
+                        <li><a href="/soft-computing/introduction/">هوش محاسباتی</a></li>
+                        <li><a href="/signal/introduction/">پردازش سیگنال</a></li>
+                        <li><a href="/image-processing/introduction/">پردازش تصویر</a></li>
+                    </ul>
+                </li>
+                <li><a href="/about/">درباره</a></li>
+                <li><a href="/contact/">تماس</a></li>
+            </ul>
+        </div><!--/.nav-collapse -->
+    </div>
+</nav>
+
+    
+    <ol class="breadcrumb">
+        <li><a href="/">خانه</a></li>
+                    <li><a href=" /image-processing/introduction/ ">پردازش تصویر</a></li>
+        
+                <li>مقدمه</li>
+        
+        <li class="active">تعریف عمل فیلتر کردن</li>
+    </ol>
+
+    <div id="content" class="row">
+        <div class="col-md-9">
+            <h2>تعریف عمل فیلتر کردن</h2>
+                            <p>در کل پیکسل های تصویر را به دوسته می توان تقسیم کرد:</p>
+<ol>
+<li>پیکسل های تیز</li>
+<li>
+<p>پیکسل های آرام</p>
+<p>به عنوان مثال شکل زیر را در نظر بگیرید:</p>
+</li>
+</ol>
+<p><img src="/assets/images/image-processing/filtering.jpg" alt="" /></p>
+<p>پیکسل های زیر ناحیه های قرمز در این تصویر را در دسته پیکسل های تیز قرار می دهیم. پیکسل هایی از تصویر را که اختلاف شدت روشنایی آنها ( مقدار پیکسل ) با پیکسل های همسایه خود زیاد باشند، پیکسل های تیز می نامیم. پیکسل های تیز معمولا یا نشان دهنده لبه های اشیای موجود در تصویر هستند یا نشان دهنده نویزهای یک تصویر هستند و در حالت کلی می توان گفت که جزئیات تصویر با استفاده از پیکسل های تیز استخراج می شوند. به عنوان مثال، تصاویری که هنگام شب توسط موبایل یا یک وب کم گرفته می شوند، دارای نویز معروف فلفل-نمکی هستند. تصویر زیر گویای این مطلب است:</p>
+<p><img src="/assets/images/image-processing/saltpepper.jpg" alt="" /></p>
+<p>در مقابل پیکسل های تیز، پیکسل های آرام تصویر قرار دارند ( ناحیه های آبی رنگ در مثال فوق ). پیکسل هایی از تصویر که اختلاف شدت روشنایی آنها با پیکسل های همجوار خود کم است، پیکسل های آرام تصویر می نامیم. حال با توجه به این مطالب به شرح فیلتر کردن تصویر می پردازیم. در حوزه مکانی فیلترها به دسته تقسیم می شوند:</p>
+<ol>
+<li>فیلترهای آرام کننده</li>
+<li>فیلترهای تیزکننده</li>
+</ol>
+<p><img src="/assets/images/image-processing/fashion-sharp.jpg" alt="" /></p>
+<p>فیلترهای آرام کننده با اعمال تغییر در شدت روشنایی پیکسل های تیز تصویر موجب تولید تصاویر آرام تری می شود. همچنین این فیلترها تاثیر چندانی بر روی پیکسل های آرام تصویر نمی گذارند. آرام شدن تصویر بدین معنی است که بخشی از جزئیات تصویر از بین می رود. به عنوان مثال اعمال یک فیلتر آرام کننده بر روی یک تصویر نویزدار موجب کاهش شدت نویزها خواهد شد. یک مثال کاربردی ساده از فیلتر های آرام کننده را می توان حذف چین و چروک ها از تصاویر صورت بیان کرد (قابل توجه دختر خانما ;-) ) .  تصاویر روبرو گویای این مطلب هستند.</p>
+<p><img src="/assets/images/image-processing/fashion-blur.jpg" alt="" /></p>
+<p>ساده ترین فیلترهای آرام کننده تصویر فیلترهای میانگین هستند. یک فیلتر میانگین m<em>n، ماسکی است که مقدار هریک از عناصر آن برابر با عدد 1/(m.n) است. به عبارت دیگر مقدار هر پیکسل در تصویر خروجی برابر است با میانگین مقدار شدت روشنایی پیکسل جاری و پیکسل های همسایه پیکسل جاری. برای آرام کردن تصویر فوق از یک فیلتر میانگین 3</em>3 استفاده کرده ایم که هریک از عناصر این فیلتر دارای مقداری برابر با 1/9 هستند.  سپس با استفاده از کانولوشن این فیلتر را بر وی تصویر بالا اعمال کرده و تصویر پایین را تولید کرده ایم. برخلاف فیلترهای آرام کننده، فیلترهای تیز کننده با اعمال تغییر بر روی پیکسل های آرام تصویر موجب استحراج جزئیات بیشتری از تصویر می شوند. در برخی موارد می بینیم که تصویر داری حالتی بلور مانند است ( جزئیات نمایان نیستند) . در چنین مواردی برای حذف خاصیت بلوری، از فیلترهای تیز کننده تصویر استفاده می کنیم:</p>
+<p><img src="/assets/images/image-processing/flower-sharp.jpg" alt="" /></p>
+<p>در شکل فوق برای افزایش جزئیات تصویر و به دست آوردن تصویر واضح تر، فیلتر تیز کننده ای را بر روی تصویر سمت چپ اعمال کرده و تصویر سمت راست را تولید کرده ایم.</p>
+<h4>پردازش تصویر در MATLAB</h4>
+<p>اعمال فیلتر در محیط MATLAB با استفاده از دستور <code>imfilter</code> انجام می پذیرد. این تابع ، فیلتر مورد نظر را بر روی تصویر مشخص شده در دیگر پارامتر تابع اعمال کرده و نتیجه را به صورت ماتریسی بر می گرداند. مجموعه دستورات زیر آرام کردن ( بلور کردن ) تصویر را با استفاده از تابع <code>imfilter</code> نشان می دهند.</p>
+<pre><code class="language-matlab">&gt;&gt; im = imread('rice.png');
+&gt;&gt; filter = ones(3,3) .* 0.11;
+&gt;&gt; imFilt = imfilter(im,filter);
+&gt;&gt; imshow(im),figure,imshow(imFilt);</code></pre>
+                    </div>
+
+        <div class="col-md-3">
+                <ul class="list-group">
+        <li class="list-group-item list-group-item-info">
+            مقدمه
+        </li>
+
+                    <li class="list-group-item">
+                                <a href="/image-processing/introduction/">مقدمه پردازش تصویر</a>
+            </li>
+                    <li class="list-group-item">
+                                <a href="/image-processing/definition/">تصویر دیجیتالی چیست؟</a>
+            </li>
+                    <li class="list-group-item">
+                                <a href="/image-processing/grayscale/">تصویر حاکستری (Grayscale)</a>
+            </li>
+                    <li class="list-group-item">
+                                <a href="/image-processing/subtract/">تفریق دو تصویر</a>
+            </li>
+                    <li class="list-group-item">
+                                <a href="/image-processing/add/">جمع دو تصویر</a>
+            </li>
+                    <li class="list-group-item">
+                                <a href="/image-processing/complement/">مکمل کردن تصویر</a>
+            </li>
+                    <li class="list-group-item">
+                                <a href="/image-processing/average/">میانگین گیری از تصویر</a>
+            </li>
+                    <li class="list-group-item">
+                                <a href="/image-processing/histogram/">پردازش هیستوگرام تصویر</a>
+            </li>
+                    <li class="list-group-item">
+                                <a href="/image-processing/convolution/">ارتقای تصویر و عملگر کانولوشن</a>
+            </li>
+                    <li class="list-group-item">
+                                    <span class="glyphicon glyphicon-menu-left" aria-hidden="true"></span>
+                                <a href="/image-processing/filtering/">تعریف عمل فیلتر کردن</a>
+            </li>
+                    <li class="list-group-item">
+                                <a href="/image-processing/spatial-filters/">فیلترهای آرام کننده حوزه مکانی</a>
+            </li>
+                    <li class="list-group-item">
+                                <a href="/image-processing/sharp-filters/">فیلترهای تیز کننده حوزه مکانی</a>
+            </li>
+                    <li class="list-group-item">
+                                <a href="/image-processing/set-operators/">عملگرهای مجموعه&zwnj;ای</a>
+            </li>
+                    <li class="list-group-item">
+                                <a href="/image-processing/morphologic-dilate/">گسترش باینری مورفولوژیکی</a>
+            </li>
+                    <li class="list-group-item">
+                                <a href="/image-processing/morphologic-erode/">سایش باینری مورفولوژیکی</a>
+            </li>
+                    <li class="list-group-item">
+                                <a href="/image-processing/morphologic-closing-and-opening/">بستن و بازکردن باینری مورفولوژیکی</a>
+            </li>
+                    <li class="list-group-item">
+                                <a href="/image-processing/morphologic-skeleton/">استخراج اسکلت بندی اشیاء</a>
+            </li>
+            </ul>
+        </div>
+    </div>
+
+</div>
+
+<footer class="footer">
+    <div class="container">
+        <p class="text-muted"> کلیه مطالب وب سایت با رعایت قوانین  <a href="http://ai.amini.eu/www.gnu.org/copyleft/fdl.html">GNU Free Documentation License</a> قابل دسترس می باشند  | 1395- 1389 © </p>
+    </div>
+</footer>
+
+
+<script type="text/javascript" src="/assets/js/jquery-2.2.4.min.js"></script>
+<script type="text/javascript" src="/assets/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="/assets/js/prism.js"></script>
+
+</body>
+</html>

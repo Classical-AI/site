@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+
+    <title>هوش مصنوعی کلاسیک </title>
+
+    <link rel="stylesheet" href="/assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/assets/css/bootstrap-rtl.min.css">
+    <link rel="stylesheet" href="/assets/css/prism.css">
+    <link rel="stylesheet" href="/assets/css/style.css">
+</head>
+
+<body>
+
+<div class="container">
+    <nav class="navbar navbar-default navbar-fixed-top">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar"
+                    aria-expanded="false" aria-controls="navbar">
+                <span class="sr-only">گشودن/بستن منو</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="/">هوش مصنوعی کلاسیک</a>
+        </div>
+        <div id="navbar" class="collapse navbar-collapse">
+            <ul class="nav navbar-nav">
+                <li><a href="/">خانه</a></li>
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
+                       aria-expanded="false">مقالات آموزشی <span class="caret"></span></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="/ai/introduction/">هوش مصنوعی</a></li>
+                        <li><a href="/soft-computing/introduction/">هوش محاسباتی</a></li>
+                        <li><a href="/signal/introduction/">پردازش سیگنال</a></li>
+                        <li><a href="/image-processing/introduction/">پردازش تصویر</a></li>
+                    </ul>
+                </li>
+                <li><a href="/about/">درباره</a></li>
+                <li><a href="/contact/">تماس</a></li>
+            </ul>
+        </div><!--/.nav-collapse -->
+    </div>
+</nav>
+
+    
+    <ol class="breadcrumb">
+        <li><a href="/">خانه</a></li>
+                    <li><a href=" /image-processing/introduction/ ">پردازش تصویر</a></li>
+        
+                <li>مقدمه</li>
+        
+        <li class="active">پردازش هیستوگرام تصویر</li>
+    </ol>
+
+    <div id="content" class="row">
+        <div class="col-md-9">
+            <h2>پردازش هیستوگرام تصویر</h2>
+                            <p>هیستوگرام تصویر نموداری است که توسط آن تعداد پیکسل های هر سطح روشنایی در تصویر ورودی مشخص می شود. فرض کنید تصویر ورودی یک تصویر Grayscale با 256 سطح روشنایی باشد ، بنابراین هریک از پیکسل های تصویر مقداری در بازه [255...0] می توانند داشته باشند.</p>
+<p>برای به دست آوردن هیستوگرام تصویر ،کافی است با پیمایش کل پیکسل های تصویر ، تعداد پیکسل های هر سطح روشنایی را محاسبه می کنیم . هیستوگرام نرمال نیز از تقسیم کردن مقادیر هیستوگرام به تعداد کل پیکسل های تصویر به دست می آید. نرمال سازی هیستوگرام موجب می شود که مقادیر هیستوگرام در بازه [0,1] قرار گیرند. شکل روبرو تصویری را به همراه هیستوگرام نرمال آن نشان می دهد.</p>
+<p><img src="/assets/images/image-processing/rice.jpg" alt="" />
+<img src="/assets/images/image-processing/histogram.jpg" alt="" /></p>
+<p>یکی از کاربـردهـای هیستوگرام در فوکوس خودکـار دوربین های دیجیتالی است. بـدین صورت   که لنز دوربین از ابتدا تا انتها حرکت کرده و در هر گام از حرکت خود تصویری از صحنه می گیرد. سپس کنتراست تصویر گرفته شده را با استفاده از هیستوگرام آن محاسبه می کند. پس از آن که لنز به انتهای حرکتی خود رسید، محلی از حرکت لنز که در آن تصویر دارای بیشترین کنتراست خود بوده است، به عنوان محل لنز تعیین می گردد.</p>
+<p>روش مذکور یکی از ساده ترین روش های فوکوس خودکار دوربین می باشد و همانطور که می توان حدس زد این الگوریتم در صحنه هایی که رنگ تیره و روشن باهم وجود داشته باشد، دچار اشکالاتی خواهد بود و باید تغییراتی در آن اعمال کرد (مفهوم کنتراست در ادامه بیان شده است).</p>
+<h4>تعدیل هیستوگرام</h4>
+<p>یکی دیگر از کاربردهای هیستورگرام در افزایش کنتراست تصاویر با کنتراست پایین است. زمانی که می گوییم کنتراست تصویری کم است این بدان معنا است که اختلاف بین کمترین و بیشتری شدت روشنایی تصویر کم است. هم تعدیل سازی هیستوگرام موجب می شود که کنتراست تصویر ورودی تا حد ممکن افزایش یابد.  به عنوان مثال شکل زیر تصویری را قبل و بعد از تعدیل سازی هیستوگرام نشان می دهد:</p>
+<p><img src="/assets/images/image-processing/historam-adjustment.jpg" alt="" /></p>
+<p>الگوریتم زیر روش تعدیل سازی هیستوگرام را نشان می دهد :</p>
+<ol>
+<li>هیستوگرام تصویر را محاسبه می کنیم. فرض کنید مقادیر هیستوگرام در آرایه hist قرار گیرد.</li>
+<li>
+<p>با استفاده از فرمول زیر فراوانی هیستوگرام را محاسبه می کنیم :</p>
+<pre><code>histCum[ i ] = histCum[ i-1 ] + hist[ i ]</code></pre>
+</li>
+<li>
+<p>از فرمول زیر استفاده کرده و هیستوگرام تعدیل شده را محاسبه می کنیم :</p>
+<pre><code>eqHist[i] = Truncate( [(L * histCum[i]) – N]/N )</code></pre>
+</li>
+<li>
+<p>در مرحله نهایی مقادیر جدید پیکسل ها را به صورت زیر مقدار دهی می کنیم :</p>
+<pre><code>Result[ i , j ] = eqHist[ input[ i , j ] ]</code></pre>
+</li>
+</ol>
+<p>که در این فرمول L تعداد سطوح خاکستری و N تعداد کل پیکسل ها، Result تصویر خروجی و input تصویر ورودی را نشان می دهند.</p>
+<h4>پردازش تصویر در MATLAB</h4>
+<p>تعدیل سازی هیستوگرام در MATLAB با استفاده از تابع <code>histeq</code> و به شکل زیر انجام می پذیرد :</p>
+<pre><code class="language-matlab">&gt;&gt; I = imread('tire.tif');
+&gt;&gt; J = histeq(I);
+&gt;&gt; figure, imshow(I), figure, imshow(J);</code></pre>
+                    </div>
+
+        <div class="col-md-3">
+                <ul class="list-group">
+        <li class="list-group-item list-group-item-info">
+            مقدمه
+        </li>
+
+                    <li class="list-group-item">
+                                <a href="/image-processing/introduction/">مقدمه پردازش تصویر</a>
+            </li>
+                    <li class="list-group-item">
+                                <a href="/image-processing/definition/">تصویر دیجیتالی چیست؟</a>
+            </li>
+                    <li class="list-group-item">
+                                <a href="/image-processing/grayscale/">تصویر حاکستری (Grayscale)</a>
+            </li>
+                    <li class="list-group-item">
+                                <a href="/image-processing/subtract/">تفریق دو تصویر</a>
+            </li>
+                    <li class="list-group-item">
+                                <a href="/image-processing/add/">جمع دو تصویر</a>
+            </li>
+                    <li class="list-group-item">
+                                <a href="/image-processing/complement/">مکمل کردن تصویر</a>
+            </li>
+                    <li class="list-group-item">
+                                <a href="/image-processing/average/">میانگین گیری از تصویر</a>
+            </li>
+                    <li class="list-group-item">
+                                    <span class="glyphicon glyphicon-menu-left" aria-hidden="true"></span>
+                                <a href="/image-processing/histogram/">پردازش هیستوگرام تصویر</a>
+            </li>
+                    <li class="list-group-item">
+                                <a href="/image-processing/convolution/">ارتقای تصویر و عملگر کانولوشن</a>
+            </li>
+                    <li class="list-group-item">
+                                <a href="/image-processing/filtering/">تعریف عمل فیلتر کردن</a>
+            </li>
+                    <li class="list-group-item">
+                                <a href="/image-processing/spatial-filters/">فیلترهای آرام کننده حوزه مکانی</a>
+            </li>
+                    <li class="list-group-item">
+                                <a href="/image-processing/sharp-filters/">فیلترهای تیز کننده حوزه مکانی</a>
+            </li>
+                    <li class="list-group-item">
+                                <a href="/image-processing/set-operators/">عملگرهای مجموعه&zwnj;ای</a>
+            </li>
+                    <li class="list-group-item">
+                                <a href="/image-processing/morphologic-dilate/">گسترش باینری مورفولوژیکی</a>
+            </li>
+                    <li class="list-group-item">
+                                <a href="/image-processing/morphologic-erode/">سایش باینری مورفولوژیکی</a>
+            </li>
+                    <li class="list-group-item">
+                                <a href="/image-processing/morphologic-closing-and-opening/">بستن و بازکردن باینری مورفولوژیکی</a>
+            </li>
+                    <li class="list-group-item">
+                                <a href="/image-processing/morphologic-skeleton/">استخراج اسکلت بندی اشیاء</a>
+            </li>
+            </ul>
+        </div>
+    </div>
+
+</div>
+
+<footer class="footer">
+    <div class="container">
+        <p class="text-muted"> کلیه مطالب وب سایت با رعایت قوانین  <a href="http://ai.amini.eu/www.gnu.org/copyleft/fdl.html">GNU Free Documentation License</a> قابل دسترس می باشند  | 1395- 1389 © </p>
+    </div>
+</footer>
+
+
+<script type="text/javascript" src="/assets/js/jquery-2.2.4.min.js"></script>
+<script type="text/javascript" src="/assets/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="/assets/js/prism.js"></script>
+
+</body>
+</html>

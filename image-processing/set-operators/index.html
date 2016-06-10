@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+
+    <title>هوش مصنوعی کلاسیک </title>
+
+    <link rel="stylesheet" href="/assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/assets/css/bootstrap-rtl.min.css">
+    <link rel="stylesheet" href="/assets/css/prism.css">
+    <link rel="stylesheet" href="/assets/css/style.css">
+</head>
+
+<body>
+
+<div class="container">
+    <nav class="navbar navbar-default navbar-fixed-top">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar"
+                    aria-expanded="false" aria-controls="navbar">
+                <span class="sr-only">گشودن/بستن منو</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="/">هوش مصنوعی کلاسیک</a>
+        </div>
+        <div id="navbar" class="collapse navbar-collapse">
+            <ul class="nav navbar-nav">
+                <li><a href="/">خانه</a></li>
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
+                       aria-expanded="false">مقالات آموزشی <span class="caret"></span></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="/ai/introduction/">هوش مصنوعی</a></li>
+                        <li><a href="/soft-computing/introduction/">هوش محاسباتی</a></li>
+                        <li><a href="/signal/introduction/">پردازش سیگنال</a></li>
+                        <li><a href="/image-processing/introduction/">پردازش تصویر</a></li>
+                    </ul>
+                </li>
+                <li><a href="/about/">درباره</a></li>
+                <li><a href="/contact/">تماس</a></li>
+            </ul>
+        </div><!--/.nav-collapse -->
+    </div>
+</nav>
+
+    
+    <ol class="breadcrumb">
+        <li><a href="/">خانه</a></li>
+                    <li><a href=" /image-processing/introduction/ ">پردازش تصویر</a></li>
+        
+                <li>مقدمه</li>
+        
+        <li class="active">عملگرهای مجموعه‌ای</li>
+    </ol>
+
+    <div id="content" class="row">
+        <div class="col-md-9">
+            <h2>عملگرهای مجموعه‌ای</h2>
+                            <p>یکی از مهمترین مراحل در پیش پردازش تصویر ، پردازش شکل شناسی می باشد. در این قسمت تنها به بررسی شکل شناسی برای تصاویر دودویی خواهیم پرداخت. منظور از تصاویر دودویی ، تصاویر با دو سطح روشنایی 0 یا 1 می باشد که در آن منظور از 0 رنگ سیاه و منظور از 1 رنگ سفید می باشد.</p>
+<p>شکل شناسی عموما از عملگرهای مجموعه ای استفاده می کند و از آن بیشتر برای استخراج نقاط کلیدی تصویر ، حذف نقاط غیر مفید تصویر و موارد مشابه دیگر استفاده می کنیم. در این قسمت ابتدا عملگرهای مجموعه ای پایه را برای پردازش شکل شناسی بررسی می کنیم. سپس به بررسی مهمترین عملگرهای مجموعه ای خواهیم پرداخت که ویژه پردازش شکل شناسی می باشند.</p>
+<h4>عملگرهای مجموعه ای پایه</h4>
+<p>این عملگر ها شامل عملگر اجتماع ، اشتراک ، تفاضل دو مجموعه می باشد. اگر هر تصویر باینری را یک مجموعه در نظر بگیریم ، اجتماع دو تصویر باینری هم اندازه ، همانطور که در شکل زیر شاهده می کنید تصویری خواهد بود که در این تصویر هر یکسلی که در تصویر اول یا تصویر دوم مقدار 1 داشته باشد ، مقدار 1 خواهد داشت. برای پیاده سازی عملگر اجتماع برای دو تصویر باینری ، می توانیم پیکسل های متناظر را در دو تصویر باهم OR بیتی کنیم.</p>
+<p><img src="/assets/images/image-processing/set-or.jpg" alt="" /></p>
+<p>اشتراک دو تصویر باینری هم اندازه ، نیز تصویری خواهد بود که در این تصویر هر پیکسلی که در تصویر اول و دوم مقدار 1 داشته باشد ، مقدار 1 خواهد داشت. برای پیاده سازی عملگر اشتراک برای دو تصویر باینری ، می توانیم پیکسل های متناظر را در دو تصویر باهم ANDبیتی کنیم.</p>
+<p><img src="/assets/images/image-processing/set-and.jpg" alt="" /></p>
+<p>تفاضل دو تصویر باینری هم اندازه ، تصویری خواهد بود که در این تصویر پیکسل هایی از تصویر اول با مقدار 1 که در تصویر دوم مقدارشان 1 نباشد ، مقدار 1 خواهند داشت. تفاضل را به شکل اشتراک تصویر دوم و مکمل تصویر اول نیز می توان تعریف کرد.</p>
+<p><img src="/assets/images/image-processing/set-sub.jpg" alt="" /></p>
+<p>همچنین عملگر تک عملوندی مکمل نیز عملگری است که پس از اعمال آن بر روی تصویر باینری ، در تصویر حاصل شده ، مقادیر 1 به 0 و مقادیر 0 به 1 تغییر می یابند. برای پیاده سازی عملگر مکمل می توانیم هر پیکسل از تصویر بانری را NOT بیتی کنیم .</p>
+<p><img src="/assets/images/image-processing/set-not.jpg" alt="" /></p>
+                    </div>
+
+        <div class="col-md-3">
+                <ul class="list-group">
+        <li class="list-group-item list-group-item-info">
+            مقدمه
+        </li>
+
+                    <li class="list-group-item">
+                                <a href="/image-processing/introduction/">مقدمه پردازش تصویر</a>
+            </li>
+                    <li class="list-group-item">
+                                <a href="/image-processing/definition/">تصویر دیجیتالی چیست؟</a>
+            </li>
+                    <li class="list-group-item">
+                                <a href="/image-processing/grayscale/">تصویر حاکستری (Grayscale)</a>
+            </li>
+                    <li class="list-group-item">
+                                <a href="/image-processing/subtract/">تفریق دو تصویر</a>
+            </li>
+                    <li class="list-group-item">
+                                <a href="/image-processing/add/">جمع دو تصویر</a>
+            </li>
+                    <li class="list-group-item">
+                                <a href="/image-processing/complement/">مکمل کردن تصویر</a>
+            </li>
+                    <li class="list-group-item">
+                                <a href="/image-processing/average/">میانگین گیری از تصویر</a>
+            </li>
+                    <li class="list-group-item">
+                                <a href="/image-processing/histogram/">پردازش هیستوگرام تصویر</a>
+            </li>
+                    <li class="list-group-item">
+                                <a href="/image-processing/convolution/">ارتقای تصویر و عملگر کانولوشن</a>
+            </li>
+                    <li class="list-group-item">
+                                <a href="/image-processing/filtering/">تعریف عمل فیلتر کردن</a>
+            </li>
+                    <li class="list-group-item">
+                                <a href="/image-processing/spatial-filters/">فیلترهای آرام کننده حوزه مکانی</a>
+            </li>
+                    <li class="list-group-item">
+                                <a href="/image-processing/sharp-filters/">فیلترهای تیز کننده حوزه مکانی</a>
+            </li>
+                    <li class="list-group-item">
+                                    <span class="glyphicon glyphicon-menu-left" aria-hidden="true"></span>
+                                <a href="/image-processing/set-operators/">عملگرهای مجموعه&zwnj;ای</a>
+            </li>
+                    <li class="list-group-item">
+                                <a href="/image-processing/morphologic-dilate/">گسترش باینری مورفولوژیکی</a>
+            </li>
+                    <li class="list-group-item">
+                                <a href="/image-processing/morphologic-erode/">سایش باینری مورفولوژیکی</a>
+            </li>
+                    <li class="list-group-item">
+                                <a href="/image-processing/morphologic-closing-and-opening/">بستن و بازکردن باینری مورفولوژیکی</a>
+            </li>
+                    <li class="list-group-item">
+                                <a href="/image-processing/morphologic-skeleton/">استخراج اسکلت بندی اشیاء</a>
+            </li>
+            </ul>
+        </div>
+    </div>
+
+</div>
+
+<footer class="footer">
+    <div class="container">
+        <p class="text-muted"> کلیه مطالب وب سایت با رعایت قوانین  <a href="http://ai.amini.eu/www.gnu.org/copyleft/fdl.html">GNU Free Documentation License</a> قابل دسترس می باشند  | 1395- 1389 © </p>
+    </div>
+</footer>
+
+
+<script type="text/javascript" src="/assets/js/jquery-2.2.4.min.js"></script>
+<script type="text/javascript" src="/assets/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="/assets/js/prism.js"></script>
+
+</body>
+</html>
