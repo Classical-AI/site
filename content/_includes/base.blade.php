@@ -9,6 +9,7 @@
 
     <link rel="stylesheet" href="@url('assets/css/bootstrap.min.css')">
     <link rel="stylesheet" href="@url('assets/css/bootstrap-rtl.min.css')">
+    <link rel="stylesheet" href="@url('assets/css/prism.css')">
     <link rel="stylesheet" href="@url('assets/css/style.css')">
 </head>
 
@@ -23,6 +24,7 @@
 
 <script type="text/javascript" src="@url('assets/js/jquery-2.2.4.min.js')"></script>
 <script type="text/javascript" src="@url('assets/js/bootstrap.min.js')"></script>
+<script type="text/javascript" src="@url('assets/js/prism.js')"></script>
 
 </body>
 </html>

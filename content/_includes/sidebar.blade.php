@@ -12,6 +12,9 @@
 
         @foreach($categoryPosts as $blogPost)
             <li class="list-group-item">
+                @if(trim($currentUrlPath, '/') == trim($blogPost->path, '/'))
+                    <span class="glyphicon glyphicon-menu-left" aria-hidden="true"></span>
+                @endif
                 <a href="@url($blogPost->path)">{{ $blogPost->title }}</a>
             </li>
         @endforeach

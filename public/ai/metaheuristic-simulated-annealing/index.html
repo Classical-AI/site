@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+
+    <title>هوش مصنوعی کلاسیک </title>
+
+    <link rel="stylesheet" href="/assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/assets/css/bootstrap-rtl.min.css">
+    <link rel="stylesheet" href="/assets/css/prism.css">
+    <link rel="stylesheet" href="/assets/css/style.css">
+</head>
+
+<body>
+
+<div class="container">
+    <nav class="navbar navbar-default navbar-fixed-top">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar"
+                    aria-expanded="false" aria-controls="navbar">
+                <span class="sr-only">گشودن/بستن منو</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="/">هوش مصنوعی کلاسیک</a>
+        </div>
+        <div id="navbar" class="collapse navbar-collapse">
+            <ul class="nav navbar-nav">
+                <li><a href="/">خانه</a></li>
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
+                       aria-expanded="false">مقالات آموزشی <span class="caret"></span></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="/ai/introduction/">هوش مصنوعی</a></li>
+                        <li><a href="#">هوش محاسباتی</a></li>
+                        <li><a href="#">پردازش سیگنال</a></li>
+                        <li><a href="#">پردازش تصویر</a></li>
+                    </ul>
+                </li>
+                <li><a href="/about/">درباره</a></li>
+                <li><a href="/contact/">تماس</a></li>
+            </ul>
+        </div><!--/.nav-collapse -->
+    </div>
+</nav>
+
+    
+    <ol class="breadcrumb">
+        <li><a href="/">خانه</a></li>
+                    <li><a href=" /ai/introduction/ ">هوش مصنوعی</a></li>
+        
+                <li>الگوریتم های متاهیوریستیک</li>
+        
+        <li class="active">الگوریتم Simulated Annealing</li>
+    </ol>
+
+    <div id="content" class="row">
+        <div class="col-md-9">
+            <h2>الگوریتم Simulated Annealing</h2>
+                            <p><img src="/assets/images/ai/annealing.jpg" alt="الگوریتم Simulated Annealing " /></p>
+<p>روش SA یکی از روش های متاهیوریستیکی احتمالی است که ایده آن از عمل سرد کردن تدریجی فلزات برای استحاکم بیشتر آن ها نشات گرفته است. همانند روش های تپه نوردی و تپه نوردی تعمیم یافته ، در این روش نیز مسئله از یک حالت مانند S در فضای حالت مسئله شروع کرده و با گذر از حالتی به حالت دیگر به جواب بهینه مسئله نزدیک می شود. انتخاب حالت شروع هم می تواند به صورت تصادفی انجام پذیرد و هم می تواند بر اساس یک قاعده حالت اولیه مسئله را انتخاب کنیم. در اینجا نیز تابع Objective میزان بهینگی حالت فعلی را محاسبه کرده و Neighbor یک حالت همسایه برای حالت فعلی تولید می کند.</p>
+<p>روش کلی کار به این صورت است که در هر تکرار ، الگوریتم SA حالت همسایه ای مانند s' ایجاد می کند و بر اساس یک احتمال ، مسئله از حالت s به حالت s' می رود و یا اینکه در همان حالت s باقی می ماند . این روند تا زمانی تکرار می شود که به یک جواب نسبتا بهینه برسیم یا اینکه ماکزیمم تعداد تکرار ها را انجام داده باشیم. همانطور که قبلا نیز بررسی کردیم نحوه تولید حالت همسایه از اهمیت به سزایی برخوردار است.</p>
+<p>در روش کلی الگوریتم بیان کردیم که قبولی حالت همسایه تولید شده بر اساس یک احتمال صورت می پذیرد . تابع ( P(e,e',T تعیین کننده احتمال قبولی حالت همسایه می باشد . e بهینگی حالت فعلی و e' بهینگی حالت همسایه می باشد . در صورتی که حالت همسایه از حالت فعلی بدتر باشد ، مقدار پارامتر T تعیین کننده احتمال قبولی جواب می باشد . در ابتدای امر مقدار پارامتر T را طوری انتخاب می کنیم که اکثر حالت های همسایه را مورد پذیرش قرار دهیم ، پارامتر T نشانگر دما بوده و مقدار این پارامتر به تدریج کاهش می یابد . مقدار پارامتر T را طوری انتخاب می کنیم که قبل از انجام گرفتن ماکزیمم تعداد تکرارها ، مقدار آن تقریبا صفر گردد . مستنداتی که برای الگوریتم SA وجود دارد، نشان می دهند که در ابتدای امر مقدار T بهتر است به گونه ای تعیین گردد که در ابتدا 80% جواب ها مورد پذیرش الگوریتم واقع شود. روش کلی این الگوریتم به صورت زیر خواهد بود :</p>
+<pre><code class="language-bash">Procedure Simulated Annealing
+  C = Choose an initial solution
+  T = Choose an initial temperature
+  REPEAT
+    S' = Generate a neighbor of the solution C
+    ΔE = objective( S' ) – objective( C )
+    IF (ΔE &gt; 0 ) THEN // S' better than C
+      C = S'
+    ELSE with probability EXP( ΔE/ T )
+      C = S'
+    END IF
+    T = lower the T using linear/ non-linear techniques
+  UNTIL meet the stop criteria
+End</code></pre>
+<p>در روش تپه نوردی برای گریز از بهینگی های محلی عمل جهش در فضای حالت را انجام دادیم . اما در روش SA به شکل دیگری به مقابله با این مشکل می پردازیم. در این روش وجود پارامتر T باعث می شود حتی در صورتی که بهینگی جواب همسایه بدتر از حالت فعلی باشد بر اساس مقدار T احتمال قبولی همین حالت نیز وجود دارد . قبول کردن جواب های غیربهینه باعث می شوند که این الگوریتم با موفقیت از بهینگی های محلی عبور کند.</p>
+<p>در صورتی که e'&lt; e باشد ، تابع P مقدار 1 برمی گرداند ( یعنی احتمال قبولی حالت همسایه 100% است ) . در غیر این صورت ( e'&gt;e ) تابع P بر اساس مقدار T و اختلاف بین e' و e مقداری بین صفر و یک بر می گرداند که نشان دهنده احتمال قبولی حالت همسایه است .</p>
+<p>در روش سرد کردن تدریجی فلزات ، برای استحکام هرچه بیشتر فلز ، دما به تدریج کاهش می یابد . در روش SA نیز مقدار T را به تدریج کاهش می دهیم . مقدار T به هرمیزانی که زیاد باشد ، باعث می شود که احتمال قبولی جواب های بد نیز بالا باشد . اما چون مقدار T رفته رفته کاهش می یابد ، بنابراین زمانی که مقدار T به اندازه کافی کم شد ( دما به اندازه کافی پایین آمد ) احتمال قبولی جواب های بد نیز به صفر میل می کند . از این لحظه به بعد فقط حالت هایی مورد پذیرش قرار می گیرند که هزینه آن ها بهتر از هزینه حالت فعلی باشند . به عبارت دیگر زمانی که مقدار T به صفر نزدیک شود ، در صورتی حالت همسایه به عنوان حالت فعلی انتخاب می شود که e' &lt; e باشد . مقدار T باید به گونه ای انتخاب گردد که هنگام رسیدن به دمای صفر ، الگوریتم از بهینگی های محلی عبور کرده و در نزدیکی بهینگی سراسری قرار گرفته باشد.</p>
+<p>برای کاهش دما، T را در یک ضریب همانند r که مقدار بین 0 و 1 دارد، ضرب می کنیم. کاهش دادن سریع دما موجب خواهد شد که همچنان با مشکل بهینگی های محلی مواجه باشیم. بنابراین مقدار این پارامتر را همیشه نزدیک به عدد 1 انتخاب می کنیم. ( مثلا 0.998 ). در الگوریتم SA انتخاب دما نقس بسیار زیادی در موفقیت الگوریتم دارد. انتخاب دمای اولیه بسیار بزرگ موجب کندی الگوریتم و انتخاب دمای کم موجب قرار گرفتن در نقاط بهینگی محلی می شود. استفاده از دمای بسیار زیاد در صورتی که مدت زمان کافی برای حل مساله داشته باشیم ، بهتر به نظر می رسد. با این حال هنگام پیاده سازی الگوریتم SA برای یک مساله خاص بهتر آن است که دمای اولیه الگوریتم با توجه به بزرگی مساله تعیین گردد. با اینکه مشکل بهینگی های محلی در الگوریتم SA حل شده است، با این حال در برخی مسائل هنگام استفاده از این الگوریتم به مشکلاتی بر خواهیم خورد. در الگوریتم SA ممکن است هنگام تولید حالت همسایگی به حالتی گذر کنیم که قبلا یکبار این حالت را مشاهده کرده ایم. البته نمی توان برگشت به حالت تکراری را مشکلی برای الگوریتم تلقی کرد. چرا که در برخی موارد همین برگشت به حالت قبلی ممکن است موجب بهبود الگوریتم گردد. اما برای رفع این مشکل نیز روش جستجوی Tabu پیشنهاد گردید که در ادامه به بررسی آن نیز می پردازیم.</p>
+                    </div>
+
+        <div class="col-md-3">
+                <ul class="list-group">
+        <li class="list-group-item list-group-item-info">
+            هوش مصنوعی کلاسیک
+        </li>
+
+                    <li class="list-group-item">
+                                <a href="/ai/introduction/">مقدمه هوش مصنوعی</a>
+            </li>
+                    <li class="list-group-item">
+                                <a href="/ai/search-types/">انواع روش های جستجو</a>
+            </li>
+                    <li class="list-group-item">
+                                <a href="/ai/dfs/">جستجوی عمقی</a>
+            </li>
+                    <li class="list-group-item">
+                                <a href="/ai/dls/">جستجوی عمقی محدود شده</a>
+            </li>
+                    <li class="list-group-item">
+                                <a href="/ai/bfs/">جستجوی سطحی</a>
+            </li>
+                    <li class="list-group-item">
+                                <a href="/ai/ucs/">جستجوی هزینه یکنواخت</a>
+            </li>
+                    <li class="list-group-item">
+                                <a href="/ai/greedy/">جستجوی حریصانه</a>
+            </li>
+                    <li class="list-group-item">
+                                <a href="/ai/a-star/">جستجوی *A</a>
+            </li>
+            </ul>
+    <ul class="list-group">
+        <li class="list-group-item list-group-item-info">
+            الگوریتم های متاهیوریستیک
+        </li>
+
+                    <li class="list-group-item">
+                                <a href="/ai/metaheuristic-introduction/">روش های جستجوی متاهیوریستیکی</a>
+            </li>
+                    <li class="list-group-item">
+                                <a href="/ai/metaheuristic-hillclimbing/">الگوریتم تپه نوردی</a>
+            </li>
+                    <li class="list-group-item">
+                                <a href="/ai/metaheuristic-extended-hillclimbing/">الگوریتم تپه نوردی تعمیم یافته</a>
+            </li>
+                    <li class="list-group-item">
+                                <a href="/ai/metaheuristic-local-beam-search/">جستجوی پرتو محلی</a>
+            </li>
+                    <li class="list-group-item">
+                                    <span class="glyphicon glyphicon-menu-left" aria-hidden="true"></span>
+                                <a href="/ai/metaheuristic-simulated-annealing/">الگوریتم Simulated Annealing</a>
+            </li>
+                    <li class="list-group-item">
+                                <a href="/ai/metaheuristic-threshold-acceptance/">الگوریتم Threshold Acceptance</a>
+            </li>
+            </ul>
+    <ul class="list-group">
+        <li class="list-group-item list-group-item-info">
+            برنامه های نمونه
+        </li>
+
+                    <li class="list-group-item">
+                                <a href="/ai/program-search-types/">روش های جستجوی ناآگاهانه</a>
+            </li>
+                    <li class="list-group-item">
+                                <a href="/ai/program-puzzle-8/">مربع هشت (8-puzzle)</a>
+            </li>
+                    <li class="list-group-item">
+                                <a href="/ai/program-minimum-spanning-tree/">درخت پوشای مینیمم (MSP)</a>
+            </li>
+                    <li class="list-group-item">
+                                <a href="/ai/program-floyd-shortest-path/">مسئله کوتاهترین مسیر</a>
+            </li>
+                    <li class="list-group-item">
+                                <a href="/ai/program-dynamic-layout-problem/">مسئله چیدمان دینامیک (DLP)</a>
+            </li>
+                    <li class="list-group-item">
+                                <a href="/ai/program-center-point/">مسئله نقطه مرکزی</a>
+            </li>
+            </ul>
+        </div>
+    </div>
+
+</div>
+
+<footer class="footer">
+    <div class="container">
+        <p class="text-muted"> کلیه مطالب وب سایت با رعایت قوانین  <a href="http://ai.amini.eu/www.gnu.org/copyleft/fdl.html">GNU Free Documentation License</a> قابل دسترس می باشند  | 1395- 1389 © </p>
+    </div>
+</footer>
+
+
+<script type="text/javascript" src="/assets/js/jquery-2.2.4.min.js"></script>
+<script type="text/javascript" src="/assets/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="/assets/js/prism.js"></script>
+
+</body>
+</html>

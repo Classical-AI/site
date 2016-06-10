@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+
+    <title>هوش مصنوعی کلاسیک </title>
+
+    <link rel="stylesheet" href="/assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/assets/css/bootstrap-rtl.min.css">
+    <link rel="stylesheet" href="/assets/css/prism.css">
+    <link rel="stylesheet" href="/assets/css/style.css">
+</head>
+
+<body>
+
+<div class="container">
+    <nav class="navbar navbar-default navbar-fixed-top">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar"
+                    aria-expanded="false" aria-controls="navbar">
+                <span class="sr-only">گشودن/بستن منو</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="/">هوش مصنوعی کلاسیک</a>
+        </div>
+        <div id="navbar" class="collapse navbar-collapse">
+            <ul class="nav navbar-nav">
+                <li><a href="/">خانه</a></li>
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
+                       aria-expanded="false">مقالات آموزشی <span class="caret"></span></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="/ai/introduction/">هوش مصنوعی</a></li>
+                        <li><a href="#">هوش محاسباتی</a></li>
+                        <li><a href="#">پردازش سیگنال</a></li>
+                        <li><a href="#">پردازش تصویر</a></li>
+                    </ul>
+                </li>
+                <li><a href="/about/">درباره</a></li>
+                <li><a href="/contact/">تماس</a></li>
+            </ul>
+        </div><!--/.nav-collapse -->
+    </div>
+</nav>
+
+    
+    <ol class="breadcrumb">
+        <li><a href="/">خانه</a></li>
+                    <li><a href=" /ai/introduction/ ">هوش مصنوعی</a></li>
+        
+                <li>الگوریتم های متاهیوریستیک</li>
+        
+        <li class="active">الگوریتم تپه نوردی تعمیم یافته</li>
+    </ol>
+
+    <div id="content" class="row">
+        <div class="col-md-9">
+            <h2>الگوریتم تپه نوردی تعمیم یافته</h2>
+                            <p><img src="/assets/images/ai/jump1.jpg" alt="الگوریتم تپه نوردی تعمیم یافته" /></p>
+<p>همانطور که در الگوریتم تپه نوردی بررسی کردیم، این روش جستجوی محلی دارای مشکل قرار گرفتن در بهینگی محلی است. این مشکل تا حدی است که حتی در مورد مسائل ساده ای همچون مسئله 8 وزیر نیز این روش جستجو از درصد موفقیت بسیار پایینی برخوردار بود.</p>
+<p>با این حال می توان تغییر کوچکی در این الگوریتم داد و تا حدودی میزان موقیت الگوریتم تپه نوردی را در حل مسائله بهینه سازی بالا برد.  مشکل الگوریتم تپه نوردی این بود که هنگام قادر به تغییر   حالت از یک محل بهینگی به محل بهینگی دیگر نبود.  اما برای گریز از بهینگی های محلی می توانیم ترتیبی اتخاذ کنیم که هنگام قرار گرفتن در بهینگی های محلی به بخش دیگری از فضای حالت جهش کنیم و سپس در آنجا به جستجوی جواب با روش تپه نوردی بپردازیم و این عمل را تا رسیدن به یک ماکزیمم سراسری تکرار کنیم.  شبه کد زیر نحوه اجرای این الگوریتم را نشان می دهد :</p>
+<pre><code class="language-basic">
+Procedure HillClimbing
+  Generate a solution ( s' )
+  Best = S'
+  Loop
+    S = Best
+    S' = Neighbors (S)
+    Best = SelectBest (S')
+    IF there is no changes in Best solution THEN
+         Jump to new state in state space
+  Until stop criterion satisfied
+End</code></pre>
+<p>در این روش علاوه بر دو تابع Objective و Neighbor ، تابعی با نام Mutate نیز خواهیم داشت که وظیفه این تابع جهش در فضای حالت مسئله خواهد بود. همچنین باید بتوان نقطه بهینگی سراسری را تشخیص داد. به عنوان مثال بهینه ترین جواب برای مسئله 8 وزیر ، نقطه ای است که در آن تعداد گاردهای جفت وزیرها صفر عدد باشد. اما مسائلی نیز وجود دارند که از ابتدا نمی توان مقدار بهینگی سراسری مسئله را در آن ها تشخیص داد. لازم به ذکر است که برای مسائل مختلف می توانیم شرط پایان حلقه و نحوه اجرای الکوریتم را تغییر دهیم. لازم به ذکر است که تابع Mutate را به طور کلی می توان با دو استراتژی مختلف پیاده سازی کرد :</p>
+<ol>
+<li>جهش در فضای حالت کوتاه باشد</li>
+<li>جهش های بزرگ در فضای حالت انجام دهد</li>
+</ol>
+<p>جهش کوتاه جهشی است که تعداد حالت های میان حالت فعلی و حالت جهش یافته کم باشد. نقطه مقابل جهش کوتاه نیز جهش بلند می باشد. استفاده از هرکدام از این روش ها بستگی به مسئله دارد و نمی توان در مورد ارجحیت یکی به دیگری اظهار نظر کرد. ما در این برنامه از جهش های کوتاه برای گریز از بهینگی های محلی استفاده کرده ایم.</p>
+                    </div>
+
+        <div class="col-md-3">
+                <ul class="list-group">
+        <li class="list-group-item list-group-item-info">
+            هوش مصنوعی کلاسیک
+        </li>
+
+                    <li class="list-group-item">
+                                <a href="/ai/introduction/">مقدمه هوش مصنوعی</a>
+            </li>
+                    <li class="list-group-item">
+                                <a href="/ai/search-types/">انواع روش های جستجو</a>
+            </li>
+                    <li class="list-group-item">
+                                <a href="/ai/dfs/">جستجوی عمقی</a>
+            </li>
+                    <li class="list-group-item">
+                                <a href="/ai/dls/">جستجوی عمقی محدود شده</a>
+            </li>
+                    <li class="list-group-item">
+                                <a href="/ai/bfs/">جستجوی سطحی</a>
+            </li>
+                    <li class="list-group-item">
+                                <a href="/ai/ucs/">جستجوی هزینه یکنواخت</a>
+            </li>
+                    <li class="list-group-item">
+                                <a href="/ai/greedy/">جستجوی حریصانه</a>
+            </li>
+                    <li class="list-group-item">
+                                <a href="/ai/a-star/">جستجوی *A</a>
+            </li>
+            </ul>
+    <ul class="list-group">
+        <li class="list-group-item list-group-item-info">
+            الگوریتم های متاهیوریستیک
+        </li>
+
+                    <li class="list-group-item">
+                                <a href="/ai/metaheuristic-introduction/">روش های جستجوی متاهیوریستیکی</a>
+            </li>
+                    <li class="list-group-item">
+                                <a href="/ai/metaheuristic-hillclimbing/">الگوریتم تپه نوردی</a>
+            </li>
+                    <li class="list-group-item">
+                                    <span class="glyphicon glyphicon-menu-left" aria-hidden="true"></span>
+                                <a href="/ai/metaheuristic-extended-hillclimbing/">الگوریتم تپه نوردی تعمیم یافته</a>
+            </li>
+                    <li class="list-group-item">
+                                <a href="/ai/metaheuristic-local-beam-search/">جستجوی پرتو محلی</a>
+            </li>
+                    <li class="list-group-item">
+                                <a href="/ai/metaheuristic-simulated-annealing/">الگوریتم Simulated Annealing</a>
+            </li>
+                    <li class="list-group-item">
+                                <a href="/ai/metaheuristic-threshold-acceptance/">الگوریتم Threshold Acceptance</a>
+            </li>
+            </ul>
+    <ul class="list-group">
+        <li class="list-group-item list-group-item-info">
+            برنامه های نمونه
+        </li>
+
+                    <li class="list-group-item">
+                                <a href="/ai/program-search-types/">روش های جستجوی ناآگاهانه</a>
+            </li>
+                    <li class="list-group-item">
+                                <a href="/ai/program-puzzle-8/">مربع هشت (8-puzzle)</a>
+            </li>
+                    <li class="list-group-item">
+                                <a href="/ai/program-minimum-spanning-tree/">درخت پوشای مینیمم (MSP)</a>
+            </li>
+                    <li class="list-group-item">
+                                <a href="/ai/program-floyd-shortest-path/">مسئله کوتاهترین مسیر</a>
+            </li>
+                    <li class="list-group-item">
+                                <a href="/ai/program-dynamic-layout-problem/">مسئله چیدمان دینامیک (DLP)</a>
+            </li>
+                    <li class="list-group-item">
+                                <a href="/ai/program-center-point/">مسئله نقطه مرکزی</a>
+            </li>
+            </ul>
+        </div>
+    </div>
+
+</div>
+
+<footer class="footer">
+    <div class="container">
+        <p class="text-muted"> کلیه مطالب وب سایت با رعایت قوانین  <a href="http://ai.amini.eu/www.gnu.org/copyleft/fdl.html">GNU Free Documentation License</a> قابل دسترس می باشند  | 1395- 1389 © </p>
+    </div>
+</footer>
+
+
+<script type="text/javascript" src="/assets/js/jquery-2.2.4.min.js"></script>
+<script type="text/javascript" src="/assets/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="/assets/js/prism.js"></script>
+
+</body>
+</html>

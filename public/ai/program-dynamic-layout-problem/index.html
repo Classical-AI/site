@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+
+    <title>هوش مصنوعی کلاسیک </title>
+
+    <link rel="stylesheet" href="/assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/assets/css/bootstrap-rtl.min.css">
+    <link rel="stylesheet" href="/assets/css/prism.css">
+    <link rel="stylesheet" href="/assets/css/style.css">
+</head>
+
+<body>
+
+<div class="container">
+    <nav class="navbar navbar-default navbar-fixed-top">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar"
+                    aria-expanded="false" aria-controls="navbar">
+                <span class="sr-only">گشودن/بستن منو</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="/">هوش مصنوعی کلاسیک</a>
+        </div>
+        <div id="navbar" class="collapse navbar-collapse">
+            <ul class="nav navbar-nav">
+                <li><a href="/">خانه</a></li>
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
+                       aria-expanded="false">مقالات آموزشی <span class="caret"></span></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="/ai/introduction/">هوش مصنوعی</a></li>
+                        <li><a href="#">هوش محاسباتی</a></li>
+                        <li><a href="#">پردازش سیگنال</a></li>
+                        <li><a href="#">پردازش تصویر</a></li>
+                    </ul>
+                </li>
+                <li><a href="/about/">درباره</a></li>
+                <li><a href="/contact/">تماس</a></li>
+            </ul>
+        </div><!--/.nav-collapse -->
+    </div>
+</nav>
+
+    
+    <ol class="breadcrumb">
+        <li><a href="/">خانه</a></li>
+                    <li><a href=" /ai/introduction/ ">هوش مصنوعی</a></li>
+        
+                <li>برنامه های نمونه</li>
+        
+        <li class="active">مسئله چیدمان دینامیک (DLP)</li>
+    </ol>
+
+    <div id="content" class="row">
+        <div class="col-md-9">
+            <h2>مسئله چیدمان دینامیک (DLP)</h2>
+                            <p><img src="/assets/images/ai/dlp.jpg" alt="" /></p>
+<p>برنامه حاضر ، یک نسخه آموزشی است که برای حل مساله چیدمان دینامیک طراحی شده است . این برنامه برای حل مساله چیدمان دینامیک از الگوریتم Simulated Annealing و الگوریتم ژنتیک استفاده کرده است . چون این برنامه برای آشنایی بیشتر با الگوریتم های مذکور تهیه شده ، از اینرو پس از اجرای الگوریتم Simulated Annealing نمودارهای مربوط به این الگوریتم نیز ترسیم شده و نمایش داده می شوند . زمانی که برنامه لود می شود ، داده های مسئله پیش فرضی را نیز به همراه آن لود می کند .</p>
+<p>مسئله چیدمان دینامیک پیش فرض شامل 5 پریود و 6 مکان می باشد . هزینه های جابجایی مواد ، تعویض واحد ها ، تخصیصی واحد ها به مکان ها و فاصله بین مکان ها نیز مشخص گردیده اند . برای مشاهده هزینه ها به برگه Costs مراجعه کنید . برای اجرای الگوریتم SA بر روی دکمه <code>Start Simulated Annealing</code> کلیک کنید . الگوریتم شروع به اجرا خواهد کرد . اجرای الگوریتم ممکن است مدتی نسبتا طولانی به طول بیانجامد . پس از اجرای الگوریتم نحوه چیدمان واحد ها در سالن ها به نمایش در خواهد آمد.</p>
+<p>برای تغییر دادن مقادیر پارامترها ، منوی <code>File-&gt;Change Parameters</code> را انتخاب کنید . پنجره ای به نمایش در خواهد آمد که در ان می توانید مقادیر جدید پارامتر ها را وارد کنید . در این پنجره دو دکمه به نام های Update و Calc وجود دارد . در صورتی که بر روی دکمه Calc کلیک کنید ، بر اساس مقادیر وارد شده برای پارامترهای Fmin ، Fmax ، Pc و Pf مقدار پارامترهای elMax ، Tin و α محاسبه می شوند . پس از محاسبه نیز پنجره بسته شده و مقادیر جدید در پنجره اصلی نمایش در می آیند . ممکن است مقادیر پارامترهای elMax ، Tin و α از قبل مشخص باشند و نیازی به محاسبه آنها از روی پارامترهای دیگر نباشد . در این صورت بر روی دکمه Update کلیک کنید . پنجره بسته شده و مقادیر در پنجره اصلی به نمایش در می آیند .</p>
+<p>برنامه حاضر این امکان را دارد که بر اساس تعداد پریود ها و مکان ها مسئله جدیدی طرح کند که هزینه های ان به طور تصادفی به وجود می آیند . برای این منظور منوی <code>File-&gt;Random Costs</code> را انتخاب کنید . در پنجره ای ظاهر می شود تعداد پریود ها و مکان ها و همچنین مقادیر پارامترهای مسئله را وارد کرده و بر روی دکمه Save کلیک کنید . مسئله جدیدی با هزینه های تصادفی به وجود می آید . برای مشاهده هزینه های مسئله جدید می توانید به برگه Costs مراجعه کنید .</p>
+                    </div>
+
+        <div class="col-md-3">
+                <ul class="list-group">
+        <li class="list-group-item list-group-item-info">
+            هوش مصنوعی کلاسیک
+        </li>
+
+                    <li class="list-group-item">
+                                <a href="/ai/introduction/">مقدمه هوش مصنوعی</a>
+            </li>
+                    <li class="list-group-item">
+                                <a href="/ai/search-types/">انواع روش های جستجو</a>
+            </li>
+                    <li class="list-group-item">
+                                <a href="/ai/dfs/">جستجوی عمقی</a>
+            </li>
+                    <li class="list-group-item">
+                                <a href="/ai/dls/">جستجوی عمقی محدود شده</a>
+            </li>
+                    <li class="list-group-item">
+                                <a href="/ai/bfs/">جستجوی سطحی</a>
+            </li>
+                    <li class="list-group-item">
+                                <a href="/ai/ucs/">جستجوی هزینه یکنواخت</a>
+            </li>
+                    <li class="list-group-item">
+                                <a href="/ai/greedy/">جستجوی حریصانه</a>
+            </li>
+                    <li class="list-group-item">
+                                <a href="/ai/a-star/">جستجوی *A</a>
+            </li>
+            </ul>
+    <ul class="list-group">
+        <li class="list-group-item list-group-item-info">
+            الگوریتم های متاهیوریستیک
+        </li>
+
+                    <li class="list-group-item">
+                                <a href="/ai/metaheuristic-introduction/">روش های جستجوی متاهیوریستیکی</a>
+            </li>
+                    <li class="list-group-item">
+                                <a href="/ai/metaheuristic-hillclimbing/">الگوریتم تپه نوردی</a>
+            </li>
+                    <li class="list-group-item">
+                                <a href="/ai/metaheuristic-extended-hillclimbing/">الگوریتم تپه نوردی تعمیم یافته</a>
+            </li>
+                    <li class="list-group-item">
+                                <a href="/ai/metaheuristic-local-beam-search/">جستجوی پرتو محلی</a>
+            </li>
+                    <li class="list-group-item">
+                                <a href="/ai/metaheuristic-simulated-annealing/">الگوریتم Simulated Annealing</a>
+            </li>
+                    <li class="list-group-item">
+                                <a href="/ai/metaheuristic-threshold-acceptance/">الگوریتم Threshold Acceptance</a>
+            </li>
+            </ul>
+    <ul class="list-group">
+        <li class="list-group-item list-group-item-info">
+            برنامه های نمونه
+        </li>
+
+                    <li class="list-group-item">
+                                <a href="/ai/program-search-types/">روش های جستجوی ناآگاهانه</a>
+            </li>
+                    <li class="list-group-item">
+                                <a href="/ai/program-puzzle-8/">مربع هشت (8-puzzle)</a>
+            </li>
+                    <li class="list-group-item">
+                                <a href="/ai/program-minimum-spanning-tree/">درخت پوشای مینیمم (MSP)</a>
+            </li>
+                    <li class="list-group-item">
+                                <a href="/ai/program-floyd-shortest-path/">مسئله کوتاهترین مسیر</a>
+            </li>
+                    <li class="list-group-item">
+                                    <span class="glyphicon glyphicon-menu-left" aria-hidden="true"></span>
+                                <a href="/ai/program-dynamic-layout-problem/">مسئله چیدمان دینامیک (DLP)</a>
+            </li>
+                    <li class="list-group-item">
+                                <a href="/ai/program-center-point/">مسئله نقطه مرکزی</a>
+            </li>
+            </ul>
+        </div>
+    </div>
+
+</div>
+
+<footer class="footer">
+    <div class="container">
+        <p class="text-muted"> کلیه مطالب وب سایت با رعایت قوانین  <a href="http://ai.amini.eu/www.gnu.org/copyleft/fdl.html">GNU Free Documentation License</a> قابل دسترس می باشند  | 1395- 1389 © </p>
+    </div>
+</footer>
+
+
+<script type="text/javascript" src="/assets/js/jquery-2.2.4.min.js"></script>
+<script type="text/javascript" src="/assets/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="/assets/js/prism.js"></script>
+
+</body>
+</html>

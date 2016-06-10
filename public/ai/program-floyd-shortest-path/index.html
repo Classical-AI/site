@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+
+    <title>هوش مصنوعی کلاسیک </title>
+
+    <link rel="stylesheet" href="/assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/assets/css/bootstrap-rtl.min.css">
+    <link rel="stylesheet" href="/assets/css/prism.css">
+    <link rel="stylesheet" href="/assets/css/style.css">
+</head>
+
+<body>
+
+<div class="container">
+    <nav class="navbar navbar-default navbar-fixed-top">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar"
+                    aria-expanded="false" aria-controls="navbar">
+                <span class="sr-only">گشودن/بستن منو</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="/">هوش مصنوعی کلاسیک</a>
+        </div>
+        <div id="navbar" class="collapse navbar-collapse">
+            <ul class="nav navbar-nav">
+                <li><a href="/">خانه</a></li>
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
+                       aria-expanded="false">مقالات آموزشی <span class="caret"></span></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="/ai/introduction/">هوش مصنوعی</a></li>
+                        <li><a href="#">هوش محاسباتی</a></li>
+                        <li><a href="#">پردازش سیگنال</a></li>
+                        <li><a href="#">پردازش تصویر</a></li>
+                    </ul>
+                </li>
+                <li><a href="/about/">درباره</a></li>
+                <li><a href="/contact/">تماس</a></li>
+            </ul>
+        </div><!--/.nav-collapse -->
+    </div>
+</nav>
+
+    
+    <ol class="breadcrumb">
+        <li><a href="/">خانه</a></li>
+                    <li><a href=" /ai/introduction/ ">هوش مصنوعی</a></li>
+        
+                <li>برنامه های نمونه</li>
+        
+        <li class="active">مسئله کوتاهترین مسیر</li>
+    </ol>
+
+    <div id="content" class="row">
+        <div class="col-md-9">
+            <h2>مسئله کوتاهترین مسیر</h2>
+                            <p><img src="/assets/images/ai/floyd-shortest-path.jpg" alt="" /></p>
+<p>مسئله کوتاهترین مسیر یکی از مسائل مطرح شده در نظریه گراف ها می باشد . از جمله کاربرد های این مسئله می توان به کاربردهای ارتباطی و حمل و نقل اشاره کرد . هدف این مسئله یافتن کوتاهترین مسیر از یک گره به گره دیگر در یک گراف جهت دار می باشد . یکی از الگوریتم های مطرح شده برای حل این مسئله ، الگوریتم فلوید می باشد . الگوریتم فلوید با استفاده از تکنیک برنامه نویسی پویا ، مسئله کوتاهرین مسیر در گراف جهت دار را حل می کند.</p>
+<p>ابتدا ماتریسی دو بعدی که نشان دهنده وزن یالهای جهت دار است ، تشکیل می دهیم . این آرایه را ماتریس وزن ها یا ماتریس weight می نامند . ماتریس دیگری نیز با نام distance ایجاد می کنیم که مقدار اولیه آن برابر مقدار ماتریس وزن ها است . شبه کد زیر نحوه پیاده سازی الگوریتم فلوید را شرح می دهد :</p>
+<pre><code class="language-basic">Procedure Floyd
+Begin
+  Copy weight matrix to distance matrix
+  N = number of nodes
+  For k = 0 to N
+    For i = 0 To N
+      For j = 0 To N
+        distance[i,j]=Min( distance[i,j],distance[i,k]+distance[k,j])
+      End For
+    End For
+  End For
+End</code></pre>
+<h4>نحوه استفاده از برنامه</h4>
+<p>برنامه فقط شامل یک پنجره اصلی است که همه ورودی ها در این پنجره وارد می شوند . پنجره اصلی برنامه از سه قسمت تشکیل یافته است . در سمت راست صفحه ترسیم نقشه قرار دارد . در این صفحه می توانید گراف بدون جهت مورد نظر را ترسیم کنید . در سمت چپ نیز یالهای خارج شده و وارد شده از هر گره به همراه وزن هریک از یالها و همچنین فاصله مستقیم هر گره از بقیه گره ها نشان داده می شود . قسمت بالایی فرم نیز شامل نوار ابزاری است که همه عملیات توسط دگمه های قرار گرفته بر روی نوار ابزار انجام می شوند .</p>
+<h4>ترسیم گراف در صفحه ترسیم</h4>
+<p>صفحه ترسیم در سمت راست فرم قرار دارد . برای قرار دادن گره ها بر روی این صفحه کافی است بر روی نقطه مورد نظر یک بار کلیک کنید . با یک بار کلیلک کردن بر روی صفحه ترسیم گره ای به صفحه اضافه می شود . برای حذف گره نیز می توانید بر روی گره مورد نظر دابل کلیک کنید . برای انتخاب گره نیز کافی است بر روی گره یک بار کلیک کنید . گره انتخاب شده رنگ متفاوتی نسبت به سایر گره ها خواهد داشت .</p>
+<p>زمانی که گره ای را انتخاب می کنید ، نام آن گره به همراه همه یالهای متصل به این گره در قسمت بالای سمت چپ پنجره به نمایش در می آیند . نام گره و وزن یال ها را می توانید در این قسمت تغییر دهید . در صورتی که یالی از گره انتخاب شده به دیگر گره ها وجود نداشته باشد ، بخش بالایی سمت چپ فقط نام گره را نشان خواهد داد . در قسمت پایینی سمت چپ نیز فاصله مستقیم گره انتخاب شده از بقیه گره ها به نمایش در می آیند . این مقادیر را نیز می توانید تغییر دهید . به صورت پیش فرض هنگامی که یالی بین دو گره رسم می شود ، فاصله بین این دو گره ( وزن یال ) فاصله اقلیدسی بین آن ها در نظر گرفته می شود.</p>
+<h4>ترسیم یال از گره 1 به گره 2</h4>
+<p>ابتدا با کلیک کردن بر روی گره 1 آن گره را انتخاب کنید . سپس کلید Ctrl را فشار داده و و بر روی گره 2 کلیک کنید . در این هنگام یالی بین گره 1 و گره 2 ترسیم می شود . در صورتی که یالی بین گره اول و گره دوم وجود داشته باشد و سعی در ترسیم دوباره یال داشته باشید ، برنامه از ترسیم یال خودداری کرده و سیگنالی را برای آگاهی شما پخش می کند .</p>
+<p>می توانید نقشه ترسیم شده را ذخیره کرده و یا نقشه ذخیره شده ای را باز کنید . برای این منظور می توانید از دکمه های قرار گرفته بر روی فرم استفاده کنید . دکمه New یک صفحه ترسیم جدید باز می کند . دکمه Load فایل نقشه را باز می کند و دکمه Save نقشه ترسیم شده را ذخیره می کند .</p>
+                    </div>
+
+        <div class="col-md-3">
+                <ul class="list-group">
+        <li class="list-group-item list-group-item-info">
+            هوش مصنوعی کلاسیک
+        </li>
+
+                    <li class="list-group-item">
+                                <a href="/ai/introduction/">مقدمه هوش مصنوعی</a>
+            </li>
+                    <li class="list-group-item">
+                                <a href="/ai/search-types/">انواع روش های جستجو</a>
+            </li>
+                    <li class="list-group-item">
+                                <a href="/ai/dfs/">جستجوی عمقی</a>
+            </li>
+                    <li class="list-group-item">
+                                <a href="/ai/dls/">جستجوی عمقی محدود شده</a>
+            </li>
+                    <li class="list-group-item">
+                                <a href="/ai/bfs/">جستجوی سطحی</a>
+            </li>
+                    <li class="list-group-item">
+                                <a href="/ai/ucs/">جستجوی هزینه یکنواخت</a>
+            </li>
+                    <li class="list-group-item">
+                                <a href="/ai/greedy/">جستجوی حریصانه</a>
+            </li>
+                    <li class="list-group-item">
+                                <a href="/ai/a-star/">جستجوی *A</a>
+            </li>
+            </ul>
+    <ul class="list-group">
+        <li class="list-group-item list-group-item-info">
+            الگوریتم های متاهیوریستیک
+        </li>
+
+                    <li class="list-group-item">
+                                <a href="/ai/metaheuristic-introduction/">روش های جستجوی متاهیوریستیکی</a>
+            </li>
+                    <li class="list-group-item">
+                                <a href="/ai/metaheuristic-hillclimbing/">الگوریتم تپه نوردی</a>
+            </li>
+                    <li class="list-group-item">
+                                <a href="/ai/metaheuristic-extended-hillclimbing/">الگوریتم تپه نوردی تعمیم یافته</a>
+            </li>
+                    <li class="list-group-item">
+                                <a href="/ai/metaheuristic-local-beam-search/">جستجوی پرتو محلی</a>
+            </li>
+                    <li class="list-group-item">
+                                <a href="/ai/metaheuristic-simulated-annealing/">الگوریتم Simulated Annealing</a>
+            </li>
+                    <li class="list-group-item">
+                                <a href="/ai/metaheuristic-threshold-acceptance/">الگوریتم Threshold Acceptance</a>
+            </li>
+            </ul>
+    <ul class="list-group">
+        <li class="list-group-item list-group-item-info">
+            برنامه های نمونه
+        </li>
+
+                    <li class="list-group-item">
+                                <a href="/ai/program-search-types/">روش های جستجوی ناآگاهانه</a>
+            </li>
+                    <li class="list-group-item">
+                                <a href="/ai/program-puzzle-8/">مربع هشت (8-puzzle)</a>
+            </li>
+                    <li class="list-group-item">
+                                <a href="/ai/program-minimum-spanning-tree/">درخت پوشای مینیمم (MSP)</a>
+            </li>
+                    <li class="list-group-item">
+                                    <span class="glyphicon glyphicon-menu-left" aria-hidden="true"></span>
+                                <a href="/ai/program-floyd-shortest-path/">مسئله کوتاهترین مسیر</a>
+            </li>
+                    <li class="list-group-item">
+                                <a href="/ai/program-dynamic-layout-problem/">مسئله چیدمان دینامیک (DLP)</a>
+            </li>
+                    <li class="list-group-item">
+                                <a href="/ai/program-center-point/">مسئله نقطه مرکزی</a>
+            </li>
+            </ul>
+        </div>
+    </div>
+
+</div>
+
+<footer class="footer">
+    <div class="container">
+        <p class="text-muted"> کلیه مطالب وب سایت با رعایت قوانین  <a href="http://ai.amini.eu/www.gnu.org/copyleft/fdl.html">GNU Free Documentation License</a> قابل دسترس می باشند  | 1395- 1389 © </p>
+    </div>
+</footer>
+
+
+<script type="text/javascript" src="/assets/js/jquery-2.2.4.min.js"></script>
+<script type="text/javascript" src="/assets/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="/assets/js/prism.js"></script>
+
+</body>
+</html>
